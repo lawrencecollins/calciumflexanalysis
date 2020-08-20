@@ -1,0 +1,1772 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.4" />
+<title>calciumflexanalysis.multiplate API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>calciumflexanalysis.multiplate</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+from calciumflexanalysis import calcium_flex as cal
+from collections import defaultdict
+import pandas as pd 
+import matplotlib.pyplot as plt
+from datetime import date
+import copy
+
+class CaFlexGroup:
+    &#34;&#34;&#34;Class used for the analysis of multiple Calcium Flex well plates.
+    
+    :param caflexplates: List of caflexplates to combine, generated from CaFlexPlate class
+    :type caflexplates: list of calciumflexanalysis.calcium_flex.CaFlexPlates
+    &#34;&#34;&#34;
+    
+    def __init__(self, caflexplates = []):
+    
+        self.caflexplates = caflexplates
+        self.grouplist = [&#39;Protein&#39;, &#39;Type&#39;, &#39;Compound&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;]
+
+        self.titles = {}
+        self.plate_maps = {}
+        self.data = {&#39;ratio&#39;:{}}
+        
+        inject_list = []
+        # iterate through each plate and update attributes using predefined caflexanalysis methods
+        for key, val in enumerate(self.caflexplates):
+            # titles (nice ref for the user)
+            self.titles[&#34;plate_{}&#34;.format(key+1)] = val.title
+            # update processed data w/ ratios
+            self.data[&#39;ratio&#39;][&#34;plate_{}&#34;.format(key+1)] = val.processed_data[&#39;ratio&#39;]
+            # dictionary of plate maps for each plate
+            self.plate_maps[&#34;plate_{}&#34;.format(key+1)] = val.plate_map
+            
+            # append list with injection times for each plate
+            inject_list.append(val.inject)
+        
+        # mean inject across all plates (this might be changed)
+        self.inject = np.array(inject_list).mean()
+        
+    def visualise_plates(self, share_y, export = False, title = &#34;&#34;, colormap = &#39;Dark2_r&#39;,
+             colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 200):
+        &#34;&#34;&#34;Returns color-coded and labelled plots of the data collected for each well of each well plate.
+
+        :param share_y: &#39;True&#39; sets y axis the same for all plots
+        :type share_y: bool
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param colormap: Sets the colormap for the color-coding, default = &#39;Dark2_r&#39;
+        :type colormap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 200
+        :type dpi: int
+        :return: Figure of plotted data for each well of the well plate described in plate_map_file
+        :rtype: figure
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        for key, val in enumerate(plates):
+            if title == &#34;&#34;:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+            else:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+            val.visualise_assay(share_y, export, title, colormap, colorby, labelby, dpi)
+            
+    def see_plates(self, title = &#34;&#34;, export = False, colormap = &#39;Paired&#39;, colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 100):
+        &#34;&#34;&#34;Returns a visual representation of each plate map.
+    
+        The label and colour for each well can be customised to be a variable, for example &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;, &#39;Contents&#39; or &#39;Type&#39;. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384. 
+        :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+        :type size: int    
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param colormap: Sets the colormap for the color-coding, default = &#39;Paired&#39;
+        :type colormap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 150
+        :type dpi: int
+        :return: Visual representation of the plate map.
+        :rtype: figure
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        for key, val in enumerate(plates):
+            if title == &#34;&#34;:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+            else:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+            try:
+                val.see_plate(Title, export, colormap, colorby, labelby, dpi)
+            except:
+                print(&#34;Check plate {}&#34;.format(key+1))
+                
+    def baseline_correct(self):
+        &#34;&#34;&#34;Baseline corrects &#39;ratio&#39; data for each well using the pre-injection time points.&#34;&#34;&#34;
+        self.data[&#39;baseline_corrected&#39;] = {}
+        for key, val in enumerate(self.caflexplates):
+            try:
+                val.baseline_correct()
+                print(&#34;Plate {}&#34;.format(key+1))
+                self.data[&#39;baseline_corrected&#39;][&#34;plate_{}&#34;.format(key+1)] = val.processed_data[&#39;baseline_corrected&#39;]
+                
+            except:
+                print(&#34;Baseline correction for plate {} failed&#34;.format(key+1))
+                
+        
+        
+    def get_window(self, data_type):
+        &#34;&#34;&#34;Finds the lowest overall mean gradient for across the ten time point window post injection for the plates
+        
+        :param data_type: Data series to calculate plateau, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Tuple containing start and end index of plateau window
+        :rtype: (int, int)
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        gradients = {}
+        
+        for key, val in enumerate(plates):
+            g = val.get_gradients(data_type)
+            
+            # keys for each plate are numbered by key this time - easier for unpacking
+            gradients[key] = g
+            
+        # collect gradients for each window in each plate into single dictionary using default dict
+        windows = defaultdict(list)
+        for key, val in gradients.items():
+            for k, v in val.items(): # unpack dictionary of dictionaries
+                windows[k].append(v) # where multiple plates have the same window, the resulting dict value will be a list of those gradients
+        
+        # take means of each window
+        mean_windows = {}
+        for key, val in windows.items():
+            mean_windows[key] = np.array(val).mean()
+                
+        # get minimum gradient index window across all plates and update self.window
+        self.window = (min(mean_windows, key = mean_windows.get))
+        
+        # update windows for each plate
+        for key, val in enumerate(plates):
+            val.window = self.window
+        
+        return self.window
+    
+    def def_window(self, time, data_type):
+        &#34;&#34;&#34;Manually sets each plateau window.
+        
+        :param time: Time point at start of window
+        :type time: int
+        :param data_type: Data to set window on, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Tuple containing start and end index of plateau window
+        :rtype: (int, int)
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        temp = []
+        for key, val in enumerate(plates):
+            val.def_window(time, data_type)
+            temp.append(val.window)
+        if all(x == temp[0] for x in temp) == True:
+            self.window = temp[0]
+            print(&#34;all windows equal, self.window updated&#34;)
+            return self.window
+        else:
+            raise ValueError(&#34;Time points are not equal&#34;)
+        
+    def group_data(self, data_type):
+        &#34;&#34;&#34;Groups data from each plate of desired type (either ratio or baseline_corrected) into single dataframe.
+        
+        :param data_type: Data to be groupe, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Dictionary of dataframes
+        :rtype: {str:pandas.DataFrame, str:pandas.DataFrame}
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        group_list = self.caflexplates
+        
+        data_list = [] # collect all data in list, then concatenate dfs, take means for each condition
+        time_list = [] # same for time (sem not required)
+        # get data for each plate in plates_list
+        for key, val in enumerate(plates):
+            plate_map = val.plate_map
+            # extract data, combine with the plate&#39;s plate map, append data_list
+            mapped = plate_map.fillna(&#39;none&#39;).join(val.processed_data[data_type][&#39;data&#39;])
+            data_list.append(mapped)
+
+        # repeat for time:
+        for key, val in enumerate(plates):
+            plate_map = val.plate_map
+            # extract data, combine with the plate&#39;s plate map, append data_list
+            mapped = plate_map.fillna(&#39;none&#39;).join(val.processed_data[data_type][&#39;time&#39;])
+            time_list.append(mapped)
+
+        # concat data and time - all data for every well now in one df for data and time
+        all_data = pd.concat(data_list, ignore_index = True)
+        all_time = pd.concat(time_list, ignore_index = True)
+        
+        self.data[data_type][&#39;grouped&#39;] = {&#39;data&#39;:all_data, &#39;time&#39;: all_time}
+        
+        print(&#34;self.data updated. See self.data[{}][&#39;grouped&#39;]&#34;.format(data_type))
+        
+    def plot_conditions(self, data_type, plate_number = True, activator = &#34; &#34;, show_window = False, dpi = 120, title = &#34;&#34;, error = False, control = [&#39;control&#39;], cmap = &#34;winter_r&#34;, window_color = &#39;hotpink&#39;, proteins = [], compounds = [], marker = &#39;o&#39;, unique_markers = False, marker_list = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;], show_control = True):
+        &#34;&#34;&#34;Plots each mean condition versus time, for either each plate or over all plates, for each compound and protein.
+        
+        If no title is desired, set title to &#34; &#34;.
+        
+
+        :param plate_number: If True, plate number is added to each plot title, default = True
+        :type plate_number: bool
+        :param data_type: Data to be plotted, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :param show_window: If &#39;True&#39;, shows the window from which the plateau for each condition is calculated, default = False 
+        :type show_window: bool
+        :param dpi: Size of figure, default = 120
+        :type dpi: int
+        :param title: Title of plot ADD LIST OF TITLES?
+        :type title: str
+        :param error: If True, plots error bars for each mean condition, default = False
+        :type error: bool
+        :param control: If True, plots control data, default = True
+        :type control: bool
+        :param cmap: Colormap to use as the source of plot colors
+        :type cmap: str
+        :param window_color: Color of the plateau window, default = &#39;hotpink&#39;
+        :type window_color: str
+        :param marker: Marker type, default = &#39;-o&#39;
+        :type marker: str
+        :param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+        :type unique_markers: bool
+        :param marker_list: List of marker symbols to use when unique_markers = True, default = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;]
+        :type marker_list: [str]
+        :return: Figure displaying each mean condition versus time
+        :rtype: fig
+        &#34;&#34;&#34;
+        grouplist = self.grouplist
+
+        for key, val in enumerate(self.caflexplates):
+            try:
+                # sort titles
+                if plate_number == True: # show 
+                    if title == &#34;&#34;:
+                        Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+                    else:
+                        Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+                else:
+                    if title == &#34;&#34;:
+                        Title = val.title
+                val.plot_conditions(data_type, activator, show_window, dpi, Title, error, control, cmap, window_color, proteins, compounds, marker, unique_markers, marker_list, show_control)
+            except:
+                print(&#34;Plate {} plot failed&#34;.format(key+1))
+                
+    def amplitude(self, data_type):
+        &#34;&#34;&#34;Calculates response amplitude for each condition, for each plate.
+        
+        Don&#39;t worry about specifying whether you want to collate data yet - it&#39;ll do both.
+        
+        :param data_type: Data to use to calculate amplitudes, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        
+        &#34;&#34;&#34;
+        for key, val in enumerate(self.caflexplates):
+            try:
+                val.amplitude(data_type)
+                print(&#34;self.processed_data[&#39;plateau&#39;][&#39;data&#39;] updated for plate {}.&#34;.format(key+1))
+            except:
+                print(&#34;Plate {} amplitude calculation failed.&#34;.format(key+1))
+            
+        # collate data processed data from all plates and update self.data
+        self.group_data(data_type)
+        amp = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].iloc[:, self.window[0]:self.window[1]].to_numpy()
+        # easiest means to do this is to just calculate the means again - keeps everything in the same order. 
+        amp_mean = np.mean(amp, axis = 1)
+        plateaus = pd.DataFrame(amp_mean, columns = [&#39;Amplitude&#39;], index = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].index)
+        
+        # get plate map info
+        cols = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].columns
+        cols_fltr = [i for i in cols if type(i) == str] # extract plate infor excluding data
+        grouped_map = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;][cols_fltr]
+        self.data[&#39;plateau&#39;] = {} 
+        
+        # merge plate map details with amps
+        self.data[&#39;plateau&#39;][&#39;data&#39;] = grouped_map.join(plateaus) 
+        
+        return self.data[&#39;plateau&#39;][&#39;data&#39;]
+        
+        print(&#34;self.data[&#39;plateau&#39;][&#39;data&#39;] updated&#34;)
+        
+                
+    def mean_amplitude(self, use_normalised = False, combine = True):
+        &#34;&#34;&#34;Returns mean amplitudes and error for each condition, for either each plate or across all plates.
+        
+        The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.
+        
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :return: Mean amplitudes and error for each condition
+        :rtype: Pandas DataFrame
+        :param combine: Generate mean amplitudes for each plate or across all plates, default = False
+        :type combine: bool
+        &#34;&#34;&#34;
+        # check data_type == &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        self.data[&#39;mean_amplitudes&#39;] = {}
+        
+        if combine == False:
+            for key, val in enumerate(self.caflexplates):
+                mean_amps = val.mean_amplitude(use_normalised) # get mean amps for each plate
+                self.data[&#39;mean_amplitudes&#39;][key] = mean_amps # update self.data
+                print(&#34;self.data[&#39;mean_ampltitudes&#39;][{}] updated&#34;.format(key))
+                
+        if combine == True:
+            if use_normalised == False:
+                group = self.data[&#39;plateau&#39;][&#39;data&#39;]
+            else:
+                group = self.data[&#39;plateau&#39;][&#39;data_normed&#39;] # UPDATE NORMALISE FOR COMBINE
+            # get valid data
+            group = group[group.Valid == True]
+            # drop cols which cause errors w/ groupby operations
+            group.drop([&#39;Valid&#39;, &#39;Column&#39;], axis = 1, inplace = True)
+            
+            # get mean amps for each condition across all plates
+            mean_response = group.groupby(self.grouplist).mean().reset_index()
+            # get errors
+            if use_normalised == False:
+                mean_response[&#39;Amplitude Error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;Amplitude&#39;]
+            else:
+                mean_response[&#39;amps_normed_error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;amps_normed&#39;]
+            # drop empty rows
+            mean_response.drop(mean_response[mean_response[&#39;Type&#39;] == &#39;empty&#39;].index)
+            # update self.data
+            self.data[&#39;mean_amplitudes&#39;] = mean_response
+
+            return self.data[&#39;mean_amplitudes&#39;]
+    
+    def normalise(self, combine = True):
+        &#34;&#34;&#34;Normalises amplitudes to mean control amplitude. 
+        
+        If combine = True, normalises to the mean control amplitude across all the plates. Updates either each caflexplate object or the caflexgroup object.
+        
+        :param combine: If true, normalises the response amplitudes to the mean control across all the plates
+        :type combine: bool
+        &#34;&#34;&#34;
+        if combine == False:
+            for key, val in enumerate(self.caflexplates):
+                val.normalise()
+                print(&#34;Plate {} normalised&#34;.format(key+1))
+                
+        if combine == True:
+            # get mean control amplitude
+            mean_amps = self.mean_amplitude(use_normalised = False, combine = True)
+            amps = self.data[&#39;plateau&#39;][&#39;data&#39;][&#39;Amplitude&#39;]
+            control_amp = mean_amps[mean_amps[&#39;Type&#39;] == &#39;control&#39;][&#39;Amplitude&#39;].mean()
+            # get plate map infor for every well across every plate
+            platemap = self.data[&#39;plateau&#39;][&#39;data&#39;].loc[:, &#39;Well ID&#39;: &#39;Valid&#39;]
+            # normalise to mean control
+            normed = ((amps*100) / control_amp).to_frame().rename(columns = {&#39;Amplitude&#39;:&#39;amps_normed&#39;})
+            # update self.data
+            self.data[&#39;plateau&#39;][&#39;data_normed&#39;] = platemap.join(normed)
+            print(&#34;Collated data normalised to mean control. See self.data[&#39;plateau&#39;][&#39;data_normed&#39;]&#34;)
+            return self.data[&#39;plateau&#39;][&#39;data_normed&#39;]
+    
+    def collate_curve_data(self, plot_func, use_normalised, n, proteins, compounds, **kwargs):
+        &#34;&#34;&#34;Updates self.plot_data with the data from all the plates.&#34;&#34;&#34;
+        
+        mean_amps = self.mean_amplitude(combine = True, use_normalised = use_normalised)
+        # use static method in calcium_flex to get curve_data
+        curve_data = cal.CaFlexPlate._gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        self.plot_data = curve_data
+        
+        return self.plot_data
+    
+    
+    def plot_curve(self, plot_func, combine_plates = False, combine = True, plate_number = True, activator = &#34; &#34;, use_normalised = False, type_to_plot = &#39;compound&#39;, title = &#39; &#39;, dpi = 120, n = 5, proteins = [], compounds = [], error_bar = True, cmap = &#34;Dark2&#34;, show_top_bot = False, conc_units = &#39;M&#39;, **kwargs):
+        &#34;&#34;&#34;Plots fitted curve, for either each plate or a combined plot using logistic regression with errors and IC50/EC50 values.
+        
+        :param plot_func: Plot function to use, either ic50 or ec50
+        :type plot_func: str
+        :param combine_plates: Combines all plots across all plates onto the same graph, default = False
+        :type combine_plates = bool
+        :param combine: Combines different proteins and compounds on same plate to the same plot, default = False
+        :type combine: bool
+        :param activator: Activator injected into assay, default = &#34;&#34;
+        :type activator: str
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :param type_to_plot: Type of condition to plot, default = &#39;compound&#39;
+        :type type_to_plot: str
+        :param title: Choose between automatic title or insert string to use, default = &#39;auto&#39;
+        :type title: str
+        :param dpi: Size of figure
+        :type dpi: int
+        :param n: Number of concentrations required for plot
+        :type n: int
+        :param proteins: Proteins to plot, defaults to all
+        :type proteins: list
+        :param compounds: Compounds to plot, defaults to all
+        :type compounds: list
+        :param show_top_bot: &#39;True&#39; shows the top and bottom curve fitting values in the legend
+        :type show_top_bot: bool
+        :param conc_units: Units displayed on x axis of graph
+        :type conc_units: str
+        :param **kwargs: Additional curve fitting arguments
+        :return: Figure with fitted dose-response curve
+        :rtype: fig
+        &#34;&#34;&#34;
+        # plot each plate separately (combine can be on or off)
+        if combine_plates == False:
+            for key, val in enumerate(self.caflexplates):
+                val.plot_curve(plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, **kwargs) # update with type_to_plot
+            
+        # combine data from all plates (combine can still separate proteins/compounds)
+        if combine_plates == True:
+            curve_data = self.collate_curve_data(plot_func, use_normalised, n, proteins, compounds, **kwargs)
+            
+            # add curve data as object attribute
+            self.curve_data = curve_data
+            for k in self.curve_data.keys():
+                self.curve_data[k][&#39;plot_func&#39;] = plot_func
+            
+            
+            # use static method in calcium_flex to plot
+            cal.CaFlexPlate._plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units)
+    
+    def export_data(self, combine_plates = False, title = &#34;&#34;):
+        &#34;&#34;&#34;Exports raw and processed data to an excel file. 
+        
+        The excel file will be named after the &#39;self.title&#39; parameter unless otherwise specified. Combining the data will calulate and generate the curve fit values that correspond to those used when combine_plates = True in plot_conditions. It is recommended that the user set the title if combine = True.
+        
+        :param combine_plates: Combines data from each plate to the same document, default = False
+        :type combine_plates: bool
+        :param title: Title of the excel file, default = self.title + &#39;_data_export.xlsx&#39;
+        :type title: str
+        :return: Excel document
+        :rtype: .xlsx
+        &#34;&#34;&#34;
+        if combine_plates == False:
+            for key, val in enumerate(self.caflexplates):
+#                 if title[-5:] != &#39;.xlsx&#39;:
+#                     title = title + &#39;.xlsx&#39;
+                if title == &#34;&#34;:
+                    val.export_data()
+                else:
+                    val.export_data(&#34;{}_{}&#34;.format(key, title))
+                print(&#34;Plate {} data exported as {}&#34;.format(key+1, title))
+        if combine_plates == True:
+            # set title
+            if title == &#34;&#34;:
+                title = date.today().strftime(&#34;%d-%m-%Y&#34;) + &#34;_combined_data_&#34; + &#39;.xlsx&#39;
+                
+            # get curve data 
+            curve_dict = {}
+
+            if hasattr(self, &#39;curve_data&#39;):
+                for key, val in self.curve_data.items(): # get curve data for each protein/compound combo
+                    curve = copy.deepcopy(val) # get deep copy - prevents original dict from being edited
+                    curve[&#39;popt_keys&#39;] = [&#39;top&#39;, &#39;bottom&#39;, curve[&#39;plot_func&#39;], &#39;hill&#39;] # add popt index
+                    for i in [&#39;compound&#39;, &#39;protein&#39;, &#39;c50units&#39;, &#39;plot_func&#39;]: # delete irrelevent keys
+                        curve.pop(i)
+                    curve_df = pd.DataFrame.from_dict(curve, orient = &#39;index&#39;)
+
+                    curve_dict[key] = curve_df
+            
+                    
+            # unpack data dictionary and upload to excel:
+            with pd.ExcelWriter(title) as writer:
+                for k1, v1 in self.data.items():
+                    if isinstance(v1, pd.DataFrame):
+                        v1.to_excel(writer, sheet_name = k1)
+                    for k2, v2 in v1.items():
+                        if isinstance(v2, pd.DataFrame):
+                            v2.to_excel(writer, sheet_name = k1 + &#34;_&#34; + k2)
+                        for k3, v3 in v2.items():
+                            if isinstance(v3, pd.DataFrame):
+                                v3.to_excel(writer, sheet_name = k1 + &#34;_&#34; + k2 + &#34;_&#34; + k3)
+                # export curve data for each protein/compund combination
+                for key, val in curve_dict.items():
+                    key = key.translate({ord(i): None for i in &#34;[]:*?/&#34; }) # get rid of invalid characters
+                    val.to_excel(writer, sheet_name = key + &#39;_curve_data&#39;)
+                    
+                    
+            print(&#34;Combined plate data exported as {}&#34;.format(title))
+            
+            </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup"><code class="flex name class">
+<span>class <span class="ident">CaFlexGroup</span></span>
+<span>(</span><span>caflexplates=[])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class used for the analysis of multiple Calcium Flex well plates.</p>
+<p>:param caflexplates: List of caflexplates to combine, generated from CaFlexPlate class
+:type caflexplates: list of calciumflexanalysis.calcium_flex.CaFlexPlates</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CaFlexGroup:
+    &#34;&#34;&#34;Class used for the analysis of multiple Calcium Flex well plates.
+    
+    :param caflexplates: List of caflexplates to combine, generated from CaFlexPlate class
+    :type caflexplates: list of calciumflexanalysis.calcium_flex.CaFlexPlates
+    &#34;&#34;&#34;
+    
+    def __init__(self, caflexplates = []):
+    
+        self.caflexplates = caflexplates
+        self.grouplist = [&#39;Protein&#39;, &#39;Type&#39;, &#39;Compound&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;]
+
+        self.titles = {}
+        self.plate_maps = {}
+        self.data = {&#39;ratio&#39;:{}}
+        
+        inject_list = []
+        # iterate through each plate and update attributes using predefined caflexanalysis methods
+        for key, val in enumerate(self.caflexplates):
+            # titles (nice ref for the user)
+            self.titles[&#34;plate_{}&#34;.format(key+1)] = val.title
+            # update processed data w/ ratios
+            self.data[&#39;ratio&#39;][&#34;plate_{}&#34;.format(key+1)] = val.processed_data[&#39;ratio&#39;]
+            # dictionary of plate maps for each plate
+            self.plate_maps[&#34;plate_{}&#34;.format(key+1)] = val.plate_map
+            
+            # append list with injection times for each plate
+            inject_list.append(val.inject)
+        
+        # mean inject across all plates (this might be changed)
+        self.inject = np.array(inject_list).mean()
+        
+    def visualise_plates(self, share_y, export = False, title = &#34;&#34;, colormap = &#39;Dark2_r&#39;,
+             colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 200):
+        &#34;&#34;&#34;Returns color-coded and labelled plots of the data collected for each well of each well plate.
+
+        :param share_y: &#39;True&#39; sets y axis the same for all plots
+        :type share_y: bool
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param colormap: Sets the colormap for the color-coding, default = &#39;Dark2_r&#39;
+        :type colormap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 200
+        :type dpi: int
+        :return: Figure of plotted data for each well of the well plate described in plate_map_file
+        :rtype: figure
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        for key, val in enumerate(plates):
+            if title == &#34;&#34;:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+            else:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+            val.visualise_assay(share_y, export, title, colormap, colorby, labelby, dpi)
+            
+    def see_plates(self, title = &#34;&#34;, export = False, colormap = &#39;Paired&#39;, colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 100):
+        &#34;&#34;&#34;Returns a visual representation of each plate map.
+    
+        The label and colour for each well can be customised to be a variable, for example &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;, &#39;Contents&#39; or &#39;Type&#39;. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384. 
+        :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+        :type size: int    
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param colormap: Sets the colormap for the color-coding, default = &#39;Paired&#39;
+        :type colormap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 150
+        :type dpi: int
+        :return: Visual representation of the plate map.
+        :rtype: figure
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        for key, val in enumerate(plates):
+            if title == &#34;&#34;:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+            else:
+                Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+            try:
+                val.see_plate(Title, export, colormap, colorby, labelby, dpi)
+            except:
+                print(&#34;Check plate {}&#34;.format(key+1))
+                
+    def baseline_correct(self):
+        &#34;&#34;&#34;Baseline corrects &#39;ratio&#39; data for each well using the pre-injection time points.&#34;&#34;&#34;
+        self.data[&#39;baseline_corrected&#39;] = {}
+        for key, val in enumerate(self.caflexplates):
+            try:
+                val.baseline_correct()
+                print(&#34;Plate {}&#34;.format(key+1))
+                self.data[&#39;baseline_corrected&#39;][&#34;plate_{}&#34;.format(key+1)] = val.processed_data[&#39;baseline_corrected&#39;]
+                
+            except:
+                print(&#34;Baseline correction for plate {} failed&#34;.format(key+1))
+                
+        
+        
+    def get_window(self, data_type):
+        &#34;&#34;&#34;Finds the lowest overall mean gradient for across the ten time point window post injection for the plates
+        
+        :param data_type: Data series to calculate plateau, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Tuple containing start and end index of plateau window
+        :rtype: (int, int)
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        gradients = {}
+        
+        for key, val in enumerate(plates):
+            g = val.get_gradients(data_type)
+            
+            # keys for each plate are numbered by key this time - easier for unpacking
+            gradients[key] = g
+            
+        # collect gradients for each window in each plate into single dictionary using default dict
+        windows = defaultdict(list)
+        for key, val in gradients.items():
+            for k, v in val.items(): # unpack dictionary of dictionaries
+                windows[k].append(v) # where multiple plates have the same window, the resulting dict value will be a list of those gradients
+        
+        # take means of each window
+        mean_windows = {}
+        for key, val in windows.items():
+            mean_windows[key] = np.array(val).mean()
+                
+        # get minimum gradient index window across all plates and update self.window
+        self.window = (min(mean_windows, key = mean_windows.get))
+        
+        # update windows for each plate
+        for key, val in enumerate(plates):
+            val.window = self.window
+        
+        return self.window
+    
+    def def_window(self, time, data_type):
+        &#34;&#34;&#34;Manually sets each plateau window.
+        
+        :param time: Time point at start of window
+        :type time: int
+        :param data_type: Data to set window on, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Tuple containing start and end index of plateau window
+        :rtype: (int, int)
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        temp = []
+        for key, val in enumerate(plates):
+            val.def_window(time, data_type)
+            temp.append(val.window)
+        if all(x == temp[0] for x in temp) == True:
+            self.window = temp[0]
+            print(&#34;all windows equal, self.window updated&#34;)
+            return self.window
+        else:
+            raise ValueError(&#34;Time points are not equal&#34;)
+        
+    def group_data(self, data_type):
+        &#34;&#34;&#34;Groups data from each plate of desired type (either ratio or baseline_corrected) into single dataframe.
+        
+        :param data_type: Data to be groupe, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Dictionary of dataframes
+        :rtype: {str:pandas.DataFrame, str:pandas.DataFrame}
+        &#34;&#34;&#34;
+        plates = self.caflexplates
+        group_list = self.caflexplates
+        
+        data_list = [] # collect all data in list, then concatenate dfs, take means for each condition
+        time_list = [] # same for time (sem not required)
+        # get data for each plate in plates_list
+        for key, val in enumerate(plates):
+            plate_map = val.plate_map
+            # extract data, combine with the plate&#39;s plate map, append data_list
+            mapped = plate_map.fillna(&#39;none&#39;).join(val.processed_data[data_type][&#39;data&#39;])
+            data_list.append(mapped)
+
+        # repeat for time:
+        for key, val in enumerate(plates):
+            plate_map = val.plate_map
+            # extract data, combine with the plate&#39;s plate map, append data_list
+            mapped = plate_map.fillna(&#39;none&#39;).join(val.processed_data[data_type][&#39;time&#39;])
+            time_list.append(mapped)
+
+        # concat data and time - all data for every well now in one df for data and time
+        all_data = pd.concat(data_list, ignore_index = True)
+        all_time = pd.concat(time_list, ignore_index = True)
+        
+        self.data[data_type][&#39;grouped&#39;] = {&#39;data&#39;:all_data, &#39;time&#39;: all_time}
+        
+        print(&#34;self.data updated. See self.data[{}][&#39;grouped&#39;]&#34;.format(data_type))
+        
+    def plot_conditions(self, data_type, plate_number = True, activator = &#34; &#34;, show_window = False, dpi = 120, title = &#34;&#34;, error = False, control = [&#39;control&#39;], cmap = &#34;winter_r&#34;, window_color = &#39;hotpink&#39;, proteins = [], compounds = [], marker = &#39;o&#39;, unique_markers = False, marker_list = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;], show_control = True):
+        &#34;&#34;&#34;Plots each mean condition versus time, for either each plate or over all plates, for each compound and protein.
+        
+        If no title is desired, set title to &#34; &#34;.
+        
+
+        :param plate_number: If True, plate number is added to each plot title, default = True
+        :type plate_number: bool
+        :param data_type: Data to be plotted, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :param show_window: If &#39;True&#39;, shows the window from which the plateau for each condition is calculated, default = False 
+        :type show_window: bool
+        :param dpi: Size of figure, default = 120
+        :type dpi: int
+        :param title: Title of plot ADD LIST OF TITLES?
+        :type title: str
+        :param error: If True, plots error bars for each mean condition, default = False
+        :type error: bool
+        :param control: If True, plots control data, default = True
+        :type control: bool
+        :param cmap: Colormap to use as the source of plot colors
+        :type cmap: str
+        :param window_color: Color of the plateau window, default = &#39;hotpink&#39;
+        :type window_color: str
+        :param marker: Marker type, default = &#39;-o&#39;
+        :type marker: str
+        :param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+        :type unique_markers: bool
+        :param marker_list: List of marker symbols to use when unique_markers = True, default = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;]
+        :type marker_list: [str]
+        :return: Figure displaying each mean condition versus time
+        :rtype: fig
+        &#34;&#34;&#34;
+        grouplist = self.grouplist
+
+        for key, val in enumerate(self.caflexplates):
+            try:
+                # sort titles
+                if plate_number == True: # show 
+                    if title == &#34;&#34;:
+                        Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+                    else:
+                        Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+                else:
+                    if title == &#34;&#34;:
+                        Title = val.title
+                val.plot_conditions(data_type, activator, show_window, dpi, Title, error, control, cmap, window_color, proteins, compounds, marker, unique_markers, marker_list, show_control)
+            except:
+                print(&#34;Plate {} plot failed&#34;.format(key+1))
+                
+    def amplitude(self, data_type):
+        &#34;&#34;&#34;Calculates response amplitude for each condition, for each plate.
+        
+        Don&#39;t worry about specifying whether you want to collate data yet - it&#39;ll do both.
+        
+        :param data_type: Data to use to calculate amplitudes, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        
+        &#34;&#34;&#34;
+        for key, val in enumerate(self.caflexplates):
+            try:
+                val.amplitude(data_type)
+                print(&#34;self.processed_data[&#39;plateau&#39;][&#39;data&#39;] updated for plate {}.&#34;.format(key+1))
+            except:
+                print(&#34;Plate {} amplitude calculation failed.&#34;.format(key+1))
+            
+        # collate data processed data from all plates and update self.data
+        self.group_data(data_type)
+        amp = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].iloc[:, self.window[0]:self.window[1]].to_numpy()
+        # easiest means to do this is to just calculate the means again - keeps everything in the same order. 
+        amp_mean = np.mean(amp, axis = 1)
+        plateaus = pd.DataFrame(amp_mean, columns = [&#39;Amplitude&#39;], index = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].index)
+        
+        # get plate map info
+        cols = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].columns
+        cols_fltr = [i for i in cols if type(i) == str] # extract plate infor excluding data
+        grouped_map = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;][cols_fltr]
+        self.data[&#39;plateau&#39;] = {} 
+        
+        # merge plate map details with amps
+        self.data[&#39;plateau&#39;][&#39;data&#39;] = grouped_map.join(plateaus) 
+        
+        return self.data[&#39;plateau&#39;][&#39;data&#39;]
+        
+        print(&#34;self.data[&#39;plateau&#39;][&#39;data&#39;] updated&#34;)
+        
+                
+    def mean_amplitude(self, use_normalised = False, combine = True):
+        &#34;&#34;&#34;Returns mean amplitudes and error for each condition, for either each plate or across all plates.
+        
+        The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.
+        
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :return: Mean amplitudes and error for each condition
+        :rtype: Pandas DataFrame
+        :param combine: Generate mean amplitudes for each plate or across all plates, default = False
+        :type combine: bool
+        &#34;&#34;&#34;
+        # check data_type == &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        self.data[&#39;mean_amplitudes&#39;] = {}
+        
+        if combine == False:
+            for key, val in enumerate(self.caflexplates):
+                mean_amps = val.mean_amplitude(use_normalised) # get mean amps for each plate
+                self.data[&#39;mean_amplitudes&#39;][key] = mean_amps # update self.data
+                print(&#34;self.data[&#39;mean_ampltitudes&#39;][{}] updated&#34;.format(key))
+                
+        if combine == True:
+            if use_normalised == False:
+                group = self.data[&#39;plateau&#39;][&#39;data&#39;]
+            else:
+                group = self.data[&#39;plateau&#39;][&#39;data_normed&#39;] # UPDATE NORMALISE FOR COMBINE
+            # get valid data
+            group = group[group.Valid == True]
+            # drop cols which cause errors w/ groupby operations
+            group.drop([&#39;Valid&#39;, &#39;Column&#39;], axis = 1, inplace = True)
+            
+            # get mean amps for each condition across all plates
+            mean_response = group.groupby(self.grouplist).mean().reset_index()
+            # get errors
+            if use_normalised == False:
+                mean_response[&#39;Amplitude Error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;Amplitude&#39;]
+            else:
+                mean_response[&#39;amps_normed_error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;amps_normed&#39;]
+            # drop empty rows
+            mean_response.drop(mean_response[mean_response[&#39;Type&#39;] == &#39;empty&#39;].index)
+            # update self.data
+            self.data[&#39;mean_amplitudes&#39;] = mean_response
+
+            return self.data[&#39;mean_amplitudes&#39;]
+    
+    def normalise(self, combine = True):
+        &#34;&#34;&#34;Normalises amplitudes to mean control amplitude. 
+        
+        If combine = True, normalises to the mean control amplitude across all the plates. Updates either each caflexplate object or the caflexgroup object.
+        
+        :param combine: If true, normalises the response amplitudes to the mean control across all the plates
+        :type combine: bool
+        &#34;&#34;&#34;
+        if combine == False:
+            for key, val in enumerate(self.caflexplates):
+                val.normalise()
+                print(&#34;Plate {} normalised&#34;.format(key+1))
+                
+        if combine == True:
+            # get mean control amplitude
+            mean_amps = self.mean_amplitude(use_normalised = False, combine = True)
+            amps = self.data[&#39;plateau&#39;][&#39;data&#39;][&#39;Amplitude&#39;]
+            control_amp = mean_amps[mean_amps[&#39;Type&#39;] == &#39;control&#39;][&#39;Amplitude&#39;].mean()
+            # get plate map infor for every well across every plate
+            platemap = self.data[&#39;plateau&#39;][&#39;data&#39;].loc[:, &#39;Well ID&#39;: &#39;Valid&#39;]
+            # normalise to mean control
+            normed = ((amps*100) / control_amp).to_frame().rename(columns = {&#39;Amplitude&#39;:&#39;amps_normed&#39;})
+            # update self.data
+            self.data[&#39;plateau&#39;][&#39;data_normed&#39;] = platemap.join(normed)
+            print(&#34;Collated data normalised to mean control. See self.data[&#39;plateau&#39;][&#39;data_normed&#39;]&#34;)
+            return self.data[&#39;plateau&#39;][&#39;data_normed&#39;]
+    
+    def collate_curve_data(self, plot_func, use_normalised, n, proteins, compounds, **kwargs):
+        &#34;&#34;&#34;Updates self.plot_data with the data from all the plates.&#34;&#34;&#34;
+        
+        mean_amps = self.mean_amplitude(combine = True, use_normalised = use_normalised)
+        # use static method in calcium_flex to get curve_data
+        curve_data = cal.CaFlexPlate._gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        self.plot_data = curve_data
+        
+        return self.plot_data
+    
+    
+    def plot_curve(self, plot_func, combine_plates = False, combine = True, plate_number = True, activator = &#34; &#34;, use_normalised = False, type_to_plot = &#39;compound&#39;, title = &#39; &#39;, dpi = 120, n = 5, proteins = [], compounds = [], error_bar = True, cmap = &#34;Dark2&#34;, show_top_bot = False, conc_units = &#39;M&#39;, **kwargs):
+        &#34;&#34;&#34;Plots fitted curve, for either each plate or a combined plot using logistic regression with errors and IC50/EC50 values.
+        
+        :param plot_func: Plot function to use, either ic50 or ec50
+        :type plot_func: str
+        :param combine_plates: Combines all plots across all plates onto the same graph, default = False
+        :type combine_plates = bool
+        :param combine: Combines different proteins and compounds on same plate to the same plot, default = False
+        :type combine: bool
+        :param activator: Activator injected into assay, default = &#34;&#34;
+        :type activator: str
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :param type_to_plot: Type of condition to plot, default = &#39;compound&#39;
+        :type type_to_plot: str
+        :param title: Choose between automatic title or insert string to use, default = &#39;auto&#39;
+        :type title: str
+        :param dpi: Size of figure
+        :type dpi: int
+        :param n: Number of concentrations required for plot
+        :type n: int
+        :param proteins: Proteins to plot, defaults to all
+        :type proteins: list
+        :param compounds: Compounds to plot, defaults to all
+        :type compounds: list
+        :param show_top_bot: &#39;True&#39; shows the top and bottom curve fitting values in the legend
+        :type show_top_bot: bool
+        :param conc_units: Units displayed on x axis of graph
+        :type conc_units: str
+        :param **kwargs: Additional curve fitting arguments
+        :return: Figure with fitted dose-response curve
+        :rtype: fig
+        &#34;&#34;&#34;
+        # plot each plate separately (combine can be on or off)
+        if combine_plates == False:
+            for key, val in enumerate(self.caflexplates):
+                val.plot_curve(plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, **kwargs) # update with type_to_plot
+            
+        # combine data from all plates (combine can still separate proteins/compounds)
+        if combine_plates == True:
+            curve_data = self.collate_curve_data(plot_func, use_normalised, n, proteins, compounds, **kwargs)
+            
+            # add curve data as object attribute
+            self.curve_data = curve_data
+            for k in self.curve_data.keys():
+                self.curve_data[k][&#39;plot_func&#39;] = plot_func
+            
+            
+            # use static method in calcium_flex to plot
+            cal.CaFlexPlate._plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units)
+    
+    def export_data(self, combine_plates = False, title = &#34;&#34;):
+        &#34;&#34;&#34;Exports raw and processed data to an excel file. 
+        
+        The excel file will be named after the &#39;self.title&#39; parameter unless otherwise specified. Combining the data will calulate and generate the curve fit values that correspond to those used when combine_plates = True in plot_conditions. It is recommended that the user set the title if combine = True.
+        
+        :param combine_plates: Combines data from each plate to the same document, default = False
+        :type combine_plates: bool
+        :param title: Title of the excel file, default = self.title + &#39;_data_export.xlsx&#39;
+        :type title: str
+        :return: Excel document
+        :rtype: .xlsx
+        &#34;&#34;&#34;
+        if combine_plates == False:
+            for key, val in enumerate(self.caflexplates):
+#                 if title[-5:] != &#39;.xlsx&#39;:
+#                     title = title + &#39;.xlsx&#39;
+                if title == &#34;&#34;:
+                    val.export_data()
+                else:
+                    val.export_data(&#34;{}_{}&#34;.format(key, title))
+                print(&#34;Plate {} data exported as {}&#34;.format(key+1, title))
+        if combine_plates == True:
+            # set title
+            if title == &#34;&#34;:
+                title = date.today().strftime(&#34;%d-%m-%Y&#34;) + &#34;_combined_data_&#34; + &#39;.xlsx&#39;
+                
+            # get curve data 
+            curve_dict = {}
+
+            if hasattr(self, &#39;curve_data&#39;):
+                for key, val in self.curve_data.items(): # get curve data for each protein/compound combo
+                    curve = copy.deepcopy(val) # get deep copy - prevents original dict from being edited
+                    curve[&#39;popt_keys&#39;] = [&#39;top&#39;, &#39;bottom&#39;, curve[&#39;plot_func&#39;], &#39;hill&#39;] # add popt index
+                    for i in [&#39;compound&#39;, &#39;protein&#39;, &#39;c50units&#39;, &#39;plot_func&#39;]: # delete irrelevent keys
+                        curve.pop(i)
+                    curve_df = pd.DataFrame.from_dict(curve, orient = &#39;index&#39;)
+
+                    curve_dict[key] = curve_df
+            
+                    
+            # unpack data dictionary and upload to excel:
+            with pd.ExcelWriter(title) as writer:
+                for k1, v1 in self.data.items():
+                    if isinstance(v1, pd.DataFrame):
+                        v1.to_excel(writer, sheet_name = k1)
+                    for k2, v2 in v1.items():
+                        if isinstance(v2, pd.DataFrame):
+                            v2.to_excel(writer, sheet_name = k1 + &#34;_&#34; + k2)
+                        for k3, v3 in v2.items():
+                            if isinstance(v3, pd.DataFrame):
+                                v3.to_excel(writer, sheet_name = k1 + &#34;_&#34; + k2 + &#34;_&#34; + k3)
+                # export curve data for each protein/compund combination
+                for key, val in curve_dict.items():
+                    key = key.translate({ord(i): None for i in &#34;[]:*?/&#34; }) # get rid of invalid characters
+                    val.to_excel(writer, sheet_name = key + &#39;_curve_data&#39;)
+                    
+                    
+            print(&#34;Combined plate data exported as {}&#34;.format(title))</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.amplitude"><code class="name flex">
+<span>def <span class="ident">amplitude</span></span>(<span>self, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates response amplitude for each condition, for each plate.</p>
+<p>Don't worry about specifying whether you want to collate data yet - it'll do both.</p>
+<p>:param data_type: Data to use to calculate amplitudes, either 'ratio' or 'baseline_corrected'
+:type data_type: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def amplitude(self, data_type):
+    &#34;&#34;&#34;Calculates response amplitude for each condition, for each plate.
+    
+    Don&#39;t worry about specifying whether you want to collate data yet - it&#39;ll do both.
+    
+    :param data_type: Data to use to calculate amplitudes, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+    
+    &#34;&#34;&#34;
+    for key, val in enumerate(self.caflexplates):
+        try:
+            val.amplitude(data_type)
+            print(&#34;self.processed_data[&#39;plateau&#39;][&#39;data&#39;] updated for plate {}.&#34;.format(key+1))
+        except:
+            print(&#34;Plate {} amplitude calculation failed.&#34;.format(key+1))
+        
+    # collate data processed data from all plates and update self.data
+    self.group_data(data_type)
+    amp = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].iloc[:, self.window[0]:self.window[1]].to_numpy()
+    # easiest means to do this is to just calculate the means again - keeps everything in the same order. 
+    amp_mean = np.mean(amp, axis = 1)
+    plateaus = pd.DataFrame(amp_mean, columns = [&#39;Amplitude&#39;], index = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].index)
+    
+    # get plate map info
+    cols = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;].columns
+    cols_fltr = [i for i in cols if type(i) == str] # extract plate infor excluding data
+    grouped_map = self.data[data_type][&#39;grouped&#39;][&#39;data&#39;][cols_fltr]
+    self.data[&#39;plateau&#39;] = {} 
+    
+    # merge plate map details with amps
+    self.data[&#39;plateau&#39;][&#39;data&#39;] = grouped_map.join(plateaus) 
+    
+    return self.data[&#39;plateau&#39;][&#39;data&#39;]
+    
+    print(&#34;self.data[&#39;plateau&#39;][&#39;data&#39;] updated&#34;)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.baseline_correct"><code class="name flex">
+<span>def <span class="ident">baseline_correct</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Baseline corrects 'ratio' data for each well using the pre-injection time points.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def baseline_correct(self):
+    &#34;&#34;&#34;Baseline corrects &#39;ratio&#39; data for each well using the pre-injection time points.&#34;&#34;&#34;
+    self.data[&#39;baseline_corrected&#39;] = {}
+    for key, val in enumerate(self.caflexplates):
+        try:
+            val.baseline_correct()
+            print(&#34;Plate {}&#34;.format(key+1))
+            self.data[&#39;baseline_corrected&#39;][&#34;plate_{}&#34;.format(key+1)] = val.processed_data[&#39;baseline_corrected&#39;]
+            
+        except:
+            print(&#34;Baseline correction for plate {} failed&#34;.format(key+1))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.collate_curve_data"><code class="name flex">
+<span>def <span class="ident">collate_curve_data</span></span>(<span>self, plot_func, use_normalised, n, proteins, compounds, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates self.plot_data with the data from all the plates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collate_curve_data(self, plot_func, use_normalised, n, proteins, compounds, **kwargs):
+    &#34;&#34;&#34;Updates self.plot_data with the data from all the plates.&#34;&#34;&#34;
+    
+    mean_amps = self.mean_amplitude(combine = True, use_normalised = use_normalised)
+    # use static method in calcium_flex to get curve_data
+    curve_data = cal.CaFlexPlate._gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs)
+    
+    self.plot_data = curve_data
+    
+    return self.plot_data</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.def_window"><code class="name flex">
+<span>def <span class="ident">def_window</span></span>(<span>self, time, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Manually sets each plateau window.</p>
+<p>:param time: Time point at start of window
+:type time: int
+:param data_type: Data to set window on, either 'ratio' or 'baseline_corrected'
+:type data_type: str
+:return: Tuple containing start and end index of plateau window
+:rtype: (int, int)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def def_window(self, time, data_type):
+    &#34;&#34;&#34;Manually sets each plateau window.
+    
+    :param time: Time point at start of window
+    :type time: int
+    :param data_type: Data to set window on, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+    :return: Tuple containing start and end index of plateau window
+    :rtype: (int, int)
+    &#34;&#34;&#34;
+    plates = self.caflexplates
+    temp = []
+    for key, val in enumerate(plates):
+        val.def_window(time, data_type)
+        temp.append(val.window)
+    if all(x == temp[0] for x in temp) == True:
+        self.window = temp[0]
+        print(&#34;all windows equal, self.window updated&#34;)
+        return self.window
+    else:
+        raise ValueError(&#34;Time points are not equal&#34;)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.export_data"><code class="name flex">
+<span>def <span class="ident">export_data</span></span>(<span>self, combine_plates=False, title='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exports raw and processed data to an excel file. </p>
+<p>The excel file will be named after the 'self.title' parameter unless otherwise specified. Combining the data will calulate and generate the curve fit values that correspond to those used when combine_plates = True in plot_conditions. It is recommended that the user set the title if combine = True.</p>
+<p>:param combine_plates: Combines data from each plate to the same document, default = False
+:type combine_plates: bool
+:param title: Title of the excel file, default = self.title + '_data_export.xlsx'
+:type title: str
+:return: Excel document
+:rtype: .xlsx</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">    def export_data(self, combine_plates = False, title = &#34;&#34;):
+        &#34;&#34;&#34;Exports raw and processed data to an excel file. 
+        
+        The excel file will be named after the &#39;self.title&#39; parameter unless otherwise specified. Combining the data will calulate and generate the curve fit values that correspond to those used when combine_plates = True in plot_conditions. It is recommended that the user set the title if combine = True.
+        
+        :param combine_plates: Combines data from each plate to the same document, default = False
+        :type combine_plates: bool
+        :param title: Title of the excel file, default = self.title + &#39;_data_export.xlsx&#39;
+        :type title: str
+        :return: Excel document
+        :rtype: .xlsx
+        &#34;&#34;&#34;
+        if combine_plates == False:
+            for key, val in enumerate(self.caflexplates):
+#                 if title[-5:] != &#39;.xlsx&#39;:
+#                     title = title + &#39;.xlsx&#39;
+                if title == &#34;&#34;:
+                    val.export_data()
+                else:
+                    val.export_data(&#34;{}_{}&#34;.format(key, title))
+                print(&#34;Plate {} data exported as {}&#34;.format(key+1, title))
+        if combine_plates == True:
+            # set title
+            if title == &#34;&#34;:
+                title = date.today().strftime(&#34;%d-%m-%Y&#34;) + &#34;_combined_data_&#34; + &#39;.xlsx&#39;
+                
+            # get curve data 
+            curve_dict = {}
+
+            if hasattr(self, &#39;curve_data&#39;):
+                for key, val in self.curve_data.items(): # get curve data for each protein/compound combo
+                    curve = copy.deepcopy(val) # get deep copy - prevents original dict from being edited
+                    curve[&#39;popt_keys&#39;] = [&#39;top&#39;, &#39;bottom&#39;, curve[&#39;plot_func&#39;], &#39;hill&#39;] # add popt index
+                    for i in [&#39;compound&#39;, &#39;protein&#39;, &#39;c50units&#39;, &#39;plot_func&#39;]: # delete irrelevent keys
+                        curve.pop(i)
+                    curve_df = pd.DataFrame.from_dict(curve, orient = &#39;index&#39;)
+
+                    curve_dict[key] = curve_df
+            
+                    
+            # unpack data dictionary and upload to excel:
+            with pd.ExcelWriter(title) as writer:
+                for k1, v1 in self.data.items():
+                    if isinstance(v1, pd.DataFrame):
+                        v1.to_excel(writer, sheet_name = k1)
+                    for k2, v2 in v1.items():
+                        if isinstance(v2, pd.DataFrame):
+                            v2.to_excel(writer, sheet_name = k1 + &#34;_&#34; + k2)
+                        for k3, v3 in v2.items():
+                            if isinstance(v3, pd.DataFrame):
+                                v3.to_excel(writer, sheet_name = k1 + &#34;_&#34; + k2 + &#34;_&#34; + k3)
+                # export curve data for each protein/compund combination
+                for key, val in curve_dict.items():
+                    key = key.translate({ord(i): None for i in &#34;[]:*?/&#34; }) # get rid of invalid characters
+                    val.to_excel(writer, sheet_name = key + &#39;_curve_data&#39;)
+                    
+                    
+            print(&#34;Combined plate data exported as {}&#34;.format(title))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.get_window"><code class="name flex">
+<span>def <span class="ident">get_window</span></span>(<span>self, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finds the lowest overall mean gradient for across the ten time point window post injection for the plates</p>
+<p>:param data_type: Data series to calculate plateau, either 'ratio' or 'baseline_corrected'
+:type data_type: str
+:return: Tuple containing start and end index of plateau window
+:rtype: (int, int)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_window(self, data_type):
+    &#34;&#34;&#34;Finds the lowest overall mean gradient for across the ten time point window post injection for the plates
+    
+    :param data_type: Data series to calculate plateau, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+    :return: Tuple containing start and end index of plateau window
+    :rtype: (int, int)
+    &#34;&#34;&#34;
+    plates = self.caflexplates
+    gradients = {}
+    
+    for key, val in enumerate(plates):
+        g = val.get_gradients(data_type)
+        
+        # keys for each plate are numbered by key this time - easier for unpacking
+        gradients[key] = g
+        
+    # collect gradients for each window in each plate into single dictionary using default dict
+    windows = defaultdict(list)
+    for key, val in gradients.items():
+        for k, v in val.items(): # unpack dictionary of dictionaries
+            windows[k].append(v) # where multiple plates have the same window, the resulting dict value will be a list of those gradients
+    
+    # take means of each window
+    mean_windows = {}
+    for key, val in windows.items():
+        mean_windows[key] = np.array(val).mean()
+            
+    # get minimum gradient index window across all plates and update self.window
+    self.window = (min(mean_windows, key = mean_windows.get))
+    
+    # update windows for each plate
+    for key, val in enumerate(plates):
+        val.window = self.window
+    
+    return self.window</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.group_data"><code class="name flex">
+<span>def <span class="ident">group_data</span></span>(<span>self, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Groups data from each plate of desired type (either ratio or baseline_corrected) into single dataframe.</p>
+<p>:param data_type: Data to be groupe, either 'ratio' or 'baseline_corrected'
+:type data_type: str
+:return: Dictionary of dataframes
+:rtype: {str:pandas.DataFrame, str:pandas.DataFrame}</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def group_data(self, data_type):
+    &#34;&#34;&#34;Groups data from each plate of desired type (either ratio or baseline_corrected) into single dataframe.
+    
+    :param data_type: Data to be groupe, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+    :return: Dictionary of dataframes
+    :rtype: {str:pandas.DataFrame, str:pandas.DataFrame}
+    &#34;&#34;&#34;
+    plates = self.caflexplates
+    group_list = self.caflexplates
+    
+    data_list = [] # collect all data in list, then concatenate dfs, take means for each condition
+    time_list = [] # same for time (sem not required)
+    # get data for each plate in plates_list
+    for key, val in enumerate(plates):
+        plate_map = val.plate_map
+        # extract data, combine with the plate&#39;s plate map, append data_list
+        mapped = plate_map.fillna(&#39;none&#39;).join(val.processed_data[data_type][&#39;data&#39;])
+        data_list.append(mapped)
+
+    # repeat for time:
+    for key, val in enumerate(plates):
+        plate_map = val.plate_map
+        # extract data, combine with the plate&#39;s plate map, append data_list
+        mapped = plate_map.fillna(&#39;none&#39;).join(val.processed_data[data_type][&#39;time&#39;])
+        time_list.append(mapped)
+
+    # concat data and time - all data for every well now in one df for data and time
+    all_data = pd.concat(data_list, ignore_index = True)
+    all_time = pd.concat(time_list, ignore_index = True)
+    
+    self.data[data_type][&#39;grouped&#39;] = {&#39;data&#39;:all_data, &#39;time&#39;: all_time}
+    
+    print(&#34;self.data updated. See self.data[{}][&#39;grouped&#39;]&#34;.format(data_type))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.mean_amplitude"><code class="name flex">
+<span>def <span class="ident">mean_amplitude</span></span>(<span>self, use_normalised=False, combine=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns mean amplitudes and error for each condition, for either each plate or across all plates.</p>
+<p>The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.</p>
+<p>:param use_normalised: If True, uses normalised amplitudes, default = False
+:type use_normalised: bool
+:return: Mean amplitudes and error for each condition
+:rtype: Pandas DataFrame
+:param combine: Generate mean amplitudes for each plate or across all plates, default = False
+:type combine: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mean_amplitude(self, use_normalised = False, combine = True):
+    &#34;&#34;&#34;Returns mean amplitudes and error for each condition, for either each plate or across all plates.
+    
+    The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.
+    
+    :param use_normalised: If True, uses normalised amplitudes, default = False
+    :type use_normalised: bool
+    :return: Mean amplitudes and error for each condition
+    :rtype: Pandas DataFrame
+    :param combine: Generate mean amplitudes for each plate or across all plates, default = False
+    :type combine: bool
+    &#34;&#34;&#34;
+    # check data_type == &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    self.data[&#39;mean_amplitudes&#39;] = {}
+    
+    if combine == False:
+        for key, val in enumerate(self.caflexplates):
+            mean_amps = val.mean_amplitude(use_normalised) # get mean amps for each plate
+            self.data[&#39;mean_amplitudes&#39;][key] = mean_amps # update self.data
+            print(&#34;self.data[&#39;mean_ampltitudes&#39;][{}] updated&#34;.format(key))
+            
+    if combine == True:
+        if use_normalised == False:
+            group = self.data[&#39;plateau&#39;][&#39;data&#39;]
+        else:
+            group = self.data[&#39;plateau&#39;][&#39;data_normed&#39;] # UPDATE NORMALISE FOR COMBINE
+        # get valid data
+        group = group[group.Valid == True]
+        # drop cols which cause errors w/ groupby operations
+        group.drop([&#39;Valid&#39;, &#39;Column&#39;], axis = 1, inplace = True)
+        
+        # get mean amps for each condition across all plates
+        mean_response = group.groupby(self.grouplist).mean().reset_index()
+        # get errors
+        if use_normalised == False:
+            mean_response[&#39;Amplitude Error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;Amplitude&#39;]
+        else:
+            mean_response[&#39;amps_normed_error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;amps_normed&#39;]
+        # drop empty rows
+        mean_response.drop(mean_response[mean_response[&#39;Type&#39;] == &#39;empty&#39;].index)
+        # update self.data
+        self.data[&#39;mean_amplitudes&#39;] = mean_response
+
+        return self.data[&#39;mean_amplitudes&#39;]</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.normalise"><code class="name flex">
+<span>def <span class="ident">normalise</span></span>(<span>self, combine=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Normalises amplitudes to mean control amplitude. </p>
+<p>If combine = True, normalises to the mean control amplitude across all the plates. Updates either each caflexplate object or the caflexgroup object.</p>
+<p>:param combine: If true, normalises the response amplitudes to the mean control across all the plates
+:type combine: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def normalise(self, combine = True):
+    &#34;&#34;&#34;Normalises amplitudes to mean control amplitude. 
+    
+    If combine = True, normalises to the mean control amplitude across all the plates. Updates either each caflexplate object or the caflexgroup object.
+    
+    :param combine: If true, normalises the response amplitudes to the mean control across all the plates
+    :type combine: bool
+    &#34;&#34;&#34;
+    if combine == False:
+        for key, val in enumerate(self.caflexplates):
+            val.normalise()
+            print(&#34;Plate {} normalised&#34;.format(key+1))
+            
+    if combine == True:
+        # get mean control amplitude
+        mean_amps = self.mean_amplitude(use_normalised = False, combine = True)
+        amps = self.data[&#39;plateau&#39;][&#39;data&#39;][&#39;Amplitude&#39;]
+        control_amp = mean_amps[mean_amps[&#39;Type&#39;] == &#39;control&#39;][&#39;Amplitude&#39;].mean()
+        # get plate map infor for every well across every plate
+        platemap = self.data[&#39;plateau&#39;][&#39;data&#39;].loc[:, &#39;Well ID&#39;: &#39;Valid&#39;]
+        # normalise to mean control
+        normed = ((amps*100) / control_amp).to_frame().rename(columns = {&#39;Amplitude&#39;:&#39;amps_normed&#39;})
+        # update self.data
+        self.data[&#39;plateau&#39;][&#39;data_normed&#39;] = platemap.join(normed)
+        print(&#34;Collated data normalised to mean control. See self.data[&#39;plateau&#39;][&#39;data_normed&#39;]&#34;)
+        return self.data[&#39;plateau&#39;][&#39;data_normed&#39;]</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.plot_conditions"><code class="name flex">
+<span>def <span class="ident">plot_conditions</span></span>(<span>self, data_type, plate_number=True, activator=' ', show_window=False, dpi=120, title='', error=False, control=['control'], cmap='winter_r', window_color='hotpink', proteins=[], compounds=[], marker='o', unique_markers=False, marker_list=['o', '^', 's', 'D', 'p', '*', 'v'], show_control=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Plots each mean condition versus time, for either each plate or over all plates, for each compound and protein.</p>
+<p>If no title is desired, set title to " ".</p>
+<p>:param plate_number: If True, plate number is added to each plot title, default = True
+:type plate_number: bool
+:param data_type: Data to be plotted, either 'ratio' or 'baseline_corrected'
+:type data_type: str
+:param show_window: If 'True', shows the window from which the plateau for each condition is calculated, default = False
+:type show_window: bool
+:param dpi: Size of figure, default = 120
+:type dpi: int
+:param title: Title of plot ADD LIST OF TITLES?
+:type title: str
+:param error: If True, plots error bars for each mean condition, default = False
+:type error: bool
+:param control: If True, plots control data, default = True
+:type control: bool
+:param cmap: Colormap to use as the source of plot colors
+:type cmap: str
+:param window_color: Color of the plateau window, default = 'hotpink'
+:type window_color: str
+:param marker: Marker type, default = '-o'
+:type marker: str
+:param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+:type unique_markers: bool
+:param marker_list: List of marker symbols to use when unique_markers = True, default = ["o", "^", "s", "D", "p", "*", "v"]
+:type marker_list: [str]
+:return: Figure displaying each mean condition versus time
+:rtype: fig</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_conditions(self, data_type, plate_number = True, activator = &#34; &#34;, show_window = False, dpi = 120, title = &#34;&#34;, error = False, control = [&#39;control&#39;], cmap = &#34;winter_r&#34;, window_color = &#39;hotpink&#39;, proteins = [], compounds = [], marker = &#39;o&#39;, unique_markers = False, marker_list = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;], show_control = True):
+    &#34;&#34;&#34;Plots each mean condition versus time, for either each plate or over all plates, for each compound and protein.
+    
+    If no title is desired, set title to &#34; &#34;.
+    
+
+    :param plate_number: If True, plate number is added to each plot title, default = True
+    :type plate_number: bool
+    :param data_type: Data to be plotted, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+    :param show_window: If &#39;True&#39;, shows the window from which the plateau for each condition is calculated, default = False 
+    :type show_window: bool
+    :param dpi: Size of figure, default = 120
+    :type dpi: int
+    :param title: Title of plot ADD LIST OF TITLES?
+    :type title: str
+    :param error: If True, plots error bars for each mean condition, default = False
+    :type error: bool
+    :param control: If True, plots control data, default = True
+    :type control: bool
+    :param cmap: Colormap to use as the source of plot colors
+    :type cmap: str
+    :param window_color: Color of the plateau window, default = &#39;hotpink&#39;
+    :type window_color: str
+    :param marker: Marker type, default = &#39;-o&#39;
+    :type marker: str
+    :param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+    :type unique_markers: bool
+    :param marker_list: List of marker symbols to use when unique_markers = True, default = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;]
+    :type marker_list: [str]
+    :return: Figure displaying each mean condition versus time
+    :rtype: fig
+    &#34;&#34;&#34;
+    grouplist = self.grouplist
+
+    for key, val in enumerate(self.caflexplates):
+        try:
+            # sort titles
+            if plate_number == True: # show 
+                if title == &#34;&#34;:
+                    Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+                else:
+                    Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+            else:
+                if title == &#34;&#34;:
+                    Title = val.title
+            val.plot_conditions(data_type, activator, show_window, dpi, Title, error, control, cmap, window_color, proteins, compounds, marker, unique_markers, marker_list, show_control)
+        except:
+            print(&#34;Plate {} plot failed&#34;.format(key+1))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.plot_curve"><code class="name flex">
+<span>def <span class="ident">plot_curve</span></span>(<span>self, plot_func, combine_plates=False, combine=True, plate_number=True, activator=' ', use_normalised=False, type_to_plot='compound', title=' ', dpi=120, n=5, proteins=[], compounds=[], error_bar=True, cmap='Dark2', show_top_bot=False, conc_units='M', **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Plots fitted curve, for either each plate or a combined plot using logistic regression with errors and IC50/EC50 values.</p>
+<p>:param plot_func: Plot function to use, either ic50 or ec50
+:type plot_func: str
+:param combine_plates: Combines all plots across all plates onto the same graph, default = False
+:type combine_plates = bool
+:param combine: Combines different proteins and compounds on same plate to the same plot, default = False
+:type combine: bool
+:param activator: Activator injected into assay, default = ""
+:type activator: str
+:param use_normalised: If True, uses normalised amplitudes, default = False
+:type use_normalised: bool
+:param type_to_plot: Type of condition to plot, default = 'compound'
+:type type_to_plot: str
+:param title: Choose between automatic title or insert string to use, default = 'auto'
+:type title: str
+:param dpi: Size of figure
+:type dpi: int
+:param n: Number of concentrations required for plot
+:type n: int
+:param proteins: Proteins to plot, defaults to all
+:type proteins: list
+:param compounds: Compounds to plot, defaults to all
+:type compounds: list
+:param show_top_bot: 'True' shows the top and bottom curve fitting values in the legend
+:type show_top_bot: bool
+:param conc_units: Units displayed on x axis of graph
+:type conc_units: str
+:param **kwargs: Additional curve fitting arguments
+:return: Figure with fitted dose-response curve
+:rtype: fig</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_curve(self, plot_func, combine_plates = False, combine = True, plate_number = True, activator = &#34; &#34;, use_normalised = False, type_to_plot = &#39;compound&#39;, title = &#39; &#39;, dpi = 120, n = 5, proteins = [], compounds = [], error_bar = True, cmap = &#34;Dark2&#34;, show_top_bot = False, conc_units = &#39;M&#39;, **kwargs):
+    &#34;&#34;&#34;Plots fitted curve, for either each plate or a combined plot using logistic regression with errors and IC50/EC50 values.
+    
+    :param plot_func: Plot function to use, either ic50 or ec50
+    :type plot_func: str
+    :param combine_plates: Combines all plots across all plates onto the same graph, default = False
+    :type combine_plates = bool
+    :param combine: Combines different proteins and compounds on same plate to the same plot, default = False
+    :type combine: bool
+    :param activator: Activator injected into assay, default = &#34;&#34;
+    :type activator: str
+    :param use_normalised: If True, uses normalised amplitudes, default = False
+    :type use_normalised: bool
+    :param type_to_plot: Type of condition to plot, default = &#39;compound&#39;
+    :type type_to_plot: str
+    :param title: Choose between automatic title or insert string to use, default = &#39;auto&#39;
+    :type title: str
+    :param dpi: Size of figure
+    :type dpi: int
+    :param n: Number of concentrations required for plot
+    :type n: int
+    :param proteins: Proteins to plot, defaults to all
+    :type proteins: list
+    :param compounds: Compounds to plot, defaults to all
+    :type compounds: list
+    :param show_top_bot: &#39;True&#39; shows the top and bottom curve fitting values in the legend
+    :type show_top_bot: bool
+    :param conc_units: Units displayed on x axis of graph
+    :type conc_units: str
+    :param **kwargs: Additional curve fitting arguments
+    :return: Figure with fitted dose-response curve
+    :rtype: fig
+    &#34;&#34;&#34;
+    # plot each plate separately (combine can be on or off)
+    if combine_plates == False:
+        for key, val in enumerate(self.caflexplates):
+            val.plot_curve(plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, **kwargs) # update with type_to_plot
+        
+    # combine data from all plates (combine can still separate proteins/compounds)
+    if combine_plates == True:
+        curve_data = self.collate_curve_data(plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        # add curve data as object attribute
+        self.curve_data = curve_data
+        for k in self.curve_data.keys():
+            self.curve_data[k][&#39;plot_func&#39;] = plot_func
+        
+        
+        # use static method in calcium_flex to plot
+        cal.CaFlexPlate._plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.see_plates"><code class="name flex">
+<span>def <span class="ident">see_plates</span></span>(<span>self, title='', export=False, colormap='Paired', colorby='Type', labelby='Type', dpi=100)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a visual representation of each plate map.</p>
+<p>The label and colour for each well can be customised to be a variable, for example 'Compound', 'Protein', 'Concentration', 'Concentration Units', 'Contents' or 'Type'. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384.
+:param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+:type size: int
+<br>
+:param export: If 'True' a .png file of the figure is saved, default = False
+:type export: bool
+:param title: Sets the title of the figure, optional
+:type title: str
+:param colormap: Sets the colormap for the color-coding, default = 'Paired'
+:type colormap: str
+:param colorby: Chooses the parameter to color code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type colorby: str
+:param labelby: Chooses the parameter to label code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type labelby: str
+:param dpi: Size of the figure, default = 150
+:type dpi: int
+:return: Visual representation of the plate map.
+:rtype: figure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def see_plates(self, title = &#34;&#34;, export = False, colormap = &#39;Paired&#39;, colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 100):
+    &#34;&#34;&#34;Returns a visual representation of each plate map.
+
+    The label and colour for each well can be customised to be a variable, for example &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;, &#39;Contents&#39; or &#39;Type&#39;. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384. 
+    :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+    :type size: int    
+    :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+    :type export: bool
+    :param title: Sets the title of the figure, optional
+    :type title: str
+    :param colormap: Sets the colormap for the color-coding, default = &#39;Paired&#39;
+    :type colormap: str
+    :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type colorby: str
+    :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type labelby: str
+    :param dpi: Size of the figure, default = 150
+    :type dpi: int
+    :return: Visual representation of the plate map.
+    :rtype: figure
+    &#34;&#34;&#34;
+    plates = self.caflexplates
+    for key, val in enumerate(plates):
+        if title == &#34;&#34;:
+            Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+        else:
+            Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+        try:
+            val.see_plate(Title, export, colormap, colorby, labelby, dpi)
+        except:
+            print(&#34;Check plate {}&#34;.format(key+1))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.multiplate.CaFlexGroup.visualise_plates"><code class="name flex">
+<span>def <span class="ident">visualise_plates</span></span>(<span>self, share_y, export=False, title='', colormap='Dark2_r', colorby='Type', labelby='Type', dpi=200)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns color-coded and labelled plots of the data collected for each well of each well plate.</p>
+<p>:param share_y: 'True' sets y axis the same for all plots
+:type share_y: bool
+:param export: If 'True' a .png file of the figure is saved, default = False
+:type export: bool
+:param title: Sets the title of the figure, optional
+:type title: str
+:param colormap: Sets the colormap for the color-coding, default = 'Dark2_r'
+:type colormap: str
+:param colorby: Chooses the parameter to color code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type colorby: str
+:param labelby: Chooses the parameter to label code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type labelby: str
+:param dpi: Size of the figure, default = 200
+:type dpi: int
+:return: Figure of plotted data for each well of the well plate described in plate_map_file
+:rtype: figure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def visualise_plates(self, share_y, export = False, title = &#34;&#34;, colormap = &#39;Dark2_r&#39;,
+         colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 200):
+    &#34;&#34;&#34;Returns color-coded and labelled plots of the data collected for each well of each well plate.
+
+    :param share_y: &#39;True&#39; sets y axis the same for all plots
+    :type share_y: bool
+    :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+    :type export: bool
+    :param title: Sets the title of the figure, optional
+    :type title: str
+    :param colormap: Sets the colormap for the color-coding, default = &#39;Dark2_r&#39;
+    :type colormap: str
+    :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type colorby: str
+    :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type labelby: str
+    :param dpi: Size of the figure, default = 200
+    :type dpi: int
+    :return: Figure of plotted data for each well of the well plate described in plate_map_file
+    :rtype: figure
+    &#34;&#34;&#34;
+    plates = self.caflexplates
+    for key, val in enumerate(plates):
+        if title == &#34;&#34;:
+            Title = &#34;Plate {}\n{}&#34;.format(key+1, val.title)
+        else:
+            Title = &#34;Plate {}\n{}&#34;.format(key+1, title)
+        val.visualise_assay(share_y, export, title, colormap, colorby, labelby, dpi)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="calciumflexanalysis" href="index.html">calciumflexanalysis</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="calciumflexanalysis.multiplate.CaFlexGroup" href="#calciumflexanalysis.multiplate.CaFlexGroup">CaFlexGroup</a></code></h4>
+<ul class="two-column">
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.amplitude" href="#calciumflexanalysis.multiplate.CaFlexGroup.amplitude">amplitude</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.baseline_correct" href="#calciumflexanalysis.multiplate.CaFlexGroup.baseline_correct">baseline_correct</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.collate_curve_data" href="#calciumflexanalysis.multiplate.CaFlexGroup.collate_curve_data">collate_curve_data</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.def_window" href="#calciumflexanalysis.multiplate.CaFlexGroup.def_window">def_window</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.export_data" href="#calciumflexanalysis.multiplate.CaFlexGroup.export_data">export_data</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.get_window" href="#calciumflexanalysis.multiplate.CaFlexGroup.get_window">get_window</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.group_data" href="#calciumflexanalysis.multiplate.CaFlexGroup.group_data">group_data</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.mean_amplitude" href="#calciumflexanalysis.multiplate.CaFlexGroup.mean_amplitude">mean_amplitude</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.normalise" href="#calciumflexanalysis.multiplate.CaFlexGroup.normalise">normalise</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.plot_conditions" href="#calciumflexanalysis.multiplate.CaFlexGroup.plot_conditions">plot_conditions</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.plot_curve" href="#calciumflexanalysis.multiplate.CaFlexGroup.plot_curve">plot_curve</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.see_plates" href="#calciumflexanalysis.multiplate.CaFlexGroup.see_plates">see_plates</a></code></li>
+<li><code><a title="calciumflexanalysis.multiplate.CaFlexGroup.visualise_plates" href="#calciumflexanalysis.multiplate.CaFlexGroup.visualise_plates">visualise_plates</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.4</a>.</p>
+</footer>
+</body>
+</html>

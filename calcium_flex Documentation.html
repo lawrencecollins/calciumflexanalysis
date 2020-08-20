@@ -1,0 +1,3221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.4" />
+<title>calciumflexanalysis.calcium_flex API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>calciumflexanalysis.calcium_flex</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import string, math
+from platemapping import plate_map as pm
+import matplotlib.patches as mpl_patches
+from scipy.optimize import curve_fit
+import copy
+import itertools
+
+# define custom errors
+class Error(Exception):
+    pass
+class CompoundNameError(pm.PlateMapError):
+    pass
+class ProteinNameError(pm.PlateMapError):
+    pass
+class UnitsError(pm.PlateMapError):
+    pass
+class DataError(Error):
+    pass
+class DataReadInError(DataError):
+    pass
+class ControlError(pm.PlateMapError):
+    pass
+
+# define well plate dimensions
+wells = {6:(2, 3), 12:(3, 4), 24:(4, 6), 48:(6, 8), 96:(8, 12), 384:(16, 24)} 
+
+def read_in(raw_data):
+    &#34;&#34;&#34;Returns a dataframe of the old flex data.&#34;&#34;&#34;
+    df = pd.read_csv(raw_data, delimiter=&#39;\t&#39;, skiprows = 2, skipfooter=3, engine = &#39;python&#39;, encoding = &#39;mbcs&#39;) # update to check headers if there is no title?
+    return df
+
+def read_in_new(raw_data, skiprows, skipfooter):
+    &#34;&#34;&#34;Returns a dataframe of the new flex data.&#34;&#34;&#34;
+    df = pd.read_csv(raw_data, delimiter=&#39;\t&#39;, skiprows = skiprows, skipfooter=skipfooter, engine = &#39;python&#39;, encoding = &#34;utf-16&#34;, skip_blank_lines=True) 
+    return df
+
+# curve fitting functions
+def _ec50_func(x,top,bottom, ec50, hill):
+    z=(ec50/x)**hill
+    return (bottom + ((top-bottom)/(1+z)))   
+
+def _ic50_func(x,top,bottom, ic50, hill):
+    z=(ic50/x)**hill
+    return (top - ((top-bottom)/(1+z)))
+func_dict = {&#34;ic50&#34;:_ic50_func, &#34;ec50&#34;: _ec50_func} # dicitonary to access required curve fitting function
+
+
+def plot_color(dataframe, cmap, iterrange):
+    &#34;&#34;&#34;Returns a color for each index value (accessed by iterrange) of a dataframe.&#34;&#34;&#34;
+    types = list(dataframe.index)
+    cmap = plt.get_cmap(cmap)
+    colors = cmap(np.linspace(0, 1, len(types)))
+    colordict = dict(zip(types, colors))
+    color = colordict.get(dataframe.index[iterrange])
+    return color
+
+def get_color(condition_list, cmap, name):
+    &#34;&#34;&#34;Returns a color for each condition plotted. 
+    
+    Similar to plot_color() but used for lists instead of dataframes - see plot_curve(combine = True).&#34;&#34;&#34;
+    cmap = plt.get_cmap(cmap)
+    colors = cmap(np.linspace(0, 1, len(condition_list)))
+    colordict = dict(zip(condition_list, colors))
+    color = colordict.get(name)
+    return color
+
+class CaFlexPlate:
+    &#34;&#34;&#34;Class used for the analysis of individual Calcium Flex well plates.
+    
+    :param raw_data: Raw, unprocessed data from experiment
+    :type raw_data: .txt file
+    :param plate_map_file: Filled template plate map that contains the information for each well of the well plate
+    :type plate_map_file: .csv
+    :param inject: Activator injection time point
+    :type inject: float or int
+    :param map_type: &#39;short&#39; or &#39;long&#39; - Denotes the type of plate map file used, default = &#39;short&#39;
+    :type map_type: str
+    :param size: Size of well plate - 6, 12, 24, 48, 96 or 384. plate_map_file MUST have the appropriate dimensions, default = 96
+    :type size: int
+    :param data_type: &#39;new&#39; or &#39;old&#39; - denotes type of flex data, default = &#39;old&#39;
+    :type data_type: str
+    :param valid: Validates every well - &#39;True&#39; sets every well as valid, &#39;False&#39; wells will not be used for analysis, default = True
+    :type valid: bool
+    :param processed_data: Dictionary containing separate dataframes of the time and flex data for every well
+    :type processed_data: dictionary of pandas dataframes
+    :param plate_map: plate_map_file converted as a dataframe
+    :type plate_map: pandas dataframe
+    :param title: Title of plate or assay 
+    :type title: str
+    :param skiprows: Number of rows to skip when reading in new data
+    :type skiprows: int
+    :param skipfooter: Number of rows from footer to skip when reading in new data
+    :type skipfooter: int
+    &#34;&#34;&#34;
+    def __init__(self, raw_data, plate_map_file, inject, map_type = &#39;short&#39;, data_type = &#39;old&#39;, valid = True, size = 96, title = &#34;&#34;, skiprows = 2, skipfooter = 3):
+        
+        self.raw_data = raw_data
+        self.plate_map_file = plate_map_file
+        self.inject = inject
+        self.map_type = map_type
+        self.size = size
+        self.data_type = data_type
+        self.valid = valid # False invalidates all wells of plate
+        self.skiprows = skiprows
+        self.skipfooter = skipfooter
+        self.processed_data = {&#39;ratio&#39;:self._data_processed()}
+        self.plate_map = self._give_platemap()
+        self.grouplist = [&#39;Protein&#39;,&#39;Type&#39;, &#39;Compound&#39;,&#39;Concentration&#39;, &#39;Concentration Units&#39;]
+        
+        # invalidate all wells if valid = False
+        if self.valid == False:
+            self.plate_map[&#39;Valid&#39;] = valid
+        if self.valid == True:
+            self.plate_map[&#39;Valid&#39;] = valid # ?????!!!
+            
+        # optional title param
+        self.title = title
+        # add default title
+        if self.title == &#34;&#34;:
+            self.title = self.raw_data[:-4] # change to experiment title in plate map?
+            
+        # check params
+        if wells.get(self.size) == None:
+            raise pm.PlateMapError(&#34;Invalid size. Try 6, 12, 24, 48, 96 or 384.&#34;)
+            
+        print(&#34;Uploaded!&#34;)
+        
+    def _give_platemap(self):
+        &#34;&#34;&#34;Returns platemap dataframe.&#34;&#34;&#34;
+        if self.map_type == &#39;short&#39;:
+             platemap = pm.short_map(self.plate_map_file, size = self.size, valid = self.valid)
+        elif self.map_type == &#39;long&#39;:
+            platemap = pm.plate_map(self.plate_map_file, size = self.size, valid = self.valid)
+        else:
+            raise pm.PlateMapError(&#34;Invalid map type. Try &#39;short&#39; or &#39;long&#39;.&#34;)
+        return platemap
+        
+    def _data_processed(self):
+        &#34;&#34;&#34;Returns a timemap and datamap as a tuple.&#34;&#34;&#34;
+        if self.data_type == &#39;old&#39;:
+            try:
+                df = read_in(self.raw_data)
+                # create new dataframe containing all time values for each well
+                dftime = df.filter(regex = &#39;T$&#39;, axis = 1)
+               # edit header names (this will come in handy in a second)
+                dftime.columns = dftime.columns.str.replace(&#39;T&#39;, &#34;&#34;)
+                # extract list of header names 
+                wellslist = list(dftime.columns.values)
+                # transpose x and y axes of dataframe - generate time &#39;rows&#39;
+                dftime = dftime.transpose()
+                # create new dataframe containing data measurements for each cell
+                dfdata = df[wellslist]
+                # transpose x and y axes
+                dfdata = dfdata.transpose()
+                # return timemap and datamap as a tuple
+                return {&#39;time&#39;:dftime, &#39;data&#39;:dfdata}
+            
+            except:
+                print(&#34;Read in error&#34;)
+
+        if self.data_type == &#39;new&#39;:
+            try:
+            
+                newdata = read_in_new(self.raw_data, self.skiprows, self.skipfooter)
+                # split the dataframe into the two data series
+                data1 = newdata.iloc[:int(newdata.shape[0]/2), :]
+                data1 = data1.reset_index(drop=True)
+                data2 = newdata.iloc[int(newdata.shape[0]/2):, :]
+                data2 = data2.reset_index(drop=True)
+                newdatadict = {&#34;data1&#34;:data1, &#34;data2&#34;:data2}
+
+                # check length
+                if len(data1) != len(data2):
+                    raise DataError(&#34;Read in error&#34;)
+                    
+            # try alternative read in if lengths not equal
+            except DataError: 
+                self.skipfooter = self.skipfooter+1
+                newdata = read_in_new(self.raw_data, self.skiprows, self.skipfooter)
+                # split the dataframe into the two data series
+                data1 = newdata.iloc[:int(newdata.shape[0]/2), :]
+                data1 = data1.reset_index(drop=True)
+                data2 = newdata.iloc[int(newdata.shape[0]/2):, :]
+                data2 = data2.reset_index(drop=True)
+                newdatadict = {&#34;data1&#34;:data1, &#34;data2&#34;:data2}
+                
+                if len(data1) != len(data2):
+                    raise DataError(&#34;Read in error&#34;)
+                else:
+                    print(&#34;self.skiprows updated. This is data type requires skipfooter equal {}.&#34;.format(self.skipfooter))
+            except DataReadInError:
+                print(&#34;Check your data. Read in is faulty.&#34;)
+                
+            # initiate empty dictionary to house preprocessed data and time values
+            preprocessed = {}
+            # loop produces two dictionaries containing preprocessed flux data and their corresponding time values
+            for key, value in newdatadict.items():
+                # reset indexes
+                value = value.reset_index(drop=True)
+                dftime = value.filter(regex = &#39;T$&#39;, axis = 1)
+                # edit header names (this will come in handy in a second)
+                dftime.columns = dftime.columns.str.replace(&#39;T&#39;, &#34;&#34;)
+                # extract list of header names 
+                wellslist = list(dftime.columns.values)
+                # transpose x and y axes of dataframe - generate time &#39;rows&#39;
+                dftime = dftime.transpose()
+                # create new dataframe containing data measurements for each cell
+                dfdata = value[wellslist]
+                # transpose x and y axes
+                dfdata = dfdata.transpose()
+                # return timemap and datamap as a tuple
+                tempdict = {&#39;time&#39;:dftime, &#39;data&#39;:dfdata}
+                # append dictionary
+                preprocessed[key] = tempdict
+
+            # take means of the time in new dataframe
+            mean_time = pd.concat((preprocessed[&#34;data1&#34;][&#39;time&#39;], preprocessed[&#34;data2&#34;][&#34;time&#34;]))
+            mean_time = mean_time.groupby(mean_time.index).mean()
+            mean_time = mean_time.reindex(wellslist)
+
+            # take difference of data to get change in flux
+            difference = preprocessed[&#34;data1&#34;][&#39;data&#39;].divide(preprocessed[&#34;data2&#34;][&#34;data&#34;])
+            return {&#39;time&#39;:mean_time, &#39;data&#39;:difference}
+
+        elif self.data_type not in (&#39;old&#39;, &#39;new&#39;):
+            raise DataError(&#34;Incorrect data type&#34;)
+            
+    def visualise_assay(self, share_y, export = False, title = &#34;&#34;, cmap = &#39;Dark2_r&#39;,
+             colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 200):
+        &#34;&#34;&#34;Returns color-coded and labelled plots of the data collected for each well of the well plate.
+        
+        :param share_y: &#39;True&#39; sets y axis the same for all plots
+        :type share_y: bool
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param cmap: Sets the colormap for the color-coding, default = &#39;Dark2_r&#39;
+        :type cmap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 200
+        :type dpi: int
+        :return: Figure of plotted data for each well of the well plate described in plate_map_file
+        :rtype: figure
+        &#34;&#34;&#34;
+        self.title = title
+        
+        # check labelby and colorby
+        if colorby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;colorby parameter not in plate map&#34;)
+        if labelby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;labelby parameter not in plate map&#34;)
+        
+        pm.visualise_all_series(x = self.processed_data[&#39;ratio&#39;][&#39;time&#39;], y = self.processed_data[&#39;ratio&#39;][&#39;data&#39;], 
+                            share_y = share_y, platemap = self.plate_map, size = self.size, 
+                            export = export, cmap = cmap,
+                            colorby = colorby, labelby = labelby, 
+                            dpi = dpi, title = self.title)
+        
+        plt.suptitle(self.title, y = 0.95)
+        
+    def see_plate(self, title = &#34;&#34;, export = False, cmap = &#39;Paired&#39;,
+             colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 150):
+        &#34;&#34;&#34;Returns a visual representation of the plate map.
+    
+        The label and colour for each well can be customised to be a variable, for example &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;, &#39;Contents&#39; or &#39;Type&#39;. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384. 
+        :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+        :type size: int    
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param cmap: Sets the colormap for the color-coding, default = &#39;Paired&#39;
+        :type cmap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 150
+        :type dpi: int
+        :return: Visual representation of the plate map.
+        :rtype: figure
+        &#34;&#34;&#34;
+        pm.visualise(self.plate_map, title = title, size = self.size, export = export, cmap = cmap,
+             colorby = colorby, labelby = labelby, dpi = dpi)
+    
+       
+    def see_wells(self, to_plot, share_y = True, colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, cmap = &#39;Dark2_r&#39;):
+        &#34;&#34;&#34;Returns plotted data from stipulated wells.
+
+        :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+        :type size: int   
+        :param to_plot: Wells to plot
+        :type to_plot: string or list of strings (well ID&#39;s), e.g. &#34;A1&#34;, &#34;A2&#34;, &#34;A3&#34;
+        :param share_y: &#39;True&#39; sets y axis the same for all plots, default = &#39;True&#39;
+        :type share_y: bool
+        :param cmap: Sets the colormap for the color-coding, optional
+        :type cmap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :return: Plotted data for the stipulated wells of the well plate  
+        :rtype: figure
+        &#34;&#34;&#34;
+        # check labelby and colorby
+        if colorby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;colorby parameter not in plate map&#34;)
+        if labelby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;labelby parameter not in plate map&#34;)
+
+        # check to_plot
+        if type(to_plot) == str:
+            # plot individual well:
+            try:
+                label = self.plate_map.loc[to_plot][labelby]
+                
+                fig, ax = plt.subplots()
+                ax.plot(self.processed_data[&#39;ratio&#39;][&#39;time&#39;].loc[to_plot], self.processed_data[&#39;ratio&#39;][&#39;data&#39;].loc[to_plot], lw = 3, color = &#39;black&#39;, label = &#34;{} {}&#34;.format(to_plot, label))
+
+            # add label for each well
+                ax.legend(loc = &#39;best&#39;, frameon = True, fancybox = True)
+                ax.set_title(&#34;{} {}&#34;.format(to_plot, pm.labelwell(self.plate_map, labelby, 0)))
+                ax.set_facecolor(&#39;0.95&#39;)
+                ax.set_xlabel(&#34;time / s&#34;)
+                ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+                ax.set_title(&#39;Flex data versus time for {}&#39;.format(to_plot), y = 1.05, size = 20)
+                plt.show()
+
+            except:
+                print(&#34;Plot error, does {} contain data?&#34;.format(to_plot))
+
+        else:
+            # plot multiple wells
+            fig, axs = plt.subplots(len(to_plot), 1, figsize = (2*len(to_plot), 3*len(to_plot)), constrained_layout = True, sharey = share_y)
+
+            for i in range(len(to_plot)):
+                try:
+                    label =  label = self.plate_map.loc[to_plot[i]][labelby] 
+                    axs[i].plot(self.processed_data[&#39;ratio&#39;][&#39;time&#39;].loc[to_plot[i]], self.processed_data[&#39;ratio&#39;][&#39;data&#39;].loc[to_plot[i]], 
+                                lw = 3, color = pm.wellcolour2(self.plate_map, colorby, cmap, i, to_plot), 
+                               label = &#34;{} {}&#34;.format(to_plot[i], label))
+
+                # add label for each well
+                    axs[i].legend(loc = &#39;best&#39;, frameon = True, fancybox = True)
+                    axs[i].set_title(&#34;{} {}&#34;.format(to_plot[i], label))
+                    axs[i].set_facecolor(&#39;0.95&#39;)
+                    axs[i].set_xlabel(&#34;time / s&#34;)
+                    axs[i].set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+                except:
+                    print(&#34;Plot error, does {} contain data?&#34;.format(to_plot[i]))
+
+            # post try/except mods 
+            fig.suptitle(&#39;Flex data versus time for the wells {}&#39;.format(&#39;, &#39;.join(to_plot)), y = 1.05, size = &#39;20&#39;)
+            
+            plt.show()
+    
+    def invalidate_wells(self, wells):
+        &#34;&#34;&#34;Invalidates specified wells and updates plate_map
+        
+        :param wells: Wells to invalidate
+        :type wells: list of strings, e.g. (&#34;A1&#34;, &#34;A2&#34;, &#34;A3&#34;)
+        &#34;&#34;&#34;
+        
+        self.plate_map = pm.invalidate_wells(self.plate_map, wells = wells, valid = False)
+        print(&#34;{} invalidated&#34;.format(wells))
+        
+    def invalidate_rows(self, rows):
+        &#34;&#34;&#34;Invalidates specified rows and updates plate_map
+        
+        :param wells: Rows to invalidate
+        :type wells: list of strings, e.g. (&#34;A&#34;, &#34;B&#34;, &#34;C&#34;)
+        &#34;&#34;&#34;
+        platemap = pm.invalidate_rows(self.plate_map, rows, valid = False)
+        self.plate_map = platemap
+        print(&#34;Row {} invalidated&#34;.format(rows))
+    
+    def invalidate_cols(self, cols):
+        &#34;&#34;&#34;Invalidates specified wells and updates plate_map
+        
+        :param wells: Wells to invalidate
+        :type wells: list of ints, e.g. (1, 2, 3)
+        &#34;&#34;&#34;
+        platemap = pm.invalidate_cols(self.plate_map, cols, valid = False)
+        self.plate_map = platemap
+        print(&#34;Columns {} invalidated&#34;.format(cols))
+        
+    def baseline_correct(self):
+        &#34;&#34;&#34;Baseline corrects &#39;ratio&#39; data using the pre-injection time points.&#34;&#34;&#34;
+        try:
+            time_cut = self.inject - 5
+            data_source = self.processed_data[&#39;ratio&#39;]
+            # convert to numpy arrays
+            time = data_source[&#39;time&#39;].to_numpy()
+            data = data_source[&#39;data&#39;].to_numpy()
+            # create mask from mean time values
+            time_filter = np.nanmean(time,axis=0)&lt;time_cut
+            # # average over these times
+            baseline = np.mean(data[:,time_filter],axis=1)
+            # add dimension to enable broadcasting
+            baseline = np.expand_dims(baseline, axis=1)
+            # rewrite values back to dataframes
+            self.processed_data[&#39;baseline_corrected&#39;] = {}
+            data_source = self.processed_data[&#39;baseline_corrected&#39;][&#39;data&#39;] = pd.DataFrame(data-baseline, index = data_source[&#39;data&#39;].index)
+            data_source = self.processed_data[&#39;baseline_corrected&#39;][&#39;time&#39;] = data_source = self.processed_data[&#39;ratio&#39;][&#39;time&#39;]
+
+            print(&#34;Baseline corrected! See self.processed_data[&#39;baseline_corrected&#39;]&#34;)
+        except:
+            print(&#34;baseline correction failed.&#34;)
+        
+    def get_gradients(self, data_type):
+        &#34;&#34;&#34;Returns the mean gradient over every 10 time points post injection.
+        
+        :param data_type: Data series to calculate plateau
+        :type data_type: str
+        :return: Dict containing a tuple corresponding to the start and end index and the corresponding mean gradient
+        :rtype: dict[tuple, float]
+        &#34;&#34;&#34;        
+        # filter for valid wells
+        valid_filter = self.plate_map.Valid == True
+
+        # add opposite time filter to extract data after injection
+        time_cut = self.inject + 5
+        data_source = self.processed_data[data_type]
+
+        # convert to numpy arrays
+        time = data_source[&#39;time&#39;][valid_filter].to_numpy()
+        data = data_source[&#39;data&#39;][valid_filter].to_numpy()
+        # create mask from mean time values
+        post_inject_filter = np.nanmean(time,axis=0) &gt; time_cut
+
+        # get absolute gradient for each well along series
+        gradient = abs(np.gradient(data[:, post_inject_filter], axis = 1))
+
+        gradient_dict = {}
+
+        index = np.array(list(data_source[&#39;data&#39;].columns))[post_inject_filter]
+
+        # mean gradient every ten measurements
+        for i in range(gradient.shape[1]-9):
+
+            # average of average gradients for every ten measurements post injection
+            mean_gradient = np.nanmean(np.mean(gradient[:, i:(i+10)], axis=1), axis = 0)
+            gradient_dict[(index[i]), (index[i]+10)] = mean_gradient
+            
+        return gradient_dict
+    
+    def get_window(self, data_type):
+        &#34;&#34;&#34;Updates self.window with the lowest mean gradient for each ten time point window post injection.
+        
+        :param data_type: Data series to calculate plateau
+        :type data_type: str
+        &#34;&#34;&#34;
+        gradient_dict = self.get_gradients(data_type)
+        
+        # get minimum gradient index window
+        min_gradient = (min(gradient_dict, key = gradient_dict.get))
+
+        self.window = min_gradient
+        
+    def def_window(self, time, data_type):
+        &#34;&#34;&#34;Manually set the plateau window.
+        
+        :param time: Time point at start of window
+        :type time: int
+        :param data_type: Data to set window on, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Tuple of start and end index of plateau window
+        :rtype: (int, int)
+        &#34;&#34;&#34;
+        valid_filter = self.plate_map.Valid == True
+        data_source = self.processed_data[data_type]
+        time_df = data_source[&#39;time&#39;][valid_filter]
+        
+        # create mask from mean time values
+        window_filter = np.nanmean(time_df,axis=0) &gt;= time
+        index = np.array(list(data_source[&#39;data&#39;].columns))[window_filter]
+        self.window =  (index[0], index[10])
+        
+    def plot_conditions(self, data_type, activator = &#34; &#34;, show_window = False, dpi = 120, title = &#34; &#34;, error = False, control = [&#39;control&#39;], cmap = &#34;winter_r&#34;, window_color = &#39;hotpink&#39;, proteins = [], compounds = [], marker = &#39;o&#39;, unique_markers = False, marker_list = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;], show_control = True):
+        &#34;&#34;&#34;Plots each mean condition versus time.
+        
+        :param data_type: Data to be plotted, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :param activator: Activator injected into assay, default = &#34;&#34;
+        :type activator: str
+        :param show_window: If &#39;True&#39;, shows the window from which the plateau for each condition is calculated, default = False 
+        :type show_window: bool
+        :param dpi: Size of figure, default = 120
+        :type dpi: int
+        :param title: Title of plot ADD LIST OF TITLES?
+        :type title: str
+        :param error: If True, plots error bars for each mean condition, default = False
+        :type error: bool
+        :param control: List of control conditions, default = &#39;control&#39;
+        :type control: bool
+        :param cmap: Colormap to use as the source of plot colors
+        :type cmap: str
+        :param window_color: Color of the plateau window, default = &#39;hotpink&#39;
+        :type window_color: str
+        :param marker: Marker type, default = &#39;-o&#39;
+        :type marker: str
+        :param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+        :type unique_markers: bool
+        :param marker_list: List of marker symbols to use when unique_markers = True, default = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;]
+        :type marker_list: [str]
+        :param show_control: If True, plots each control condition for each protein, default = True
+        :return: Figure displaying each mean condition versus time
+        :rtype: fig
+        &#34;&#34;&#34;
+
+        platemap = self.plate_map
+        grouplist = self.grouplist
+        groupdct = {}
+        
+        # check control
+        # check controls are correct
+        for c in control:
+            if self.plate_map[&#39;Type&#39;].isin([c]).any() == False:
+                raise ControlError(&#34;{} not in plate map&#34;.format(c))
+        
+        for key, val in self.processed_data[data_type].items():
+            data_length = val.shape[1]
+            mapped = platemap.fillna(&#39;none&#39;).join(val)
+            group = mapped[mapped.Valid == True].groupby(grouplist)[val.columns]
+            # update dictionary
+            groupdct[key] = group
+
+        # get data, time and error values for each condition
+        data = groupdct[&#39;data&#39;].mean().reset_index()
+        time = groupdct[&#39;time&#39;].mean().reset_index()
+        yerr = groupdct[&#39;data&#39;].sem().reset_index()
+
+        # get names of proteins and compounds, excluding control
+        if proteins == []:
+            proteins = data[data[&#39;Type&#39;].str.contains(&#39;control&#39;) == False][&#39;Protein&#39;].unique()
+            
+        # iterate through proteins list
+        for pkey, pval in enumerate(proteins):
+            # get number of compounds for each protein
+            if compounds == []:
+                compounds = data[(data[&#39;Type&#39;].str.contains(&#39;control&#39;) == False) &amp; (data[&#39;Protein&#39;] == pval)][&#39;Compound&#39;].unique()
+                
+            # iterate through compounds for each protein
+            for ckey, cval in enumerate(compounds):                
+                # try each different combo
+#                 try:
+                # extract data for each protein and compound, excluding control. 
+
+                data_temp = data[data[&#39;Type&#39;].isin(control) == False]
+                data_temp = data_temp[(data_temp[&#39;Protein&#39;] == pval) &amp; (data_temp[&#39;Compound&#39;] == cval)]
+
+                time_temp = time[time[&#39;Type&#39;].isin(control) == False]
+                time_temp = time_temp[(time_temp[&#39;Protein&#39;] == pval) &amp; (time_temp[&#39;Compound&#39;] == cval)]
+
+                yerr_temp = yerr[yerr[&#39;Type&#39;].isin(control) == False]
+                yerr_temp = yerr_temp[(yerr_temp[&#39;Protein&#39;] == pval) &amp; (yerr_temp[&#39;Compound&#39;] == cval)]
+
+                templist = [x for x in grouplist if x != &#39;Concentration&#39;] # get columns to remove
+
+                # extract just the data with conc as the index
+                index = data_temp.iloc[:, :-data_length]
+                data_temp = data_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+                time_temp = time_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+                yerr_temp = yerr_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+
+                ########## PLOT ##########
+                if (pval != &#39;none&#39;) &amp; (cval != &#39;none&#39;):
+                    fig, ax = plt.subplots(dpi = 120)
+
+                    # check units!
+                    if len(index[&#39;Concentration Units&#39;].unique()) &gt; 1 :
+                        raise UnitsError
+                    # if units are fine, get units!
+                    unique_units = index[&#39;Concentration Units&#39;].unique()[0]
+
+                    ########## control ##########
+                    ctrl_max_vals = []
+                    if show_control == True:
+                        for c in control:
+
+                            control_data = data[data[&#39;Type&#39;].str.contains(c) == True]
+                            control_data = control_data[(control_data[&#39;Protein&#39;] == pval)].iloc[:, -data_length:]
+
+                            control_time = time[time[&#39;Type&#39;].str.contains(c) == True]
+                            control_time = control_time[(control_time[&#39;Protein&#39;] == pval)].iloc[:, -data_length:]
+                            ctrl_max_vals.append(control_data.max().max())
+                            
+                            # convert u to mu
+                            if unique_units[0] == &#39;u&#39;:
+                                ctrl_label = &#34;0 &#34; + &#34;$\mathrm{\mu }$&#34; + unique_units[1:] + &#34; ({})&#34;.format(c)
+                            else:
+                                ctrl_label = &#34;0 {} ({})&#34;.format(unique_units, c)
+
+                            ax.plot(control_time.iloc[0], control_data.iloc[0], marker, linestyle = &#39;-&#39;, color = &#39;black&#39;, 
+                                    mfc = get_color(control, &#39;binary&#39;, c), lw = 1, zorder = 2, label = ctrl_label)
+
+                    ########## control end ##########
+
+                    markers = itertools.cycle(marker_list) # define unique markers for each line (unique_markers = True)
+
+                    # plot series, iterating down rows
+                    for i in range(len(time_temp)):
+                        # get legend labels
+                        if unique_units[0] == &#39;u&#39;:
+                            legend_label = &#34;{} &#34;.format(data_temp.index[i]) + &#34;$\mathrm{\mu }$&#34; + unique_units[1:]
+                        else:
+                            legend_label = &#34;{} {}&#34;.format(data_temp.index[i], unique_units)
+
+                        # plot each condition
+                        if error == True:
+                            ax.errorbar(x = time_temp.iloc[i], y = data_temp.iloc[i], yerr = yerr_temp.iloc[i],
+                                       capsize = 3, zorder=1, color = plot_color(data_temp, cmap, i),
+                                       label = legend_label)
+                        else: 
+                            if unique_markers == False:
+                                ax.plot(time_temp.iloc[i], data_temp.iloc[i], marker = marker, linestyle = &#39;-&#39;, zorder=1, label = legend_label, ms = 5, color = plot_color(data_temp, cmap, i), lw = 1)
+                            else:
+                                ax.plot(time_temp.iloc[i], data_temp.iloc[i], marker = next(markers), linestyle = &#39;-&#39;, zorder=1, label = legend_label, ms = 4, color = &#39;black&#39;, lw = 1)
+
+                        # add legend    
+                        ax.legend(loc = &#34;upper left&#34;, bbox_to_anchor = (1.0, 1.0), frameon = False, title = &#34;{}&#34;.format(cval))
+
+                    # white background makes the exported figure look a lot nicer
+                    fig.patch.set_facecolor(&#39;white&#39;)
+
+                    # spines
+                    ax.spines[&#39;right&#39;].set_visible(False)
+                    ax.spines[&#39;top&#39;].set_visible(False)
+
+                    # add line representing the activator
+                    times = self.processed_data[data_type][&#39;time&#39;].mean() # get times
+                    time_filter = times &gt; (self.inject - 5) # mean time series that contains activator
+
+                    # get start and end points
+                    injection_start = times[time_filter].iloc[0]
+                    injection_end = times[time_filter].iloc[-1]
+
+                    # add line indicating presence of activator
+                    if len(ctrl_max_vals) &gt; 0: # make sure line is above plotted data!! 
+                        if max(ctrl_max_vals) &gt; data_temp.max().max():
+                            ymax = control_data.max().max() + control_data.max().max()*0.1
+                    else:
+                        ymax = data_temp.max().max() + data_temp.max().max()*0.1 # add a bit extra to prevent clash
+
+                    ax.plot([injection_start, injection_end], [ymax, ymax], c = &#39;black&#39;)
+
+                    # activator title
+                    ax.text((injection_start+injection_end)/2, (ymax+ymax*0.05), activator, ha = &#39;center&#39;)
+
+                    # assay title
+                    ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                    # axes labels
+                    ax.set_xlabel(&#34;time (s)&#34;)
+                    ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+
+                    # display plateau window
+                    if show_window == True:
+                        # x min and x max for axvspan 
+                        xmin = time_temp.loc[:, self.window[0]].mean()
+                        xmax = time_temp.loc[:, self.window[1]].mean()
+                        ax.axvspan(xmin, xmax, facecolor = window_color, alpha = 0.5)
+
+                    ########## PLOT END ##########
+
+                plt.show()
+
+                    # catch errors and notify user
+#                 except UnitsError:
+#                     print(&#34;{}, {} failed&#34;.format(pval, cval))
+#                     print(&#34;too many units: {}&#34;.format(index[&#39;Concentration Units&#39;].unique()))
+#                 except ControlError:
+#                     for c in control:
+#                         if self.plate_map[&#39;Type&#39;].isin([c]).any() == False:
+#                             print(&#34;{} not in plate map&#34;.format(c))
+#                 except:
+#                     print(&#34;{}, {} failed&#34;.format(pval, cval))
+
+    def amplitude(self, data_type):
+        &#34;&#34;&#34;Calculates response amplitude for each condition, updates processed_data dictionary with &#39;plateau&#39; and plate_map with amplitude column. 
+        
+        :param data_type: Data to use to calculate amplitudes, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+
+        &#34;&#34;&#34;
+        try:
+            # get ampltitude for every condition
+            amp = (self.processed_data[data_type][&#39;data&#39;].iloc[:, self.window[0]:self.window[1]]).to_numpy()
+            # get mean amplitude for every condition
+            amp_mean = np.mean(amp, axis = 1)
+            # update processed_data with response amplitude
+            self.processed_data[&#39;plateau&#39;] = {}
+            self.processed_data[&#39;plateau&#39;][&#39;data&#39;] = pd.DataFrame(amp_mean, index = self.processed_data[&#39;ratio&#39;][&#39;data&#39;].index, columns = [&#39;Amplitude&#39;])
+
+            print(&#34;Amplitudes calculated from {}. See self.processed_data[&#39;plateau&#39;][&#39;data&#39;]&#34;.format(data_type))
+        except:
+            print(&#34;Ampltitude calculation failed.&#34;)
+        
+    def mean_amplitude(self, use_normalised = False):
+        &#34;&#34;&#34;Returns mean amplitudes and error for each condition.
+        
+        The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.
+        
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :return: Mean amplitudes and error for each condition
+        :rtype: Pandas DataFrame
+        &#34;&#34;&#34;
+        mapped = self.plate_map.fillna(-1).join(self.processed_data[&#39;plateau&#39;][&#39;data&#39;])
+        if use_normalised == True:
+            mapped = self.plate_map.fillna(-1).join(self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;])
+        # group by grouplist and take mean amplitude for each condition
+        # filter for valid wells
+        group = mapped[mapped.Valid == True] 
+        # drop columns which can cause errors w/ groupby operations
+        group.drop([&#39;Valid&#39;, &#39;Column&#39;], axis = 1, inplace = True)
+        mean_response = group.groupby(self.grouplist).mean().reset_index()
+        
+        if use_normalised == False:
+            mean_response[&#39;Amplitude Error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;Amplitude&#39;]
+        else:
+            mean_response[&#39;amps_normed_error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;amps_normed&#39;]
+        # drop empty rows
+        mean_response.drop(mean_response[mean_response[&#39;Type&#39;] == &#39;empty&#39;].index)
+
+        # update data dict
+        self.processed_data[&#39;mean_amplitudes&#39;] = mean_response
+        
+        return mean_response
+    
+    def normalise(self):
+        &#34;&#34;&#34;Normalises amplitudes to mean control amplitude.&#34;&#34;&#34;
+        mean_amps = self.mean_amplitude(use_normalised = False) # get mean control amplitude
+        amps = self.processed_data[&#39;plateau&#39;][&#39;data&#39;]
+        control_amp = float(mean_amps[mean_amps[&#39;Type&#39;] == &#39;control&#39;][&#39;Amplitude&#39;])
+        self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;] = &#34;test&#34;
+        self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;] = ((amps * 100) / control_amp).rename(columns = {&#39;Amplitude&#39;:&#39;amps_normed&#39;})
+
+        return self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;]
+    
+    @staticmethod
+    def _gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs):
+        &#34;&#34;&#34;Generates data required for a fitted plot of IC50&#39;s or EC50&#39;s.&#34;&#34;&#34;
+        # check proteins and compounds 
+            
+        curve_data = {}
+        # filter amps 
+        amps = mean_amps[mean_amps.Type == &#39;compound&#39;]
+        
+        # get names of proteins
+        if proteins == []:
+            prots = list(amps[&#39;Protein&#39;].unique())
+        else:
+            prots = proteins
+        # separate proteins 
+        for pkey, pval in enumerate(prots):
+            try:
+                # check protein
+                if mean_amps[&#39;Protein&#39;].str.contains(pval, regex = False).any() == False:
+                    raise ProteinNameError()
+                # get compounds for each proteins
+                if compounds == []:
+                    comps = amps[amps[&#39;Protein&#39;] == pval][&#39;Compound&#39;].unique()
+                # get number of compounds for each protein
+                for ckey, cval in enumerate(comps):
+                    # check compound
+                    if mean_amps[&#39;Compound&#39;].str.contains(cval, regex = False).any() == False:
+                        raise CompoundNameError()
+                    # filter dataframe for each compound in each protein
+                    temp = amps[(amps[&#39;Protein&#39;] == pval) &amp; (amps[&#39;Compound&#39;] == cval)]
+                    # check there is only 1 conc unit
+                    if len(temp[&#39;Concentration Units&#39;].unique()) &gt; 1:
+                        raise ValueError[&#34;One unit per condition please!&#34;]
+                        # check there is an adequate number of concs
+                    if len(temp[&#39;Concentration&#39;]) &lt; n:
+                        raise ValueError(&#34;Not enough concs! You&#39;ve only got {} for {}, compound {}. You really need at least {} to do a fit.&#34;.format(len(temp[&#39;Concentration&#39;]), pval, cval, n))
+
+                    # get x, y and error values, c50 units, compound and protein names to use for plot
+                    x = temp[&#39;Concentration&#39;].to_numpy()
+                    y = temp.iloc[:, -2].to_numpy()
+                    yerr = temp.iloc[:, -1].to_numpy()
+                    c50units = temp[&#39;Concentration Units&#39;].unique()[0]
+
+                    # get popt values for logistic regression
+                    popt, pcov = curve_fit(func_dict[plot_func], x, y, **kwargs) 
+
+                    # update curve_data dict
+                    curve_data[&#34;{}_{}&#34;.format(pval, cval)] = {&#39;x&#39;:x, &#39;y&#39;:y, &#39;yerr&#39;:yerr, &#39;c50units&#39;:c50units, &#39;compound&#39;:cval, 
+                                                              &#39;protein&#39;:pval, &#39;popt&#39;:popt}
+            except CompoundNameError:
+                print(&#34;Compound not found. Available compounds are: {}&#34;.format(amps[&#39;Compound&#39;].unique()))
+
+            except ProteinNameError:
+                print(&#34;Protein not found. Available compounds are: {}&#34;.format(amps[&#39;Protein&#39;].unique()))
+                
+        return curve_data  
+        
+    def _get_curve_data(self, plot_func, use_normalised, n, proteins, compounds, **kwargs): 
+        &#34;&#34;&#34;Updates and returns self.plot_data with data required for a fitted plot of IC50&#39;s or EC50&#39;s.&#34;&#34;&#34;
+        mean_amps = self.mean_amplitude(use_normalised)
+        
+        curve_data = self._gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        self.plot_data = curve_data
+        
+        return self.plot_data
+        
+    @staticmethod
+    def _plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units):
+        
+        legend_label = {&#34;ic50&#34;:&#34;IC$_{{50}}$&#34;, &#34;ec50&#34;:&#34;EC$_{{50}}$&#34;}
+        if combine == True:
+            fig, ax = plt.subplots(dpi = dpi)
+        
+        for key, val in curve_data.items():
+            
+            
+            ########## TRY EXCEPT ##########
+            try:
+                if combine == False:
+                    fig, ax = plt.subplots(dpi = dpi)
+                # unpack curve_data:
+                x = val[&#39;x&#39;]
+                y = val[&#39;y&#39;]
+                yerr = val[&#39;yerr&#39;]
+                c50units = val[&#39;c50units&#39;]
+                popt = val[&#39;popt&#39;]
+                protein = val[&#39;protein&#39;]
+                compound = val[&#39;compound&#39;]
+                tb_str = &#34;&#34;
+                if show_top_bot == True:
+                    tb_str = &#34;\nTop = {:.2f}\nBottom = {:.2f}&#34;.format(popt[0], popt[1])
+
+                # get x and y fits
+                fit_x = np.logspace(np.log10(x.min())-0.5, np.log10(x.max())+0.5, 300)
+                fit = func_dict[plot_func](fit_x, *popt)
+                ############################# types of plot: combine True OR False ####################
+                # TRUE
+                if combine == True:
+                    # get label for legend
+                    
+                    # convert u to mu 
+                    if c50units[0] == &#39;u&#39;:
+                        label = r&#34;$\bf{}\ {}$ &#34;.format(compound, &#34;&#34;) + &#34;\n{} = {:.2f}&#34;.format(legend_label[plot_func], popt[2]) + &#34;$\mathrm{\mu }$&#34; 
+                        + &#34;{}&#34;.format(c50units[1:]) + &#34;\nHill Slope = {:.2f}&#34;.format(popt[3])+tb_str
+                        
+                    else:
+                        label = r&#34;$\bf{}\ {}$&#34;.format(compound, &#34;&#34;) +&#34;\n{} = {:.2f} {}\nHill Slope = {:.2f}&#34;.format(legend_label[plot_func], popt[2], c50units, popt[3])+tb_str
+
+                    # plot fit
+                    ax.plot(fit_x, fit, lw = 1.2, label = label, color = get_color(list(curve_data.keys()), cmap, &#34;{}_{}&#34;.format(protein, compound)))
+
+                    # plot errors
+                    if error_bar == True:
+                        ax.errorbar(x, y, yerr, fmt=&#39;ko&#39;,capsize=3,ms=3, color = get_color(list(curve_data.keys()), cmap, &#34;{}_{}&#34;.format(protein, compound)))
+                # FALSE        
+                if combine == False:
+                    # get label for legend
+                    
+                    # convert u to mu 
+                    if c50units[0] == &#39;u&#39;:
+                        label = &#34;\n{} = {:.2f} &#34;.format(legend_label[plot_func], popt[2]) + &#34;$\mathrm{\mu }$&#34; + &#34;{}&#34;.format(c50units[1:]) + &#34;\nHill Slope = {:.2f}&#34;.format(popt[3])+tb_str
+                    else:
+                        label = &#34;{} = {:.2f} {}\nHill Slope = {:.2f} &#34;.format(legend_label[plot_func], popt[2], c50units, popt[3])+tb_str
+
+                    # plot fit
+                    ax.plot(fit_x, fit, lw = 1.2, label = label, color = &#39;black&#39;)
+
+                    # plot errors
+                    if error_bar == True:
+                        ax.errorbar(x, y, yerr, fmt=&#39;ko&#39;,capsize=3,ms=3, color = &#39;black&#39;)
+
+                    # add legend
+                    ax.legend(loc = &#39;best&#39;, frameon = False,framealpha=0.7, handlelength=0, handletextpad=0)
+
+                ############# end of combine differences   ############# 
+                ############# in loop modifications for both types of plot (combine = True OR False) #############   
+                plt.xscale(&#39;log&#39;)    
+
+                # spines
+                ax.spines[&#39;right&#39;].set_visible(False)
+                ax.spines[&#39;top&#39;].set_visible(False)
+
+                # labels
+                ax.set_xlabel(&#34;[{}] / {}&#34;.format(compound, conc_units))
+                ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                if use_normalised == False:
+                    ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+                else:
+                    if activator == &#34;&#34;:
+                        ax.set_ylabel(&#34;% of activation&#34;)
+                    else:
+                        ax.set_ylabel(&#34;% of activation by {}&#34;.format(activator))
+
+                # title
+                ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                plt.minorticks_off()
+            except:
+                print(&#34;Did not plot {}, {}&#34;.format(protein, compound))
+        ###################################### end of plotting loop ##########################        
+        # post loop mods
+        
+        
+        # using plt legend allows use of loc = &#39;best&#39; to prevent annotation clashing with line
+        if combine == True:
+            leg = ax.legend(loc = &#39;center left&#39;, frameon = False, bbox_to_anchor = [1.0, 0.5])
+            ax.set_xlabel(&#34;Concentration / {}&#34;.format(conc_units))
+        
+        # set background
+        fig.patch.set_facecolor(&#39;white&#39;)
+        
+        plt.show()
+        
+        
+    def plot_curve(self, plot_func, use_normalised = False, n = 5, proteins = [], compounds = [], error_bar = True, cmap = &#34;Dark2&#34;, combine = False, activator = &#34; &#34;, title = &#34; &#34;, dpi = 120, show_top_bot = False, conc_units = &#39;M&#39;, **kwargs):
+        &#34;&#34;&#34;Plots fitted curve using logistic regression with errors and IC50/EC50 values.
+        
+        :param plot_func: Plot function to use, either ic50 or ec50
+        :type plot_func: str
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :param n: Number of concentrations required for plot
+        :type n: int
+        :param proteins: Proteins to plot, defaults to all
+        :type proteins: list
+        :param compounds: Compounds to plot, defaults to all
+        :type compounds: list
+        :param error_bar: If True, reveals error bars, default = True
+        :type error_bar = bool
+        :param cmap: Color map that sets each line colour in a combined plot, default = &#34;Dark2&#34;
+        :type cmap: bool
+        :param activator: Activator injected into assay, default = &#34; &#34;
+        :type activator: str
+        :param title: Choose between automatic title or insert string to use, default = &#34; &#34;
+        :type title: str
+        :param dpi: Size of figure
+        :type dpi: int
+        :param show_top_bot: &#39;True&#39; shows the top and bottom curve fitting values in the legend
+        :type show_top_bot: bool
+        :param conc_units: Units displayed on x axis of graph
+        :type conc_units: str
+        :param **kwargs: Additional curve fitting arguments
+        &#34;&#34;&#34;         
+        curve_data =  self._get_curve_data(plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        # update object with curve data to access when exporting
+        self.curve_data = curve_data
+        for key in self.curve_data.keys():
+            self.curve_data[key][&#39;plot_func&#39;] = plot_func # curve data maximal conc plot function
+
+    # do plots
+        self._plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units)
+        
+        
+        
+    def export_data(self, title = &#34;&#34;):
+        &#34;&#34;&#34;Exports raw and processed data to an excel file. 
+        
+        The excel file will be named after the &#39;self.title&#39; parameter unless otherwise specified.
+        
+        :param title: Title of the excel file, default = self.title + &#39;_data_export.xlsx&#39;
+        :type title: str
+        :return: Excel document
+        :rtype: .xlsx
+        &#34;&#34;&#34;
+        if title == &#34;&#34;:
+            title = self.title + &#39;_data_export.xlsx&#39;
+        if title[-5:] != &#39;.xlsx&#39;:
+            title = title + &#39;.xlsx&#39;
+            
+        dfs = self.processed_data
+        
+        # get curve data
+        curve_list = {}
+        
+        if hasattr(self, &#39;curve_data&#39;):
+            for key, val in self.curve_data.items(): # get curve data for each protein/compound combo
+                curve = copy.deepcopy(val) # get deep copy - prevents original dict from being edited
+                curve[&#39;popt_keys&#39;] = [&#39;top&#39;, &#39;bottom&#39;, curve[&#39;plot_func&#39;], &#39;hill&#39;] # add popt index
+                for i in [&#39;compound&#39;, &#39;protein&#39;, &#39;c50units&#39;, &#39;plot_func&#39;]: # delete irrelevent keys
+                    curve.pop(i)
+                curve_df = pd.DataFrame.from_dict(curve, orient = &#39;index&#39;)
+                
+                curve_list[key] = curve_df
+    
+    
+        # create separate sheet for each data set
+        with pd.ExcelWriter(title) as writer:
+            dfs[&#39;ratio&#39;][&#39;time&#39;].to_excel(writer, sheet_name = &#39;time&#39;)
+            dfs[&#39;ratio&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;ratio&#39;)
+            dfs[&#39;baseline_corrected&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;baseline_corrected&#39;)
+            if &#39;data&#39; in dfs[&#39;plateau&#39;].keys():
+                dfs[&#39;plateau&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;plateau&#39;)
+            if &#39;data_normed&#39; in dfs[&#39;plateau&#39;].keys():
+                dfs[&#39;plateau&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;normalised_plateau&#39;)
+            if &#39;mean_amplitudes&#39; in dfs.keys():
+                dfs[&#39;mean_amplitudes&#39;].to_excel(writer, sheet_name = &#39;mean_amplitudes&#39;)
+            self.plate_map.to_excel(writer, sheet_name = &#39;plate_map&#39;)
+            
+            # export curve data for each protein/compund combination
+            for key, val in curve_list.items():
+                val.to_excel(writer, sheet_name = key + &#39;_curve_data&#39;)
+                
+        print(&#34;Data exported to excel as {} Check your folder.&#34;.format(title))</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="calciumflexanalysis.calcium_flex.get_color"><code class="name flex">
+<span>def <span class="ident">get_color</span></span>(<span>condition_list, cmap, name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a color for each condition plotted. </p>
+<p>Similar to plot_color() but used for lists instead of dataframes - see plot_curve(combine = True).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_color(condition_list, cmap, name):
+    &#34;&#34;&#34;Returns a color for each condition plotted. 
+    
+    Similar to plot_color() but used for lists instead of dataframes - see plot_curve(combine = True).&#34;&#34;&#34;
+    cmap = plt.get_cmap(cmap)
+    colors = cmap(np.linspace(0, 1, len(condition_list)))
+    colordict = dict(zip(condition_list, colors))
+    color = colordict.get(name)
+    return color</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.plot_color"><code class="name flex">
+<span>def <span class="ident">plot_color</span></span>(<span>dataframe, cmap, iterrange)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a color for each index value (accessed by iterrange) of a dataframe.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_color(dataframe, cmap, iterrange):
+    &#34;&#34;&#34;Returns a color for each index value (accessed by iterrange) of a dataframe.&#34;&#34;&#34;
+    types = list(dataframe.index)
+    cmap = plt.get_cmap(cmap)
+    colors = cmap(np.linspace(0, 1, len(types)))
+    colordict = dict(zip(types, colors))
+    color = colordict.get(dataframe.index[iterrange])
+    return color</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.read_in"><code class="name flex">
+<span>def <span class="ident">read_in</span></span>(<span>raw_data)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a dataframe of the old flex data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_in(raw_data):
+    &#34;&#34;&#34;Returns a dataframe of the old flex data.&#34;&#34;&#34;
+    df = pd.read_csv(raw_data, delimiter=&#39;\t&#39;, skiprows = 2, skipfooter=3, engine = &#39;python&#39;, encoding = &#39;mbcs&#39;) # update to check headers if there is no title?
+    return df</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.read_in_new"><code class="name flex">
+<span>def <span class="ident">read_in_new</span></span>(<span>raw_data, skiprows, skipfooter)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a dataframe of the new flex data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_in_new(raw_data, skiprows, skipfooter):
+    &#34;&#34;&#34;Returns a dataframe of the new flex data.&#34;&#34;&#34;
+    df = pd.read_csv(raw_data, delimiter=&#39;\t&#39;, skiprows = skiprows, skipfooter=skipfooter, engine = &#39;python&#39;, encoding = &#34;utf-16&#34;, skip_blank_lines=True) 
+    return df</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate"><code class="flex name class">
+<span>class <span class="ident">CaFlexPlate</span></span>
+<span>(</span><span>raw_data, plate_map_file, inject, map_type='short', data_type='old', valid=True, size=96, title='', skiprows=2, skipfooter=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class used for the analysis of individual Calcium Flex well plates.</p>
+<p>:param raw_data: Raw, unprocessed data from experiment
+:type raw_data: .txt file
+:param plate_map_file: Filled template plate map that contains the information for each well of the well plate
+:type plate_map_file: .csv
+:param inject: Activator injection time point
+:type inject: float or int
+:param map_type: 'short' or 'long' - Denotes the type of plate map file used, default = 'short'
+:type map_type: str
+:param size: Size of well plate - 6, 12, 24, 48, 96 or 384. plate_map_file MUST have the appropriate dimensions, default = 96
+:type size: int
+:param data_type: 'new' or 'old' - denotes type of flex data, default = 'old'
+:type data_type: str
+:param valid: Validates every well - 'True' sets every well as valid, 'False' wells will not be used for analysis, default = True
+:type valid: bool
+:param processed_data: Dictionary containing separate dataframes of the time and flex data for every well
+:type processed_data: dictionary of pandas dataframes
+:param plate_map: plate_map_file converted as a dataframe
+:type plate_map: pandas dataframe
+:param title: Title of plate or assay
+:type title: str
+:param skiprows: Number of rows to skip when reading in new data
+:type skiprows: int
+:param skipfooter: Number of rows from footer to skip when reading in new data
+:type skipfooter: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CaFlexPlate:
+    &#34;&#34;&#34;Class used for the analysis of individual Calcium Flex well plates.
+    
+    :param raw_data: Raw, unprocessed data from experiment
+    :type raw_data: .txt file
+    :param plate_map_file: Filled template plate map that contains the information for each well of the well plate
+    :type plate_map_file: .csv
+    :param inject: Activator injection time point
+    :type inject: float or int
+    :param map_type: &#39;short&#39; or &#39;long&#39; - Denotes the type of plate map file used, default = &#39;short&#39;
+    :type map_type: str
+    :param size: Size of well plate - 6, 12, 24, 48, 96 or 384. plate_map_file MUST have the appropriate dimensions, default = 96
+    :type size: int
+    :param data_type: &#39;new&#39; or &#39;old&#39; - denotes type of flex data, default = &#39;old&#39;
+    :type data_type: str
+    :param valid: Validates every well - &#39;True&#39; sets every well as valid, &#39;False&#39; wells will not be used for analysis, default = True
+    :type valid: bool
+    :param processed_data: Dictionary containing separate dataframes of the time and flex data for every well
+    :type processed_data: dictionary of pandas dataframes
+    :param plate_map: plate_map_file converted as a dataframe
+    :type plate_map: pandas dataframe
+    :param title: Title of plate or assay 
+    :type title: str
+    :param skiprows: Number of rows to skip when reading in new data
+    :type skiprows: int
+    :param skipfooter: Number of rows from footer to skip when reading in new data
+    :type skipfooter: int
+    &#34;&#34;&#34;
+    def __init__(self, raw_data, plate_map_file, inject, map_type = &#39;short&#39;, data_type = &#39;old&#39;, valid = True, size = 96, title = &#34;&#34;, skiprows = 2, skipfooter = 3):
+        
+        self.raw_data = raw_data
+        self.plate_map_file = plate_map_file
+        self.inject = inject
+        self.map_type = map_type
+        self.size = size
+        self.data_type = data_type
+        self.valid = valid # False invalidates all wells of plate
+        self.skiprows = skiprows
+        self.skipfooter = skipfooter
+        self.processed_data = {&#39;ratio&#39;:self._data_processed()}
+        self.plate_map = self._give_platemap()
+        self.grouplist = [&#39;Protein&#39;,&#39;Type&#39;, &#39;Compound&#39;,&#39;Concentration&#39;, &#39;Concentration Units&#39;]
+        
+        # invalidate all wells if valid = False
+        if self.valid == False:
+            self.plate_map[&#39;Valid&#39;] = valid
+        if self.valid == True:
+            self.plate_map[&#39;Valid&#39;] = valid # ?????!!!
+            
+        # optional title param
+        self.title = title
+        # add default title
+        if self.title == &#34;&#34;:
+            self.title = self.raw_data[:-4] # change to experiment title in plate map?
+            
+        # check params
+        if wells.get(self.size) == None:
+            raise pm.PlateMapError(&#34;Invalid size. Try 6, 12, 24, 48, 96 or 384.&#34;)
+            
+        print(&#34;Uploaded!&#34;)
+        
+    def _give_platemap(self):
+        &#34;&#34;&#34;Returns platemap dataframe.&#34;&#34;&#34;
+        if self.map_type == &#39;short&#39;:
+             platemap = pm.short_map(self.plate_map_file, size = self.size, valid = self.valid)
+        elif self.map_type == &#39;long&#39;:
+            platemap = pm.plate_map(self.plate_map_file, size = self.size, valid = self.valid)
+        else:
+            raise pm.PlateMapError(&#34;Invalid map type. Try &#39;short&#39; or &#39;long&#39;.&#34;)
+        return platemap
+        
+    def _data_processed(self):
+        &#34;&#34;&#34;Returns a timemap and datamap as a tuple.&#34;&#34;&#34;
+        if self.data_type == &#39;old&#39;:
+            try:
+                df = read_in(self.raw_data)
+                # create new dataframe containing all time values for each well
+                dftime = df.filter(regex = &#39;T$&#39;, axis = 1)
+               # edit header names (this will come in handy in a second)
+                dftime.columns = dftime.columns.str.replace(&#39;T&#39;, &#34;&#34;)
+                # extract list of header names 
+                wellslist = list(dftime.columns.values)
+                # transpose x and y axes of dataframe - generate time &#39;rows&#39;
+                dftime = dftime.transpose()
+                # create new dataframe containing data measurements for each cell
+                dfdata = df[wellslist]
+                # transpose x and y axes
+                dfdata = dfdata.transpose()
+                # return timemap and datamap as a tuple
+                return {&#39;time&#39;:dftime, &#39;data&#39;:dfdata}
+            
+            except:
+                print(&#34;Read in error&#34;)
+
+        if self.data_type == &#39;new&#39;:
+            try:
+            
+                newdata = read_in_new(self.raw_data, self.skiprows, self.skipfooter)
+                # split the dataframe into the two data series
+                data1 = newdata.iloc[:int(newdata.shape[0]/2), :]
+                data1 = data1.reset_index(drop=True)
+                data2 = newdata.iloc[int(newdata.shape[0]/2):, :]
+                data2 = data2.reset_index(drop=True)
+                newdatadict = {&#34;data1&#34;:data1, &#34;data2&#34;:data2}
+
+                # check length
+                if len(data1) != len(data2):
+                    raise DataError(&#34;Read in error&#34;)
+                    
+            # try alternative read in if lengths not equal
+            except DataError: 
+                self.skipfooter = self.skipfooter+1
+                newdata = read_in_new(self.raw_data, self.skiprows, self.skipfooter)
+                # split the dataframe into the two data series
+                data1 = newdata.iloc[:int(newdata.shape[0]/2), :]
+                data1 = data1.reset_index(drop=True)
+                data2 = newdata.iloc[int(newdata.shape[0]/2):, :]
+                data2 = data2.reset_index(drop=True)
+                newdatadict = {&#34;data1&#34;:data1, &#34;data2&#34;:data2}
+                
+                if len(data1) != len(data2):
+                    raise DataError(&#34;Read in error&#34;)
+                else:
+                    print(&#34;self.skiprows updated. This is data type requires skipfooter equal {}.&#34;.format(self.skipfooter))
+            except DataReadInError:
+                print(&#34;Check your data. Read in is faulty.&#34;)
+                
+            # initiate empty dictionary to house preprocessed data and time values
+            preprocessed = {}
+            # loop produces two dictionaries containing preprocessed flux data and their corresponding time values
+            for key, value in newdatadict.items():
+                # reset indexes
+                value = value.reset_index(drop=True)
+                dftime = value.filter(regex = &#39;T$&#39;, axis = 1)
+                # edit header names (this will come in handy in a second)
+                dftime.columns = dftime.columns.str.replace(&#39;T&#39;, &#34;&#34;)
+                # extract list of header names 
+                wellslist = list(dftime.columns.values)
+                # transpose x and y axes of dataframe - generate time &#39;rows&#39;
+                dftime = dftime.transpose()
+                # create new dataframe containing data measurements for each cell
+                dfdata = value[wellslist]
+                # transpose x and y axes
+                dfdata = dfdata.transpose()
+                # return timemap and datamap as a tuple
+                tempdict = {&#39;time&#39;:dftime, &#39;data&#39;:dfdata}
+                # append dictionary
+                preprocessed[key] = tempdict
+
+            # take means of the time in new dataframe
+            mean_time = pd.concat((preprocessed[&#34;data1&#34;][&#39;time&#39;], preprocessed[&#34;data2&#34;][&#34;time&#34;]))
+            mean_time = mean_time.groupby(mean_time.index).mean()
+            mean_time = mean_time.reindex(wellslist)
+
+            # take difference of data to get change in flux
+            difference = preprocessed[&#34;data1&#34;][&#39;data&#39;].divide(preprocessed[&#34;data2&#34;][&#34;data&#34;])
+            return {&#39;time&#39;:mean_time, &#39;data&#39;:difference}
+
+        elif self.data_type not in (&#39;old&#39;, &#39;new&#39;):
+            raise DataError(&#34;Incorrect data type&#34;)
+            
+    def visualise_assay(self, share_y, export = False, title = &#34;&#34;, cmap = &#39;Dark2_r&#39;,
+             colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 200):
+        &#34;&#34;&#34;Returns color-coded and labelled plots of the data collected for each well of the well plate.
+        
+        :param share_y: &#39;True&#39; sets y axis the same for all plots
+        :type share_y: bool
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param cmap: Sets the colormap for the color-coding, default = &#39;Dark2_r&#39;
+        :type cmap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 200
+        :type dpi: int
+        :return: Figure of plotted data for each well of the well plate described in plate_map_file
+        :rtype: figure
+        &#34;&#34;&#34;
+        self.title = title
+        
+        # check labelby and colorby
+        if colorby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;colorby parameter not in plate map&#34;)
+        if labelby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;labelby parameter not in plate map&#34;)
+        
+        pm.visualise_all_series(x = self.processed_data[&#39;ratio&#39;][&#39;time&#39;], y = self.processed_data[&#39;ratio&#39;][&#39;data&#39;], 
+                            share_y = share_y, platemap = self.plate_map, size = self.size, 
+                            export = export, cmap = cmap,
+                            colorby = colorby, labelby = labelby, 
+                            dpi = dpi, title = self.title)
+        
+        plt.suptitle(self.title, y = 0.95)
+        
+    def see_plate(self, title = &#34;&#34;, export = False, cmap = &#39;Paired&#39;,
+             colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 150):
+        &#34;&#34;&#34;Returns a visual representation of the plate map.
+    
+        The label and colour for each well can be customised to be a variable, for example &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;, &#39;Contents&#39; or &#39;Type&#39;. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384. 
+        :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+        :type size: int    
+        :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+        :type export: bool
+        :param title: Sets the title of the figure, optional
+        :type title: str
+        :param cmap: Sets the colormap for the color-coding, default = &#39;Paired&#39;
+        :type cmap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :param dpi: Size of the figure, default = 150
+        :type dpi: int
+        :return: Visual representation of the plate map.
+        :rtype: figure
+        &#34;&#34;&#34;
+        pm.visualise(self.plate_map, title = title, size = self.size, export = export, cmap = cmap,
+             colorby = colorby, labelby = labelby, dpi = dpi)
+    
+       
+    def see_wells(self, to_plot, share_y = True, colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, cmap = &#39;Dark2_r&#39;):
+        &#34;&#34;&#34;Returns plotted data from stipulated wells.
+
+        :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+        :type size: int   
+        :param to_plot: Wells to plot
+        :type to_plot: string or list of strings (well ID&#39;s), e.g. &#34;A1&#34;, &#34;A2&#34;, &#34;A3&#34;
+        :param share_y: &#39;True&#39; sets y axis the same for all plots, default = &#39;True&#39;
+        :type share_y: bool
+        :param cmap: Sets the colormap for the color-coding, optional
+        :type cmap: str
+        :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type colorby: str
+        :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+        :type labelby: str
+        :return: Plotted data for the stipulated wells of the well plate  
+        :rtype: figure
+        &#34;&#34;&#34;
+        # check labelby and colorby
+        if colorby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;colorby parameter not in plate map&#34;)
+        if labelby not in self.plate_map.columns:
+            raise pm.HeaderError(&#34;labelby parameter not in plate map&#34;)
+
+        # check to_plot
+        if type(to_plot) == str:
+            # plot individual well:
+            try:
+                label = self.plate_map.loc[to_plot][labelby]
+                
+                fig, ax = plt.subplots()
+                ax.plot(self.processed_data[&#39;ratio&#39;][&#39;time&#39;].loc[to_plot], self.processed_data[&#39;ratio&#39;][&#39;data&#39;].loc[to_plot], lw = 3, color = &#39;black&#39;, label = &#34;{} {}&#34;.format(to_plot, label))
+
+            # add label for each well
+                ax.legend(loc = &#39;best&#39;, frameon = True, fancybox = True)
+                ax.set_title(&#34;{} {}&#34;.format(to_plot, pm.labelwell(self.plate_map, labelby, 0)))
+                ax.set_facecolor(&#39;0.95&#39;)
+                ax.set_xlabel(&#34;time / s&#34;)
+                ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+                ax.set_title(&#39;Flex data versus time for {}&#39;.format(to_plot), y = 1.05, size = 20)
+                plt.show()
+
+            except:
+                print(&#34;Plot error, does {} contain data?&#34;.format(to_plot))
+
+        else:
+            # plot multiple wells
+            fig, axs = plt.subplots(len(to_plot), 1, figsize = (2*len(to_plot), 3*len(to_plot)), constrained_layout = True, sharey = share_y)
+
+            for i in range(len(to_plot)):
+                try:
+                    label =  label = self.plate_map.loc[to_plot[i]][labelby] 
+                    axs[i].plot(self.processed_data[&#39;ratio&#39;][&#39;time&#39;].loc[to_plot[i]], self.processed_data[&#39;ratio&#39;][&#39;data&#39;].loc[to_plot[i]], 
+                                lw = 3, color = pm.wellcolour2(self.plate_map, colorby, cmap, i, to_plot), 
+                               label = &#34;{} {}&#34;.format(to_plot[i], label))
+
+                # add label for each well
+                    axs[i].legend(loc = &#39;best&#39;, frameon = True, fancybox = True)
+                    axs[i].set_title(&#34;{} {}&#34;.format(to_plot[i], label))
+                    axs[i].set_facecolor(&#39;0.95&#39;)
+                    axs[i].set_xlabel(&#34;time / s&#34;)
+                    axs[i].set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+                except:
+                    print(&#34;Plot error, does {} contain data?&#34;.format(to_plot[i]))
+
+            # post try/except mods 
+            fig.suptitle(&#39;Flex data versus time for the wells {}&#39;.format(&#39;, &#39;.join(to_plot)), y = 1.05, size = &#39;20&#39;)
+            
+            plt.show()
+    
+    def invalidate_wells(self, wells):
+        &#34;&#34;&#34;Invalidates specified wells and updates plate_map
+        
+        :param wells: Wells to invalidate
+        :type wells: list of strings, e.g. (&#34;A1&#34;, &#34;A2&#34;, &#34;A3&#34;)
+        &#34;&#34;&#34;
+        
+        self.plate_map = pm.invalidate_wells(self.plate_map, wells = wells, valid = False)
+        print(&#34;{} invalidated&#34;.format(wells))
+        
+    def invalidate_rows(self, rows):
+        &#34;&#34;&#34;Invalidates specified rows and updates plate_map
+        
+        :param wells: Rows to invalidate
+        :type wells: list of strings, e.g. (&#34;A&#34;, &#34;B&#34;, &#34;C&#34;)
+        &#34;&#34;&#34;
+        platemap = pm.invalidate_rows(self.plate_map, rows, valid = False)
+        self.plate_map = platemap
+        print(&#34;Row {} invalidated&#34;.format(rows))
+    
+    def invalidate_cols(self, cols):
+        &#34;&#34;&#34;Invalidates specified wells and updates plate_map
+        
+        :param wells: Wells to invalidate
+        :type wells: list of ints, e.g. (1, 2, 3)
+        &#34;&#34;&#34;
+        platemap = pm.invalidate_cols(self.plate_map, cols, valid = False)
+        self.plate_map = platemap
+        print(&#34;Columns {} invalidated&#34;.format(cols))
+        
+    def baseline_correct(self):
+        &#34;&#34;&#34;Baseline corrects &#39;ratio&#39; data using the pre-injection time points.&#34;&#34;&#34;
+        try:
+            time_cut = self.inject - 5
+            data_source = self.processed_data[&#39;ratio&#39;]
+            # convert to numpy arrays
+            time = data_source[&#39;time&#39;].to_numpy()
+            data = data_source[&#39;data&#39;].to_numpy()
+            # create mask from mean time values
+            time_filter = np.nanmean(time,axis=0)&lt;time_cut
+            # # average over these times
+            baseline = np.mean(data[:,time_filter],axis=1)
+            # add dimension to enable broadcasting
+            baseline = np.expand_dims(baseline, axis=1)
+            # rewrite values back to dataframes
+            self.processed_data[&#39;baseline_corrected&#39;] = {}
+            data_source = self.processed_data[&#39;baseline_corrected&#39;][&#39;data&#39;] = pd.DataFrame(data-baseline, index = data_source[&#39;data&#39;].index)
+            data_source = self.processed_data[&#39;baseline_corrected&#39;][&#39;time&#39;] = data_source = self.processed_data[&#39;ratio&#39;][&#39;time&#39;]
+
+            print(&#34;Baseline corrected! See self.processed_data[&#39;baseline_corrected&#39;]&#34;)
+        except:
+            print(&#34;baseline correction failed.&#34;)
+        
+    def get_gradients(self, data_type):
+        &#34;&#34;&#34;Returns the mean gradient over every 10 time points post injection.
+        
+        :param data_type: Data series to calculate plateau
+        :type data_type: str
+        :return: Dict containing a tuple corresponding to the start and end index and the corresponding mean gradient
+        :rtype: dict[tuple, float]
+        &#34;&#34;&#34;        
+        # filter for valid wells
+        valid_filter = self.plate_map.Valid == True
+
+        # add opposite time filter to extract data after injection
+        time_cut = self.inject + 5
+        data_source = self.processed_data[data_type]
+
+        # convert to numpy arrays
+        time = data_source[&#39;time&#39;][valid_filter].to_numpy()
+        data = data_source[&#39;data&#39;][valid_filter].to_numpy()
+        # create mask from mean time values
+        post_inject_filter = np.nanmean(time,axis=0) &gt; time_cut
+
+        # get absolute gradient for each well along series
+        gradient = abs(np.gradient(data[:, post_inject_filter], axis = 1))
+
+        gradient_dict = {}
+
+        index = np.array(list(data_source[&#39;data&#39;].columns))[post_inject_filter]
+
+        # mean gradient every ten measurements
+        for i in range(gradient.shape[1]-9):
+
+            # average of average gradients for every ten measurements post injection
+            mean_gradient = np.nanmean(np.mean(gradient[:, i:(i+10)], axis=1), axis = 0)
+            gradient_dict[(index[i]), (index[i]+10)] = mean_gradient
+            
+        return gradient_dict
+    
+    def get_window(self, data_type):
+        &#34;&#34;&#34;Updates self.window with the lowest mean gradient for each ten time point window post injection.
+        
+        :param data_type: Data series to calculate plateau
+        :type data_type: str
+        &#34;&#34;&#34;
+        gradient_dict = self.get_gradients(data_type)
+        
+        # get minimum gradient index window
+        min_gradient = (min(gradient_dict, key = gradient_dict.get))
+
+        self.window = min_gradient
+        
+    def def_window(self, time, data_type):
+        &#34;&#34;&#34;Manually set the plateau window.
+        
+        :param time: Time point at start of window
+        :type time: int
+        :param data_type: Data to set window on, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :return: Tuple of start and end index of plateau window
+        :rtype: (int, int)
+        &#34;&#34;&#34;
+        valid_filter = self.plate_map.Valid == True
+        data_source = self.processed_data[data_type]
+        time_df = data_source[&#39;time&#39;][valid_filter]
+        
+        # create mask from mean time values
+        window_filter = np.nanmean(time_df,axis=0) &gt;= time
+        index = np.array(list(data_source[&#39;data&#39;].columns))[window_filter]
+        self.window =  (index[0], index[10])
+        
+    def plot_conditions(self, data_type, activator = &#34; &#34;, show_window = False, dpi = 120, title = &#34; &#34;, error = False, control = [&#39;control&#39;], cmap = &#34;winter_r&#34;, window_color = &#39;hotpink&#39;, proteins = [], compounds = [], marker = &#39;o&#39;, unique_markers = False, marker_list = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;], show_control = True):
+        &#34;&#34;&#34;Plots each mean condition versus time.
+        
+        :param data_type: Data to be plotted, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :param activator: Activator injected into assay, default = &#34;&#34;
+        :type activator: str
+        :param show_window: If &#39;True&#39;, shows the window from which the plateau for each condition is calculated, default = False 
+        :type show_window: bool
+        :param dpi: Size of figure, default = 120
+        :type dpi: int
+        :param title: Title of plot ADD LIST OF TITLES?
+        :type title: str
+        :param error: If True, plots error bars for each mean condition, default = False
+        :type error: bool
+        :param control: List of control conditions, default = &#39;control&#39;
+        :type control: bool
+        :param cmap: Colormap to use as the source of plot colors
+        :type cmap: str
+        :param window_color: Color of the plateau window, default = &#39;hotpink&#39;
+        :type window_color: str
+        :param marker: Marker type, default = &#39;-o&#39;
+        :type marker: str
+        :param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+        :type unique_markers: bool
+        :param marker_list: List of marker symbols to use when unique_markers = True, default = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;]
+        :type marker_list: [str]
+        :param show_control: If True, plots each control condition for each protein, default = True
+        :return: Figure displaying each mean condition versus time
+        :rtype: fig
+        &#34;&#34;&#34;
+
+        platemap = self.plate_map
+        grouplist = self.grouplist
+        groupdct = {}
+        
+        # check control
+        # check controls are correct
+        for c in control:
+            if self.plate_map[&#39;Type&#39;].isin([c]).any() == False:
+                raise ControlError(&#34;{} not in plate map&#34;.format(c))
+        
+        for key, val in self.processed_data[data_type].items():
+            data_length = val.shape[1]
+            mapped = platemap.fillna(&#39;none&#39;).join(val)
+            group = mapped[mapped.Valid == True].groupby(grouplist)[val.columns]
+            # update dictionary
+            groupdct[key] = group
+
+        # get data, time and error values for each condition
+        data = groupdct[&#39;data&#39;].mean().reset_index()
+        time = groupdct[&#39;time&#39;].mean().reset_index()
+        yerr = groupdct[&#39;data&#39;].sem().reset_index()
+
+        # get names of proteins and compounds, excluding control
+        if proteins == []:
+            proteins = data[data[&#39;Type&#39;].str.contains(&#39;control&#39;) == False][&#39;Protein&#39;].unique()
+            
+        # iterate through proteins list
+        for pkey, pval in enumerate(proteins):
+            # get number of compounds for each protein
+            if compounds == []:
+                compounds = data[(data[&#39;Type&#39;].str.contains(&#39;control&#39;) == False) &amp; (data[&#39;Protein&#39;] == pval)][&#39;Compound&#39;].unique()
+                
+            # iterate through compounds for each protein
+            for ckey, cval in enumerate(compounds):                
+                # try each different combo
+#                 try:
+                # extract data for each protein and compound, excluding control. 
+
+                data_temp = data[data[&#39;Type&#39;].isin(control) == False]
+                data_temp = data_temp[(data_temp[&#39;Protein&#39;] == pval) &amp; (data_temp[&#39;Compound&#39;] == cval)]
+
+                time_temp = time[time[&#39;Type&#39;].isin(control) == False]
+                time_temp = time_temp[(time_temp[&#39;Protein&#39;] == pval) &amp; (time_temp[&#39;Compound&#39;] == cval)]
+
+                yerr_temp = yerr[yerr[&#39;Type&#39;].isin(control) == False]
+                yerr_temp = yerr_temp[(yerr_temp[&#39;Protein&#39;] == pval) &amp; (yerr_temp[&#39;Compound&#39;] == cval)]
+
+                templist = [x for x in grouplist if x != &#39;Concentration&#39;] # get columns to remove
+
+                # extract just the data with conc as the index
+                index = data_temp.iloc[:, :-data_length]
+                data_temp = data_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+                time_temp = time_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+                yerr_temp = yerr_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+
+                ########## PLOT ##########
+                if (pval != &#39;none&#39;) &amp; (cval != &#39;none&#39;):
+                    fig, ax = plt.subplots(dpi = 120)
+
+                    # check units!
+                    if len(index[&#39;Concentration Units&#39;].unique()) &gt; 1 :
+                        raise UnitsError
+                    # if units are fine, get units!
+                    unique_units = index[&#39;Concentration Units&#39;].unique()[0]
+
+                    ########## control ##########
+                    ctrl_max_vals = []
+                    if show_control == True:
+                        for c in control:
+
+                            control_data = data[data[&#39;Type&#39;].str.contains(c) == True]
+                            control_data = control_data[(control_data[&#39;Protein&#39;] == pval)].iloc[:, -data_length:]
+
+                            control_time = time[time[&#39;Type&#39;].str.contains(c) == True]
+                            control_time = control_time[(control_time[&#39;Protein&#39;] == pval)].iloc[:, -data_length:]
+                            ctrl_max_vals.append(control_data.max().max())
+                            
+                            # convert u to mu
+                            if unique_units[0] == &#39;u&#39;:
+                                ctrl_label = &#34;0 &#34; + &#34;$\mathrm{\mu }$&#34; + unique_units[1:] + &#34; ({})&#34;.format(c)
+                            else:
+                                ctrl_label = &#34;0 {} ({})&#34;.format(unique_units, c)
+
+                            ax.plot(control_time.iloc[0], control_data.iloc[0], marker, linestyle = &#39;-&#39;, color = &#39;black&#39;, 
+                                    mfc = get_color(control, &#39;binary&#39;, c), lw = 1, zorder = 2, label = ctrl_label)
+
+                    ########## control end ##########
+
+                    markers = itertools.cycle(marker_list) # define unique markers for each line (unique_markers = True)
+
+                    # plot series, iterating down rows
+                    for i in range(len(time_temp)):
+                        # get legend labels
+                        if unique_units[0] == &#39;u&#39;:
+                            legend_label = &#34;{} &#34;.format(data_temp.index[i]) + &#34;$\mathrm{\mu }$&#34; + unique_units[1:]
+                        else:
+                            legend_label = &#34;{} {}&#34;.format(data_temp.index[i], unique_units)
+
+                        # plot each condition
+                        if error == True:
+                            ax.errorbar(x = time_temp.iloc[i], y = data_temp.iloc[i], yerr = yerr_temp.iloc[i],
+                                       capsize = 3, zorder=1, color = plot_color(data_temp, cmap, i),
+                                       label = legend_label)
+                        else: 
+                            if unique_markers == False:
+                                ax.plot(time_temp.iloc[i], data_temp.iloc[i], marker = marker, linestyle = &#39;-&#39;, zorder=1, label = legend_label, ms = 5, color = plot_color(data_temp, cmap, i), lw = 1)
+                            else:
+                                ax.plot(time_temp.iloc[i], data_temp.iloc[i], marker = next(markers), linestyle = &#39;-&#39;, zorder=1, label = legend_label, ms = 4, color = &#39;black&#39;, lw = 1)
+
+                        # add legend    
+                        ax.legend(loc = &#34;upper left&#34;, bbox_to_anchor = (1.0, 1.0), frameon = False, title = &#34;{}&#34;.format(cval))
+
+                    # white background makes the exported figure look a lot nicer
+                    fig.patch.set_facecolor(&#39;white&#39;)
+
+                    # spines
+                    ax.spines[&#39;right&#39;].set_visible(False)
+                    ax.spines[&#39;top&#39;].set_visible(False)
+
+                    # add line representing the activator
+                    times = self.processed_data[data_type][&#39;time&#39;].mean() # get times
+                    time_filter = times &gt; (self.inject - 5) # mean time series that contains activator
+
+                    # get start and end points
+                    injection_start = times[time_filter].iloc[0]
+                    injection_end = times[time_filter].iloc[-1]
+
+                    # add line indicating presence of activator
+                    if len(ctrl_max_vals) &gt; 0: # make sure line is above plotted data!! 
+                        if max(ctrl_max_vals) &gt; data_temp.max().max():
+                            ymax = control_data.max().max() + control_data.max().max()*0.1
+                    else:
+                        ymax = data_temp.max().max() + data_temp.max().max()*0.1 # add a bit extra to prevent clash
+
+                    ax.plot([injection_start, injection_end], [ymax, ymax], c = &#39;black&#39;)
+
+                    # activator title
+                    ax.text((injection_start+injection_end)/2, (ymax+ymax*0.05), activator, ha = &#39;center&#39;)
+
+                    # assay title
+                    ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                    # axes labels
+                    ax.set_xlabel(&#34;time (s)&#34;)
+                    ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+
+                    # display plateau window
+                    if show_window == True:
+                        # x min and x max for axvspan 
+                        xmin = time_temp.loc[:, self.window[0]].mean()
+                        xmax = time_temp.loc[:, self.window[1]].mean()
+                        ax.axvspan(xmin, xmax, facecolor = window_color, alpha = 0.5)
+
+                    ########## PLOT END ##########
+
+                plt.show()
+
+                    # catch errors and notify user
+#                 except UnitsError:
+#                     print(&#34;{}, {} failed&#34;.format(pval, cval))
+#                     print(&#34;too many units: {}&#34;.format(index[&#39;Concentration Units&#39;].unique()))
+#                 except ControlError:
+#                     for c in control:
+#                         if self.plate_map[&#39;Type&#39;].isin([c]).any() == False:
+#                             print(&#34;{} not in plate map&#34;.format(c))
+#                 except:
+#                     print(&#34;{}, {} failed&#34;.format(pval, cval))
+
+    def amplitude(self, data_type):
+        &#34;&#34;&#34;Calculates response amplitude for each condition, updates processed_data dictionary with &#39;plateau&#39; and plate_map with amplitude column. 
+        
+        :param data_type: Data to use to calculate amplitudes, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+
+        &#34;&#34;&#34;
+        try:
+            # get ampltitude for every condition
+            amp = (self.processed_data[data_type][&#39;data&#39;].iloc[:, self.window[0]:self.window[1]]).to_numpy()
+            # get mean amplitude for every condition
+            amp_mean = np.mean(amp, axis = 1)
+            # update processed_data with response amplitude
+            self.processed_data[&#39;plateau&#39;] = {}
+            self.processed_data[&#39;plateau&#39;][&#39;data&#39;] = pd.DataFrame(amp_mean, index = self.processed_data[&#39;ratio&#39;][&#39;data&#39;].index, columns = [&#39;Amplitude&#39;])
+
+            print(&#34;Amplitudes calculated from {}. See self.processed_data[&#39;plateau&#39;][&#39;data&#39;]&#34;.format(data_type))
+        except:
+            print(&#34;Ampltitude calculation failed.&#34;)
+        
+    def mean_amplitude(self, use_normalised = False):
+        &#34;&#34;&#34;Returns mean amplitudes and error for each condition.
+        
+        The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.
+        
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :return: Mean amplitudes and error for each condition
+        :rtype: Pandas DataFrame
+        &#34;&#34;&#34;
+        mapped = self.plate_map.fillna(-1).join(self.processed_data[&#39;plateau&#39;][&#39;data&#39;])
+        if use_normalised == True:
+            mapped = self.plate_map.fillna(-1).join(self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;])
+        # group by grouplist and take mean amplitude for each condition
+        # filter for valid wells
+        group = mapped[mapped.Valid == True] 
+        # drop columns which can cause errors w/ groupby operations
+        group.drop([&#39;Valid&#39;, &#39;Column&#39;], axis = 1, inplace = True)
+        mean_response = group.groupby(self.grouplist).mean().reset_index()
+        
+        if use_normalised == False:
+            mean_response[&#39;Amplitude Error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;Amplitude&#39;]
+        else:
+            mean_response[&#39;amps_normed_error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;amps_normed&#39;]
+        # drop empty rows
+        mean_response.drop(mean_response[mean_response[&#39;Type&#39;] == &#39;empty&#39;].index)
+
+        # update data dict
+        self.processed_data[&#39;mean_amplitudes&#39;] = mean_response
+        
+        return mean_response
+    
+    def normalise(self):
+        &#34;&#34;&#34;Normalises amplitudes to mean control amplitude.&#34;&#34;&#34;
+        mean_amps = self.mean_amplitude(use_normalised = False) # get mean control amplitude
+        amps = self.processed_data[&#39;plateau&#39;][&#39;data&#39;]
+        control_amp = float(mean_amps[mean_amps[&#39;Type&#39;] == &#39;control&#39;][&#39;Amplitude&#39;])
+        self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;] = &#34;test&#34;
+        self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;] = ((amps * 100) / control_amp).rename(columns = {&#39;Amplitude&#39;:&#39;amps_normed&#39;})
+
+        return self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;]
+    
+    @staticmethod
+    def _gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs):
+        &#34;&#34;&#34;Generates data required for a fitted plot of IC50&#39;s or EC50&#39;s.&#34;&#34;&#34;
+        # check proteins and compounds 
+            
+        curve_data = {}
+        # filter amps 
+        amps = mean_amps[mean_amps.Type == &#39;compound&#39;]
+        
+        # get names of proteins
+        if proteins == []:
+            prots = list(amps[&#39;Protein&#39;].unique())
+        else:
+            prots = proteins
+        # separate proteins 
+        for pkey, pval in enumerate(prots):
+            try:
+                # check protein
+                if mean_amps[&#39;Protein&#39;].str.contains(pval, regex = False).any() == False:
+                    raise ProteinNameError()
+                # get compounds for each proteins
+                if compounds == []:
+                    comps = amps[amps[&#39;Protein&#39;] == pval][&#39;Compound&#39;].unique()
+                # get number of compounds for each protein
+                for ckey, cval in enumerate(comps):
+                    # check compound
+                    if mean_amps[&#39;Compound&#39;].str.contains(cval, regex = False).any() == False:
+                        raise CompoundNameError()
+                    # filter dataframe for each compound in each protein
+                    temp = amps[(amps[&#39;Protein&#39;] == pval) &amp; (amps[&#39;Compound&#39;] == cval)]
+                    # check there is only 1 conc unit
+                    if len(temp[&#39;Concentration Units&#39;].unique()) &gt; 1:
+                        raise ValueError[&#34;One unit per condition please!&#34;]
+                        # check there is an adequate number of concs
+                    if len(temp[&#39;Concentration&#39;]) &lt; n:
+                        raise ValueError(&#34;Not enough concs! You&#39;ve only got {} for {}, compound {}. You really need at least {} to do a fit.&#34;.format(len(temp[&#39;Concentration&#39;]), pval, cval, n))
+
+                    # get x, y and error values, c50 units, compound and protein names to use for plot
+                    x = temp[&#39;Concentration&#39;].to_numpy()
+                    y = temp.iloc[:, -2].to_numpy()
+                    yerr = temp.iloc[:, -1].to_numpy()
+                    c50units = temp[&#39;Concentration Units&#39;].unique()[0]
+
+                    # get popt values for logistic regression
+                    popt, pcov = curve_fit(func_dict[plot_func], x, y, **kwargs) 
+
+                    # update curve_data dict
+                    curve_data[&#34;{}_{}&#34;.format(pval, cval)] = {&#39;x&#39;:x, &#39;y&#39;:y, &#39;yerr&#39;:yerr, &#39;c50units&#39;:c50units, &#39;compound&#39;:cval, 
+                                                              &#39;protein&#39;:pval, &#39;popt&#39;:popt}
+            except CompoundNameError:
+                print(&#34;Compound not found. Available compounds are: {}&#34;.format(amps[&#39;Compound&#39;].unique()))
+
+            except ProteinNameError:
+                print(&#34;Protein not found. Available compounds are: {}&#34;.format(amps[&#39;Protein&#39;].unique()))
+                
+        return curve_data  
+        
+    def _get_curve_data(self, plot_func, use_normalised, n, proteins, compounds, **kwargs): 
+        &#34;&#34;&#34;Updates and returns self.plot_data with data required for a fitted plot of IC50&#39;s or EC50&#39;s.&#34;&#34;&#34;
+        mean_amps = self.mean_amplitude(use_normalised)
+        
+        curve_data = self._gen_curve_data(mean_amps, plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        self.plot_data = curve_data
+        
+        return self.plot_data
+        
+    @staticmethod
+    def _plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units):
+        
+        legend_label = {&#34;ic50&#34;:&#34;IC$_{{50}}$&#34;, &#34;ec50&#34;:&#34;EC$_{{50}}$&#34;}
+        if combine == True:
+            fig, ax = plt.subplots(dpi = dpi)
+        
+        for key, val in curve_data.items():
+            
+            
+            ########## TRY EXCEPT ##########
+            try:
+                if combine == False:
+                    fig, ax = plt.subplots(dpi = dpi)
+                # unpack curve_data:
+                x = val[&#39;x&#39;]
+                y = val[&#39;y&#39;]
+                yerr = val[&#39;yerr&#39;]
+                c50units = val[&#39;c50units&#39;]
+                popt = val[&#39;popt&#39;]
+                protein = val[&#39;protein&#39;]
+                compound = val[&#39;compound&#39;]
+                tb_str = &#34;&#34;
+                if show_top_bot == True:
+                    tb_str = &#34;\nTop = {:.2f}\nBottom = {:.2f}&#34;.format(popt[0], popt[1])
+
+                # get x and y fits
+                fit_x = np.logspace(np.log10(x.min())-0.5, np.log10(x.max())+0.5, 300)
+                fit = func_dict[plot_func](fit_x, *popt)
+                ############################# types of plot: combine True OR False ####################
+                # TRUE
+                if combine == True:
+                    # get label for legend
+                    
+                    # convert u to mu 
+                    if c50units[0] == &#39;u&#39;:
+                        label = r&#34;$\bf{}\ {}$ &#34;.format(compound, &#34;&#34;) + &#34;\n{} = {:.2f}&#34;.format(legend_label[plot_func], popt[2]) + &#34;$\mathrm{\mu }$&#34; 
+                        + &#34;{}&#34;.format(c50units[1:]) + &#34;\nHill Slope = {:.2f}&#34;.format(popt[3])+tb_str
+                        
+                    else:
+                        label = r&#34;$\bf{}\ {}$&#34;.format(compound, &#34;&#34;) +&#34;\n{} = {:.2f} {}\nHill Slope = {:.2f}&#34;.format(legend_label[plot_func], popt[2], c50units, popt[3])+tb_str
+
+                    # plot fit
+                    ax.plot(fit_x, fit, lw = 1.2, label = label, color = get_color(list(curve_data.keys()), cmap, &#34;{}_{}&#34;.format(protein, compound)))
+
+                    # plot errors
+                    if error_bar == True:
+                        ax.errorbar(x, y, yerr, fmt=&#39;ko&#39;,capsize=3,ms=3, color = get_color(list(curve_data.keys()), cmap, &#34;{}_{}&#34;.format(protein, compound)))
+                # FALSE        
+                if combine == False:
+                    # get label for legend
+                    
+                    # convert u to mu 
+                    if c50units[0] == &#39;u&#39;:
+                        label = &#34;\n{} = {:.2f} &#34;.format(legend_label[plot_func], popt[2]) + &#34;$\mathrm{\mu }$&#34; + &#34;{}&#34;.format(c50units[1:]) + &#34;\nHill Slope = {:.2f}&#34;.format(popt[3])+tb_str
+                    else:
+                        label = &#34;{} = {:.2f} {}\nHill Slope = {:.2f} &#34;.format(legend_label[plot_func], popt[2], c50units, popt[3])+tb_str
+
+                    # plot fit
+                    ax.plot(fit_x, fit, lw = 1.2, label = label, color = &#39;black&#39;)
+
+                    # plot errors
+                    if error_bar == True:
+                        ax.errorbar(x, y, yerr, fmt=&#39;ko&#39;,capsize=3,ms=3, color = &#39;black&#39;)
+
+                    # add legend
+                    ax.legend(loc = &#39;best&#39;, frameon = False,framealpha=0.7, handlelength=0, handletextpad=0)
+
+                ############# end of combine differences   ############# 
+                ############# in loop modifications for both types of plot (combine = True OR False) #############   
+                plt.xscale(&#39;log&#39;)    
+
+                # spines
+                ax.spines[&#39;right&#39;].set_visible(False)
+                ax.spines[&#39;top&#39;].set_visible(False)
+
+                # labels
+                ax.set_xlabel(&#34;[{}] / {}&#34;.format(compound, conc_units))
+                ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                if use_normalised == False:
+                    ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+                else:
+                    if activator == &#34;&#34;:
+                        ax.set_ylabel(&#34;% of activation&#34;)
+                    else:
+                        ax.set_ylabel(&#34;% of activation by {}&#34;.format(activator))
+
+                # title
+                ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                plt.minorticks_off()
+            except:
+                print(&#34;Did not plot {}, {}&#34;.format(protein, compound))
+        ###################################### end of plotting loop ##########################        
+        # post loop mods
+        
+        
+        # using plt legend allows use of loc = &#39;best&#39; to prevent annotation clashing with line
+        if combine == True:
+            leg = ax.legend(loc = &#39;center left&#39;, frameon = False, bbox_to_anchor = [1.0, 0.5])
+            ax.set_xlabel(&#34;Concentration / {}&#34;.format(conc_units))
+        
+        # set background
+        fig.patch.set_facecolor(&#39;white&#39;)
+        
+        plt.show()
+        
+        
+    def plot_curve(self, plot_func, use_normalised = False, n = 5, proteins = [], compounds = [], error_bar = True, cmap = &#34;Dark2&#34;, combine = False, activator = &#34; &#34;, title = &#34; &#34;, dpi = 120, show_top_bot = False, conc_units = &#39;M&#39;, **kwargs):
+        &#34;&#34;&#34;Plots fitted curve using logistic regression with errors and IC50/EC50 values.
+        
+        :param plot_func: Plot function to use, either ic50 or ec50
+        :type plot_func: str
+        :param use_normalised: If True, uses normalised amplitudes, default = False
+        :type use_normalised: bool
+        :param n: Number of concentrations required for plot
+        :type n: int
+        :param proteins: Proteins to plot, defaults to all
+        :type proteins: list
+        :param compounds: Compounds to plot, defaults to all
+        :type compounds: list
+        :param error_bar: If True, reveals error bars, default = True
+        :type error_bar = bool
+        :param cmap: Color map that sets each line colour in a combined plot, default = &#34;Dark2&#34;
+        :type cmap: bool
+        :param activator: Activator injected into assay, default = &#34; &#34;
+        :type activator: str
+        :param title: Choose between automatic title or insert string to use, default = &#34; &#34;
+        :type title: str
+        :param dpi: Size of figure
+        :type dpi: int
+        :param show_top_bot: &#39;True&#39; shows the top and bottom curve fitting values in the legend
+        :type show_top_bot: bool
+        :param conc_units: Units displayed on x axis of graph
+        :type conc_units: str
+        :param **kwargs: Additional curve fitting arguments
+        &#34;&#34;&#34;         
+        curve_data =  self._get_curve_data(plot_func, use_normalised, n, proteins, compounds, **kwargs)
+        
+        # update object with curve data to access when exporting
+        self.curve_data = curve_data
+        for key in self.curve_data.keys():
+            self.curve_data[key][&#39;plot_func&#39;] = plot_func # curve data maximal conc plot function
+
+    # do plots
+        self._plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units)
+        
+        
+        
+    def export_data(self, title = &#34;&#34;):
+        &#34;&#34;&#34;Exports raw and processed data to an excel file. 
+        
+        The excel file will be named after the &#39;self.title&#39; parameter unless otherwise specified.
+        
+        :param title: Title of the excel file, default = self.title + &#39;_data_export.xlsx&#39;
+        :type title: str
+        :return: Excel document
+        :rtype: .xlsx
+        &#34;&#34;&#34;
+        if title == &#34;&#34;:
+            title = self.title + &#39;_data_export.xlsx&#39;
+        if title[-5:] != &#39;.xlsx&#39;:
+            title = title + &#39;.xlsx&#39;
+            
+        dfs = self.processed_data
+        
+        # get curve data
+        curve_list = {}
+        
+        if hasattr(self, &#39;curve_data&#39;):
+            for key, val in self.curve_data.items(): # get curve data for each protein/compound combo
+                curve = copy.deepcopy(val) # get deep copy - prevents original dict from being edited
+                curve[&#39;popt_keys&#39;] = [&#39;top&#39;, &#39;bottom&#39;, curve[&#39;plot_func&#39;], &#39;hill&#39;] # add popt index
+                for i in [&#39;compound&#39;, &#39;protein&#39;, &#39;c50units&#39;, &#39;plot_func&#39;]: # delete irrelevent keys
+                    curve.pop(i)
+                curve_df = pd.DataFrame.from_dict(curve, orient = &#39;index&#39;)
+                
+                curve_list[key] = curve_df
+    
+    
+        # create separate sheet for each data set
+        with pd.ExcelWriter(title) as writer:
+            dfs[&#39;ratio&#39;][&#39;time&#39;].to_excel(writer, sheet_name = &#39;time&#39;)
+            dfs[&#39;ratio&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;ratio&#39;)
+            dfs[&#39;baseline_corrected&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;baseline_corrected&#39;)
+            if &#39;data&#39; in dfs[&#39;plateau&#39;].keys():
+                dfs[&#39;plateau&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;plateau&#39;)
+            if &#39;data_normed&#39; in dfs[&#39;plateau&#39;].keys():
+                dfs[&#39;plateau&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;normalised_plateau&#39;)
+            if &#39;mean_amplitudes&#39; in dfs.keys():
+                dfs[&#39;mean_amplitudes&#39;].to_excel(writer, sheet_name = &#39;mean_amplitudes&#39;)
+            self.plate_map.to_excel(writer, sheet_name = &#39;plate_map&#39;)
+            
+            # export curve data for each protein/compund combination
+            for key, val in curve_list.items():
+                val.to_excel(writer, sheet_name = key + &#39;_curve_data&#39;)
+                
+        print(&#34;Data exported to excel as {} Check your folder.&#34;.format(title))</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.amplitude"><code class="name flex">
+<span>def <span class="ident">amplitude</span></span>(<span>self, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates response amplitude for each condition, updates processed_data dictionary with 'plateau' and plate_map with amplitude column. </p>
+<p>:param data_type: Data to use to calculate amplitudes, either 'ratio' or 'baseline_corrected'
+:type data_type: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def amplitude(self, data_type):
+    &#34;&#34;&#34;Calculates response amplitude for each condition, updates processed_data dictionary with &#39;plateau&#39; and plate_map with amplitude column. 
+    
+    :param data_type: Data to use to calculate amplitudes, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+
+    &#34;&#34;&#34;
+    try:
+        # get ampltitude for every condition
+        amp = (self.processed_data[data_type][&#39;data&#39;].iloc[:, self.window[0]:self.window[1]]).to_numpy()
+        # get mean amplitude for every condition
+        amp_mean = np.mean(amp, axis = 1)
+        # update processed_data with response amplitude
+        self.processed_data[&#39;plateau&#39;] = {}
+        self.processed_data[&#39;plateau&#39;][&#39;data&#39;] = pd.DataFrame(amp_mean, index = self.processed_data[&#39;ratio&#39;][&#39;data&#39;].index, columns = [&#39;Amplitude&#39;])
+
+        print(&#34;Amplitudes calculated from {}. See self.processed_data[&#39;plateau&#39;][&#39;data&#39;]&#34;.format(data_type))
+    except:
+        print(&#34;Ampltitude calculation failed.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.baseline_correct"><code class="name flex">
+<span>def <span class="ident">baseline_correct</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Baseline corrects 'ratio' data using the pre-injection time points.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def baseline_correct(self):
+    &#34;&#34;&#34;Baseline corrects &#39;ratio&#39; data using the pre-injection time points.&#34;&#34;&#34;
+    try:
+        time_cut = self.inject - 5
+        data_source = self.processed_data[&#39;ratio&#39;]
+        # convert to numpy arrays
+        time = data_source[&#39;time&#39;].to_numpy()
+        data = data_source[&#39;data&#39;].to_numpy()
+        # create mask from mean time values
+        time_filter = np.nanmean(time,axis=0)&lt;time_cut
+        # # average over these times
+        baseline = np.mean(data[:,time_filter],axis=1)
+        # add dimension to enable broadcasting
+        baseline = np.expand_dims(baseline, axis=1)
+        # rewrite values back to dataframes
+        self.processed_data[&#39;baseline_corrected&#39;] = {}
+        data_source = self.processed_data[&#39;baseline_corrected&#39;][&#39;data&#39;] = pd.DataFrame(data-baseline, index = data_source[&#39;data&#39;].index)
+        data_source = self.processed_data[&#39;baseline_corrected&#39;][&#39;time&#39;] = data_source = self.processed_data[&#39;ratio&#39;][&#39;time&#39;]
+
+        print(&#34;Baseline corrected! See self.processed_data[&#39;baseline_corrected&#39;]&#34;)
+    except:
+        print(&#34;baseline correction failed.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.def_window"><code class="name flex">
+<span>def <span class="ident">def_window</span></span>(<span>self, time, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Manually set the plateau window.</p>
+<p>:param time: Time point at start of window
+:type time: int
+:param data_type: Data to set window on, either 'ratio' or 'baseline_corrected'
+:type data_type: str
+:return: Tuple of start and end index of plateau window
+:rtype: (int, int)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def def_window(self, time, data_type):
+    &#34;&#34;&#34;Manually set the plateau window.
+    
+    :param time: Time point at start of window
+    :type time: int
+    :param data_type: Data to set window on, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+    :type data_type: str
+    :return: Tuple of start and end index of plateau window
+    :rtype: (int, int)
+    &#34;&#34;&#34;
+    valid_filter = self.plate_map.Valid == True
+    data_source = self.processed_data[data_type]
+    time_df = data_source[&#39;time&#39;][valid_filter]
+    
+    # create mask from mean time values
+    window_filter = np.nanmean(time_df,axis=0) &gt;= time
+    index = np.array(list(data_source[&#39;data&#39;].columns))[window_filter]
+    self.window =  (index[0], index[10])</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.export_data"><code class="name flex">
+<span>def <span class="ident">export_data</span></span>(<span>self, title='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exports raw and processed data to an excel file. </p>
+<p>The excel file will be named after the 'self.title' parameter unless otherwise specified.</p>
+<p>:param title: Title of the excel file, default = self.title + '_data_export.xlsx'
+:type title: str
+:return: Excel document
+:rtype: .xlsx</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def export_data(self, title = &#34;&#34;):
+    &#34;&#34;&#34;Exports raw and processed data to an excel file. 
+    
+    The excel file will be named after the &#39;self.title&#39; parameter unless otherwise specified.
+    
+    :param title: Title of the excel file, default = self.title + &#39;_data_export.xlsx&#39;
+    :type title: str
+    :return: Excel document
+    :rtype: .xlsx
+    &#34;&#34;&#34;
+    if title == &#34;&#34;:
+        title = self.title + &#39;_data_export.xlsx&#39;
+    if title[-5:] != &#39;.xlsx&#39;:
+        title = title + &#39;.xlsx&#39;
+        
+    dfs = self.processed_data
+    
+    # get curve data
+    curve_list = {}
+    
+    if hasattr(self, &#39;curve_data&#39;):
+        for key, val in self.curve_data.items(): # get curve data for each protein/compound combo
+            curve = copy.deepcopy(val) # get deep copy - prevents original dict from being edited
+            curve[&#39;popt_keys&#39;] = [&#39;top&#39;, &#39;bottom&#39;, curve[&#39;plot_func&#39;], &#39;hill&#39;] # add popt index
+            for i in [&#39;compound&#39;, &#39;protein&#39;, &#39;c50units&#39;, &#39;plot_func&#39;]: # delete irrelevent keys
+                curve.pop(i)
+            curve_df = pd.DataFrame.from_dict(curve, orient = &#39;index&#39;)
+            
+            curve_list[key] = curve_df
+
+
+    # create separate sheet for each data set
+    with pd.ExcelWriter(title) as writer:
+        dfs[&#39;ratio&#39;][&#39;time&#39;].to_excel(writer, sheet_name = &#39;time&#39;)
+        dfs[&#39;ratio&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;ratio&#39;)
+        dfs[&#39;baseline_corrected&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;baseline_corrected&#39;)
+        if &#39;data&#39; in dfs[&#39;plateau&#39;].keys():
+            dfs[&#39;plateau&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;plateau&#39;)
+        if &#39;data_normed&#39; in dfs[&#39;plateau&#39;].keys():
+            dfs[&#39;plateau&#39;][&#39;data&#39;].to_excel(writer, sheet_name = &#39;normalised_plateau&#39;)
+        if &#39;mean_amplitudes&#39; in dfs.keys():
+            dfs[&#39;mean_amplitudes&#39;].to_excel(writer, sheet_name = &#39;mean_amplitudes&#39;)
+        self.plate_map.to_excel(writer, sheet_name = &#39;plate_map&#39;)
+        
+        # export curve data for each protein/compund combination
+        for key, val in curve_list.items():
+            val.to_excel(writer, sheet_name = key + &#39;_curve_data&#39;)
+            
+    print(&#34;Data exported to excel as {} Check your folder.&#34;.format(title))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.get_gradients"><code class="name flex">
+<span>def <span class="ident">get_gradients</span></span>(<span>self, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the mean gradient over every 10 time points post injection.</p>
+<p>:param data_type: Data series to calculate plateau
+:type data_type: str
+:return: Dict containing a tuple corresponding to the start and end index and the corresponding mean gradient
+:rtype: dict[tuple, float]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gradients(self, data_type):
+    &#34;&#34;&#34;Returns the mean gradient over every 10 time points post injection.
+    
+    :param data_type: Data series to calculate plateau
+    :type data_type: str
+    :return: Dict containing a tuple corresponding to the start and end index and the corresponding mean gradient
+    :rtype: dict[tuple, float]
+    &#34;&#34;&#34;        
+    # filter for valid wells
+    valid_filter = self.plate_map.Valid == True
+
+    # add opposite time filter to extract data after injection
+    time_cut = self.inject + 5
+    data_source = self.processed_data[data_type]
+
+    # convert to numpy arrays
+    time = data_source[&#39;time&#39;][valid_filter].to_numpy()
+    data = data_source[&#39;data&#39;][valid_filter].to_numpy()
+    # create mask from mean time values
+    post_inject_filter = np.nanmean(time,axis=0) &gt; time_cut
+
+    # get absolute gradient for each well along series
+    gradient = abs(np.gradient(data[:, post_inject_filter], axis = 1))
+
+    gradient_dict = {}
+
+    index = np.array(list(data_source[&#39;data&#39;].columns))[post_inject_filter]
+
+    # mean gradient every ten measurements
+    for i in range(gradient.shape[1]-9):
+
+        # average of average gradients for every ten measurements post injection
+        mean_gradient = np.nanmean(np.mean(gradient[:, i:(i+10)], axis=1), axis = 0)
+        gradient_dict[(index[i]), (index[i]+10)] = mean_gradient
+        
+    return gradient_dict</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.get_window"><code class="name flex">
+<span>def <span class="ident">get_window</span></span>(<span>self, data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates self.window with the lowest mean gradient for each ten time point window post injection.</p>
+<p>:param data_type: Data series to calculate plateau
+:type data_type: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_window(self, data_type):
+    &#34;&#34;&#34;Updates self.window with the lowest mean gradient for each ten time point window post injection.
+    
+    :param data_type: Data series to calculate plateau
+    :type data_type: str
+    &#34;&#34;&#34;
+    gradient_dict = self.get_gradients(data_type)
+    
+    # get minimum gradient index window
+    min_gradient = (min(gradient_dict, key = gradient_dict.get))
+
+    self.window = min_gradient</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_cols"><code class="name flex">
+<span>def <span class="ident">invalidate_cols</span></span>(<span>self, cols)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Invalidates specified wells and updates plate_map</p>
+<p>:param wells: Wells to invalidate
+:type wells: list of ints, e.g. (1, 2, 3)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def invalidate_cols(self, cols):
+    &#34;&#34;&#34;Invalidates specified wells and updates plate_map
+    
+    :param wells: Wells to invalidate
+    :type wells: list of ints, e.g. (1, 2, 3)
+    &#34;&#34;&#34;
+    platemap = pm.invalidate_cols(self.plate_map, cols, valid = False)
+    self.plate_map = platemap
+    print(&#34;Columns {} invalidated&#34;.format(cols))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_rows"><code class="name flex">
+<span>def <span class="ident">invalidate_rows</span></span>(<span>self, rows)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Invalidates specified rows and updates plate_map</p>
+<p>:param wells: Rows to invalidate
+:type wells: list of strings, e.g. ("A", "B", "C")</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def invalidate_rows(self, rows):
+    &#34;&#34;&#34;Invalidates specified rows and updates plate_map
+    
+    :param wells: Rows to invalidate
+    :type wells: list of strings, e.g. (&#34;A&#34;, &#34;B&#34;, &#34;C&#34;)
+    &#34;&#34;&#34;
+    platemap = pm.invalidate_rows(self.plate_map, rows, valid = False)
+    self.plate_map = platemap
+    print(&#34;Row {} invalidated&#34;.format(rows))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_wells"><code class="name flex">
+<span>def <span class="ident">invalidate_wells</span></span>(<span>self, wells)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Invalidates specified wells and updates plate_map</p>
+<p>:param wells: Wells to invalidate
+:type wells: list of strings, e.g. ("A1", "A2", "A3")</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def invalidate_wells(self, wells):
+    &#34;&#34;&#34;Invalidates specified wells and updates plate_map
+    
+    :param wells: Wells to invalidate
+    :type wells: list of strings, e.g. (&#34;A1&#34;, &#34;A2&#34;, &#34;A3&#34;)
+    &#34;&#34;&#34;
+    
+    self.plate_map = pm.invalidate_wells(self.plate_map, wells = wells, valid = False)
+    print(&#34;{} invalidated&#34;.format(wells))</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.mean_amplitude"><code class="name flex">
+<span>def <span class="ident">mean_amplitude</span></span>(<span>self, use_normalised=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns mean amplitudes and error for each condition.</p>
+<p>The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.</p>
+<p>:param use_normalised: If True, uses normalised amplitudes, default = False
+:type use_normalised: bool
+:return: Mean amplitudes and error for each condition
+:rtype: Pandas DataFrame</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mean_amplitude(self, use_normalised = False):
+    &#34;&#34;&#34;Returns mean amplitudes and error for each condition.
+    
+    The user must run the normalise method before attempting to get the mean amplitudes of the normalised amplitudes.
+    
+    :param use_normalised: If True, uses normalised amplitudes, default = False
+    :type use_normalised: bool
+    :return: Mean amplitudes and error for each condition
+    :rtype: Pandas DataFrame
+    &#34;&#34;&#34;
+    mapped = self.plate_map.fillna(-1).join(self.processed_data[&#39;plateau&#39;][&#39;data&#39;])
+    if use_normalised == True:
+        mapped = self.plate_map.fillna(-1).join(self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;])
+    # group by grouplist and take mean amplitude for each condition
+    # filter for valid wells
+    group = mapped[mapped.Valid == True] 
+    # drop columns which can cause errors w/ groupby operations
+    group.drop([&#39;Valid&#39;, &#39;Column&#39;], axis = 1, inplace = True)
+    mean_response = group.groupby(self.grouplist).mean().reset_index()
+    
+    if use_normalised == False:
+        mean_response[&#39;Amplitude Error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;Amplitude&#39;]
+    else:
+        mean_response[&#39;amps_normed_error&#39;] = group.groupby(self.grouplist).sem().reset_index().loc[:, &#39;amps_normed&#39;]
+    # drop empty rows
+    mean_response.drop(mean_response[mean_response[&#39;Type&#39;] == &#39;empty&#39;].index)
+
+    # update data dict
+    self.processed_data[&#39;mean_amplitudes&#39;] = mean_response
+    
+    return mean_response</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.normalise"><code class="name flex">
+<span>def <span class="ident">normalise</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Normalises amplitudes to mean control amplitude.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def normalise(self):
+    &#34;&#34;&#34;Normalises amplitudes to mean control amplitude.&#34;&#34;&#34;
+    mean_amps = self.mean_amplitude(use_normalised = False) # get mean control amplitude
+    amps = self.processed_data[&#39;plateau&#39;][&#39;data&#39;]
+    control_amp = float(mean_amps[mean_amps[&#39;Type&#39;] == &#39;control&#39;][&#39;Amplitude&#39;])
+    self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;] = &#34;test&#34;
+    self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;] = ((amps * 100) / control_amp).rename(columns = {&#39;Amplitude&#39;:&#39;amps_normed&#39;})
+
+    return self.processed_data[&#39;plateau&#39;][&#39;data_normed&#39;]</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.plot_conditions"><code class="name flex">
+<span>def <span class="ident">plot_conditions</span></span>(<span>self, data_type, activator=' ', show_window=False, dpi=120, title=' ', error=False, control=['control'], cmap='winter_r', window_color='hotpink', proteins=[], compounds=[], marker='o', unique_markers=False, marker_list=['o', '^', 's', 'D', 'p', '*', 'v'], show_control=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Plots each mean condition versus time.</p>
+<p>:param data_type: Data to be plotted, either 'ratio' or 'baseline_corrected'
+:type data_type: str
+:param activator: Activator injected into assay, default = ""
+:type activator: str
+:param show_window: If 'True', shows the window from which the plateau for each condition is calculated, default = False
+:type show_window: bool
+:param dpi: Size of figure, default = 120
+:type dpi: int
+:param title: Title of plot ADD LIST OF TITLES?
+:type title: str
+:param error: If True, plots error bars for each mean condition, default = False
+:type error: bool
+:param control: List of control conditions, default = 'control'
+:type control: bool
+:param cmap: Colormap to use as the source of plot colors
+:type cmap: str
+:param window_color: Color of the plateau window, default = 'hotpink'
+:type window_color: str
+:param marker: Marker type, default = '-o'
+:type marker: str
+:param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+:type unique_markers: bool
+:param marker_list: List of marker symbols to use when unique_markers = True, default = ["o", "^", "s", "D", "p", "*", "v"]
+:type marker_list: [str]
+:param show_control: If True, plots each control condition for each protein, default = True
+:return: Figure displaying each mean condition versus time
+:rtype: fig</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">    def plot_conditions(self, data_type, activator = &#34; &#34;, show_window = False, dpi = 120, title = &#34; &#34;, error = False, control = [&#39;control&#39;], cmap = &#34;winter_r&#34;, window_color = &#39;hotpink&#39;, proteins = [], compounds = [], marker = &#39;o&#39;, unique_markers = False, marker_list = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;], show_control = True):
+        &#34;&#34;&#34;Plots each mean condition versus time.
+        
+        :param data_type: Data to be plotted, either &#39;ratio&#39; or &#39;baseline_corrected&#39;
+        :type data_type: str
+        :param activator: Activator injected into assay, default = &#34;&#34;
+        :type activator: str
+        :param show_window: If &#39;True&#39;, shows the window from which the plateau for each condition is calculated, default = False 
+        :type show_window: bool
+        :param dpi: Size of figure, default = 120
+        :type dpi: int
+        :param title: Title of plot ADD LIST OF TITLES?
+        :type title: str
+        :param error: If True, plots error bars for each mean condition, default = False
+        :type error: bool
+        :param control: List of control conditions, default = &#39;control&#39;
+        :type control: bool
+        :param cmap: Colormap to use as the source of plot colors
+        :type cmap: str
+        :param window_color: Color of the plateau window, default = &#39;hotpink&#39;
+        :type window_color: str
+        :param marker: Marker type, default = &#39;-o&#39;
+        :type marker: str
+        :param unique_markers: If True, plots each condition as a black line with a unique marker, default = False
+        :type unique_markers: bool
+        :param marker_list: List of marker symbols to use when unique_markers = True, default = [&#34;o&#34;, &#34;^&#34;, &#34;s&#34;, &#34;D&#34;, &#34;p&#34;, &#34;*&#34;, &#34;v&#34;]
+        :type marker_list: [str]
+        :param show_control: If True, plots each control condition for each protein, default = True
+        :return: Figure displaying each mean condition versus time
+        :rtype: fig
+        &#34;&#34;&#34;
+
+        platemap = self.plate_map
+        grouplist = self.grouplist
+        groupdct = {}
+        
+        # check control
+        # check controls are correct
+        for c in control:
+            if self.plate_map[&#39;Type&#39;].isin([c]).any() == False:
+                raise ControlError(&#34;{} not in plate map&#34;.format(c))
+        
+        for key, val in self.processed_data[data_type].items():
+            data_length = val.shape[1]
+            mapped = platemap.fillna(&#39;none&#39;).join(val)
+            group = mapped[mapped.Valid == True].groupby(grouplist)[val.columns]
+            # update dictionary
+            groupdct[key] = group
+
+        # get data, time and error values for each condition
+        data = groupdct[&#39;data&#39;].mean().reset_index()
+        time = groupdct[&#39;time&#39;].mean().reset_index()
+        yerr = groupdct[&#39;data&#39;].sem().reset_index()
+
+        # get names of proteins and compounds, excluding control
+        if proteins == []:
+            proteins = data[data[&#39;Type&#39;].str.contains(&#39;control&#39;) == False][&#39;Protein&#39;].unique()
+            
+        # iterate through proteins list
+        for pkey, pval in enumerate(proteins):
+            # get number of compounds for each protein
+            if compounds == []:
+                compounds = data[(data[&#39;Type&#39;].str.contains(&#39;control&#39;) == False) &amp; (data[&#39;Protein&#39;] == pval)][&#39;Compound&#39;].unique()
+                
+            # iterate through compounds for each protein
+            for ckey, cval in enumerate(compounds):                
+                # try each different combo
+#                 try:
+                # extract data for each protein and compound, excluding control. 
+
+                data_temp = data[data[&#39;Type&#39;].isin(control) == False]
+                data_temp = data_temp[(data_temp[&#39;Protein&#39;] == pval) &amp; (data_temp[&#39;Compound&#39;] == cval)]
+
+                time_temp = time[time[&#39;Type&#39;].isin(control) == False]
+                time_temp = time_temp[(time_temp[&#39;Protein&#39;] == pval) &amp; (time_temp[&#39;Compound&#39;] == cval)]
+
+                yerr_temp = yerr[yerr[&#39;Type&#39;].isin(control) == False]
+                yerr_temp = yerr_temp[(yerr_temp[&#39;Protein&#39;] == pval) &amp; (yerr_temp[&#39;Compound&#39;] == cval)]
+
+                templist = [x for x in grouplist if x != &#39;Concentration&#39;] # get columns to remove
+
+                # extract just the data with conc as the index
+                index = data_temp.iloc[:, :-data_length]
+                data_temp = data_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+                time_temp = time_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+                yerr_temp = yerr_temp.set_index(&#39;Concentration&#39;).iloc[:, -data_length:]
+
+                ########## PLOT ##########
+                if (pval != &#39;none&#39;) &amp; (cval != &#39;none&#39;):
+                    fig, ax = plt.subplots(dpi = 120)
+
+                    # check units!
+                    if len(index[&#39;Concentration Units&#39;].unique()) &gt; 1 :
+                        raise UnitsError
+                    # if units are fine, get units!
+                    unique_units = index[&#39;Concentration Units&#39;].unique()[0]
+
+                    ########## control ##########
+                    ctrl_max_vals = []
+                    if show_control == True:
+                        for c in control:
+
+                            control_data = data[data[&#39;Type&#39;].str.contains(c) == True]
+                            control_data = control_data[(control_data[&#39;Protein&#39;] == pval)].iloc[:, -data_length:]
+
+                            control_time = time[time[&#39;Type&#39;].str.contains(c) == True]
+                            control_time = control_time[(control_time[&#39;Protein&#39;] == pval)].iloc[:, -data_length:]
+                            ctrl_max_vals.append(control_data.max().max())
+                            
+                            # convert u to mu
+                            if unique_units[0] == &#39;u&#39;:
+                                ctrl_label = &#34;0 &#34; + &#34;$\mathrm{\mu }$&#34; + unique_units[1:] + &#34; ({})&#34;.format(c)
+                            else:
+                                ctrl_label = &#34;0 {} ({})&#34;.format(unique_units, c)
+
+                            ax.plot(control_time.iloc[0], control_data.iloc[0], marker, linestyle = &#39;-&#39;, color = &#39;black&#39;, 
+                                    mfc = get_color(control, &#39;binary&#39;, c), lw = 1, zorder = 2, label = ctrl_label)
+
+                    ########## control end ##########
+
+                    markers = itertools.cycle(marker_list) # define unique markers for each line (unique_markers = True)
+
+                    # plot series, iterating down rows
+                    for i in range(len(time_temp)):
+                        # get legend labels
+                        if unique_units[0] == &#39;u&#39;:
+                            legend_label = &#34;{} &#34;.format(data_temp.index[i]) + &#34;$\mathrm{\mu }$&#34; + unique_units[1:]
+                        else:
+                            legend_label = &#34;{} {}&#34;.format(data_temp.index[i], unique_units)
+
+                        # plot each condition
+                        if error == True:
+                            ax.errorbar(x = time_temp.iloc[i], y = data_temp.iloc[i], yerr = yerr_temp.iloc[i],
+                                       capsize = 3, zorder=1, color = plot_color(data_temp, cmap, i),
+                                       label = legend_label)
+                        else: 
+                            if unique_markers == False:
+                                ax.plot(time_temp.iloc[i], data_temp.iloc[i], marker = marker, linestyle = &#39;-&#39;, zorder=1, label = legend_label, ms = 5, color = plot_color(data_temp, cmap, i), lw = 1)
+                            else:
+                                ax.plot(time_temp.iloc[i], data_temp.iloc[i], marker = next(markers), linestyle = &#39;-&#39;, zorder=1, label = legend_label, ms = 4, color = &#39;black&#39;, lw = 1)
+
+                        # add legend    
+                        ax.legend(loc = &#34;upper left&#34;, bbox_to_anchor = (1.0, 1.0), frameon = False, title = &#34;{}&#34;.format(cval))
+
+                    # white background makes the exported figure look a lot nicer
+                    fig.patch.set_facecolor(&#39;white&#39;)
+
+                    # spines
+                    ax.spines[&#39;right&#39;].set_visible(False)
+                    ax.spines[&#39;top&#39;].set_visible(False)
+
+                    # add line representing the activator
+                    times = self.processed_data[data_type][&#39;time&#39;].mean() # get times
+                    time_filter = times &gt; (self.inject - 5) # mean time series that contains activator
+
+                    # get start and end points
+                    injection_start = times[time_filter].iloc[0]
+                    injection_end = times[time_filter].iloc[-1]
+
+                    # add line indicating presence of activator
+                    if len(ctrl_max_vals) &gt; 0: # make sure line is above plotted data!! 
+                        if max(ctrl_max_vals) &gt; data_temp.max().max():
+                            ymax = control_data.max().max() + control_data.max().max()*0.1
+                    else:
+                        ymax = data_temp.max().max() + data_temp.max().max()*0.1 # add a bit extra to prevent clash
+
+                    ax.plot([injection_start, injection_end], [ymax, ymax], c = &#39;black&#39;)
+
+                    # activator title
+                    ax.text((injection_start+injection_end)/2, (ymax+ymax*0.05), activator, ha = &#39;center&#39;)
+
+                    # assay title
+                    ax.set_title(title, x = 0, fontweight = &#39;550&#39;)
+
+                    # axes labels
+                    ax.set_xlabel(&#34;time (s)&#34;)
+                    ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+
+                    # display plateau window
+                    if show_window == True:
+                        # x min and x max for axvspan 
+                        xmin = time_temp.loc[:, self.window[0]].mean()
+                        xmax = time_temp.loc[:, self.window[1]].mean()
+                        ax.axvspan(xmin, xmax, facecolor = window_color, alpha = 0.5)
+
+                    ########## PLOT END ##########
+
+                plt.show()</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.plot_curve"><code class="name flex">
+<span>def <span class="ident">plot_curve</span></span>(<span>self, plot_func, use_normalised=False, n=5, proteins=[], compounds=[], error_bar=True, cmap='Dark2', combine=False, activator=' ', title=' ', dpi=120, show_top_bot=False, conc_units='M', **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Plots fitted curve using logistic regression with errors and IC50/EC50 values.</p>
+<p>:param plot_func: Plot function to use, either ic50 or ec50
+:type plot_func: str
+:param use_normalised: If True, uses normalised amplitudes, default = False
+:type use_normalised: bool
+:param n: Number of concentrations required for plot
+:type n: int
+:param proteins: Proteins to plot, defaults to all
+:type proteins: list
+:param compounds: Compounds to plot, defaults to all
+:type compounds: list
+:param error_bar: If True, reveals error bars, default = True
+:type error_bar = bool
+:param cmap: Color map that sets each line colour in a combined plot, default = "Dark2"
+:type cmap: bool
+:param activator: Activator injected into assay, default = " "
+:type activator: str
+:param title: Choose between automatic title or insert string to use, default = " "
+:type title: str
+:param dpi: Size of figure
+:type dpi: int
+:param show_top_bot: 'True' shows the top and bottom curve fitting values in the legend
+:type show_top_bot: bool
+:param conc_units: Units displayed on x axis of graph
+:type conc_units: str
+:param **kwargs: Additional curve fitting arguments</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_curve(self, plot_func, use_normalised = False, n = 5, proteins = [], compounds = [], error_bar = True, cmap = &#34;Dark2&#34;, combine = False, activator = &#34; &#34;, title = &#34; &#34;, dpi = 120, show_top_bot = False, conc_units = &#39;M&#39;, **kwargs):
+    &#34;&#34;&#34;Plots fitted curve using logistic regression with errors and IC50/EC50 values.
+    
+    :param plot_func: Plot function to use, either ic50 or ec50
+    :type plot_func: str
+    :param use_normalised: If True, uses normalised amplitudes, default = False
+    :type use_normalised: bool
+    :param n: Number of concentrations required for plot
+    :type n: int
+    :param proteins: Proteins to plot, defaults to all
+    :type proteins: list
+    :param compounds: Compounds to plot, defaults to all
+    :type compounds: list
+    :param error_bar: If True, reveals error bars, default = True
+    :type error_bar = bool
+    :param cmap: Color map that sets each line colour in a combined plot, default = &#34;Dark2&#34;
+    :type cmap: bool
+    :param activator: Activator injected into assay, default = &#34; &#34;
+    :type activator: str
+    :param title: Choose between automatic title or insert string to use, default = &#34; &#34;
+    :type title: str
+    :param dpi: Size of figure
+    :type dpi: int
+    :param show_top_bot: &#39;True&#39; shows the top and bottom curve fitting values in the legend
+    :type show_top_bot: bool
+    :param conc_units: Units displayed on x axis of graph
+    :type conc_units: str
+    :param **kwargs: Additional curve fitting arguments
+    &#34;&#34;&#34;         
+    curve_data =  self._get_curve_data(plot_func, use_normalised, n, proteins, compounds, **kwargs)
+    
+    # update object with curve data to access when exporting
+    self.curve_data = curve_data
+    for key in self.curve_data.keys():
+        self.curve_data[key][&#39;plot_func&#39;] = plot_func # curve data maximal conc plot function
+
+# do plots
+    self._plot_curve(curve_data, plot_func, use_normalised, n, proteins, compounds, error_bar, cmap, combine, activator, title, dpi, show_top_bot, conc_units)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.see_plate"><code class="name flex">
+<span>def <span class="ident">see_plate</span></span>(<span>self, title='', export=False, cmap='Paired', colorby='Type', labelby='Type', dpi=150)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a visual representation of the plate map.</p>
+<p>The label and colour for each well can be customised to be a variable, for example 'Compound', 'Protein', 'Concentration', 'Concentration Units', 'Contents' or 'Type'. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384.
+:param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+:type size: int
+<br>
+:param export: If 'True' a .png file of the figure is saved, default = False
+:type export: bool
+:param title: Sets the title of the figure, optional
+:type title: str
+:param cmap: Sets the colormap for the color-coding, default = 'Paired'
+:type cmap: str
+:param colorby: Chooses the parameter to color code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type colorby: str
+:param labelby: Chooses the parameter to label code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type labelby: str
+:param dpi: Size of the figure, default = 150
+:type dpi: int
+:return: Visual representation of the plate map.
+:rtype: figure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def see_plate(self, title = &#34;&#34;, export = False, cmap = &#39;Paired&#39;,
+         colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 150):
+    &#34;&#34;&#34;Returns a visual representation of the plate map.
+
+    The label and colour for each well can be customised to be a variable, for example &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration&#39;, &#39;Concentration Units&#39;, &#39;Contents&#39; or &#39;Type&#39;. The size of the plate map used to generate the figure can be either 6, 12, 24, 48, 96 or 384. 
+    :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+    :type size: int    
+    :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+    :type export: bool
+    :param title: Sets the title of the figure, optional
+    :type title: str
+    :param cmap: Sets the colormap for the color-coding, default = &#39;Paired&#39;
+    :type cmap: str
+    :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type colorby: str
+    :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type labelby: str
+    :param dpi: Size of the figure, default = 150
+    :type dpi: int
+    :return: Visual representation of the plate map.
+    :rtype: figure
+    &#34;&#34;&#34;
+    pm.visualise(self.plate_map, title = title, size = self.size, export = export, cmap = cmap,
+         colorby = colorby, labelby = labelby, dpi = dpi)</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.see_wells"><code class="name flex">
+<span>def <span class="ident">see_wells</span></span>(<span>self, to_plot, share_y=True, colorby='Type', labelby='Type', cmap='Dark2_r')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns plotted data from stipulated wells.</p>
+<p>:param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+:type size: int <br>
+:param to_plot: Wells to plot
+:type to_plot: string or list of strings (well ID's), e.g. "A1", "A2", "A3"
+:param share_y: 'True' sets y axis the same for all plots, default = 'True'
+:type share_y: bool
+:param cmap: Sets the colormap for the color-coding, optional
+:type cmap: str
+:param colorby: Chooses the parameter to color code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type colorby: str
+:param labelby: Chooses the parameter to label code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type labelby: str
+:return: Plotted data for the stipulated wells of the well plate<br>
+:rtype: figure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def see_wells(self, to_plot, share_y = True, colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, cmap = &#39;Dark2_r&#39;):
+    &#34;&#34;&#34;Returns plotted data from stipulated wells.
+
+    :param size: Size of platemap, 6, 12, 24, 48, 96 or 384, default = 96
+    :type size: int   
+    :param to_plot: Wells to plot
+    :type to_plot: string or list of strings (well ID&#39;s), e.g. &#34;A1&#34;, &#34;A2&#34;, &#34;A3&#34;
+    :param share_y: &#39;True&#39; sets y axis the same for all plots, default = &#39;True&#39;
+    :type share_y: bool
+    :param cmap: Sets the colormap for the color-coding, optional
+    :type cmap: str
+    :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type colorby: str
+    :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type labelby: str
+    :return: Plotted data for the stipulated wells of the well plate  
+    :rtype: figure
+    &#34;&#34;&#34;
+    # check labelby and colorby
+    if colorby not in self.plate_map.columns:
+        raise pm.HeaderError(&#34;colorby parameter not in plate map&#34;)
+    if labelby not in self.plate_map.columns:
+        raise pm.HeaderError(&#34;labelby parameter not in plate map&#34;)
+
+    # check to_plot
+    if type(to_plot) == str:
+        # plot individual well:
+        try:
+            label = self.plate_map.loc[to_plot][labelby]
+            
+            fig, ax = plt.subplots()
+            ax.plot(self.processed_data[&#39;ratio&#39;][&#39;time&#39;].loc[to_plot], self.processed_data[&#39;ratio&#39;][&#39;data&#39;].loc[to_plot], lw = 3, color = &#39;black&#39;, label = &#34;{} {}&#34;.format(to_plot, label))
+
+        # add label for each well
+            ax.legend(loc = &#39;best&#39;, frameon = True, fancybox = True)
+            ax.set_title(&#34;{} {}&#34;.format(to_plot, pm.labelwell(self.plate_map, labelby, 0)))
+            ax.set_facecolor(&#39;0.95&#39;)
+            ax.set_xlabel(&#34;time / s&#34;)
+            ax.set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+            ax.set_title(&#39;Flex data versus time for {}&#39;.format(to_plot), y = 1.05, size = 20)
+            plt.show()
+
+        except:
+            print(&#34;Plot error, does {} contain data?&#34;.format(to_plot))
+
+    else:
+        # plot multiple wells
+        fig, axs = plt.subplots(len(to_plot), 1, figsize = (2*len(to_plot), 3*len(to_plot)), constrained_layout = True, sharey = share_y)
+
+        for i in range(len(to_plot)):
+            try:
+                label =  label = self.plate_map.loc[to_plot[i]][labelby] 
+                axs[i].plot(self.processed_data[&#39;ratio&#39;][&#39;time&#39;].loc[to_plot[i]], self.processed_data[&#39;ratio&#39;][&#39;data&#39;].loc[to_plot[i]], 
+                            lw = 3, color = pm.wellcolour2(self.plate_map, colorby, cmap, i, to_plot), 
+                           label = &#34;{} {}&#34;.format(to_plot[i], label))
+
+            # add label for each well
+                axs[i].legend(loc = &#39;best&#39;, frameon = True, fancybox = True)
+                axs[i].set_title(&#34;{} {}&#34;.format(to_plot[i], label))
+                axs[i].set_facecolor(&#39;0.95&#39;)
+                axs[i].set_xlabel(&#34;time / s&#34;)
+                axs[i].set_ylabel(&#34;$\mathrm{\Delta Ca^{2+} \ _i}$ (Ratio Units F340/F380)&#34;)
+            except:
+                print(&#34;Plot error, does {} contain data?&#34;.format(to_plot[i]))
+
+        # post try/except mods 
+        fig.suptitle(&#39;Flex data versus time for the wells {}&#39;.format(&#39;, &#39;.join(to_plot)), y = 1.05, size = &#39;20&#39;)
+        
+        plt.show()</code></pre>
+</details>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CaFlexPlate.visualise_assay"><code class="name flex">
+<span>def <span class="ident">visualise_assay</span></span>(<span>self, share_y, export=False, title='', cmap='Dark2_r', colorby='Type', labelby='Type', dpi=200)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns color-coded and labelled plots of the data collected for each well of the well plate.</p>
+<p>:param share_y: 'True' sets y axis the same for all plots
+:type share_y: bool
+:param export: If 'True' a .png file of the figure is saved, default = False
+:type export: bool
+:param title: Sets the title of the figure, optional
+:type title: str
+:param cmap: Sets the colormap for the color-coding, default = 'Dark2_r'
+:type cmap: str
+:param colorby: Chooses the parameter to color code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type colorby: str
+:param labelby: Chooses the parameter to label code by, for example 'Type', 'Contents', 'Concentration', 'Compound', 'Protein', 'Concentration Units', default = 'Type'
+:type labelby: str
+:param dpi: Size of the figure, default = 200
+:type dpi: int
+:return: Figure of plotted data for each well of the well plate described in plate_map_file
+:rtype: figure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def visualise_assay(self, share_y, export = False, title = &#34;&#34;, cmap = &#39;Dark2_r&#39;,
+         colorby = &#39;Type&#39;, labelby = &#39;Type&#39;, dpi = 200):
+    &#34;&#34;&#34;Returns color-coded and labelled plots of the data collected for each well of the well plate.
+    
+    :param share_y: &#39;True&#39; sets y axis the same for all plots
+    :type share_y: bool
+    :param export: If &#39;True&#39; a .png file of the figure is saved, default = False
+    :type export: bool
+    :param title: Sets the title of the figure, optional
+    :type title: str
+    :param cmap: Sets the colormap for the color-coding, default = &#39;Dark2_r&#39;
+    :type cmap: str
+    :param colorby: Chooses the parameter to color code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type colorby: str
+    :param labelby: Chooses the parameter to label code by, for example &#39;Type&#39;, &#39;Contents&#39;, &#39;Concentration&#39;, &#39;Compound&#39;, &#39;Protein&#39;, &#39;Concentration Units&#39;, default = &#39;Type&#39;
+    :type labelby: str
+    :param dpi: Size of the figure, default = 200
+    :type dpi: int
+    :return: Figure of plotted data for each well of the well plate described in plate_map_file
+    :rtype: figure
+    &#34;&#34;&#34;
+    self.title = title
+    
+    # check labelby and colorby
+    if colorby not in self.plate_map.columns:
+        raise pm.HeaderError(&#34;colorby parameter not in plate map&#34;)
+    if labelby not in self.plate_map.columns:
+        raise pm.HeaderError(&#34;labelby parameter not in plate map&#34;)
+    
+    pm.visualise_all_series(x = self.processed_data[&#39;ratio&#39;][&#39;time&#39;], y = self.processed_data[&#39;ratio&#39;][&#39;data&#39;], 
+                        share_y = share_y, platemap = self.plate_map, size = self.size, 
+                        export = export, cmap = cmap,
+                        colorby = colorby, labelby = labelby, 
+                        dpi = dpi, title = self.title)
+    
+    plt.suptitle(self.title, y = 0.95)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.CompoundNameError"><code class="flex name class">
+<span>class <span class="ident">CompoundNameError</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CompoundNameError(pm.PlateMapError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>platemapping.plate_map.PlateMapError</li>
+<li>platemapping.plate_map.Error</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.ControlError"><code class="flex name class">
+<span>class <span class="ident">ControlError</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ControlError(pm.PlateMapError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>platemapping.plate_map.PlateMapError</li>
+<li>platemapping.plate_map.Error</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.DataError"><code class="flex name class">
+<span>class <span class="ident">DataError</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DataError(Error):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="calciumflexanalysis.calcium_flex.Error" href="#calciumflexanalysis.calcium_flex.Error">Error</a></li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="calciumflexanalysis.calcium_flex.DataReadInError" href="#calciumflexanalysis.calcium_flex.DataReadInError">DataReadInError</a></li>
+</ul>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.DataReadInError"><code class="flex name class">
+<span>class <span class="ident">DataReadInError</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DataReadInError(DataError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="calciumflexanalysis.calcium_flex.DataError" href="#calciumflexanalysis.calcium_flex.DataError">DataError</a></li>
+<li><a title="calciumflexanalysis.calcium_flex.Error" href="#calciumflexanalysis.calcium_flex.Error">Error</a></li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.Error"><code class="flex name class">
+<span>class <span class="ident">Error</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Error(Exception):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="calciumflexanalysis.calcium_flex.DataError" href="#calciumflexanalysis.calcium_flex.DataError">DataError</a></li>
+</ul>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.ProteinNameError"><code class="flex name class">
+<span>class <span class="ident">ProteinNameError</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ProteinNameError(pm.PlateMapError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>platemapping.plate_map.PlateMapError</li>
+<li>platemapping.plate_map.Error</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="calciumflexanalysis.calcium_flex.UnitsError"><code class="flex name class">
+<span>class <span class="ident">UnitsError</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UnitsError(pm.PlateMapError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>platemapping.plate_map.PlateMapError</li>
+<li>platemapping.plate_map.Error</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="calciumflexanalysis" href="index.html">calciumflexanalysis</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="calciumflexanalysis.calcium_flex.get_color" href="#calciumflexanalysis.calcium_flex.get_color">get_color</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.plot_color" href="#calciumflexanalysis.calcium_flex.plot_color">plot_color</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.read_in" href="#calciumflexanalysis.calcium_flex.read_in">read_in</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.read_in_new" href="#calciumflexanalysis.calcium_flex.read_in_new">read_in_new</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate" href="#calciumflexanalysis.calcium_flex.CaFlexPlate">CaFlexPlate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.amplitude" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.amplitude">amplitude</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.baseline_correct" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.baseline_correct">baseline_correct</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.def_window" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.def_window">def_window</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.export_data" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.export_data">export_data</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.get_gradients" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.get_gradients">get_gradients</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.get_window" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.get_window">get_window</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_cols" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_cols">invalidate_cols</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_rows" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_rows">invalidate_rows</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_wells" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.invalidate_wells">invalidate_wells</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.mean_amplitude" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.mean_amplitude">mean_amplitude</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.normalise" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.normalise">normalise</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.plot_conditions" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.plot_conditions">plot_conditions</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.plot_curve" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.plot_curve">plot_curve</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.see_plate" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.see_plate">see_plate</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.see_wells" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.see_wells">see_wells</a></code></li>
+<li><code><a title="calciumflexanalysis.calcium_flex.CaFlexPlate.visualise_assay" href="#calciumflexanalysis.calcium_flex.CaFlexPlate.visualise_assay">visualise_assay</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.CompoundNameError" href="#calciumflexanalysis.calcium_flex.CompoundNameError">CompoundNameError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.ControlError" href="#calciumflexanalysis.calcium_flex.ControlError">ControlError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.DataError" href="#calciumflexanalysis.calcium_flex.DataError">DataError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.DataReadInError" href="#calciumflexanalysis.calcium_flex.DataReadInError">DataReadInError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.Error" href="#calciumflexanalysis.calcium_flex.Error">Error</a></code></h4>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.ProteinNameError" href="#calciumflexanalysis.calcium_flex.ProteinNameError">ProteinNameError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="calciumflexanalysis.calcium_flex.UnitsError" href="#calciumflexanalysis.calcium_flex.UnitsError">UnitsError</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.4</a>.</p>
+</footer>
+</body>
+</html>
