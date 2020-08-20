@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="calciumflexanalysis", 
-    version="0.0.3",
+    version="0.0.4",
     author="Lawrence Collins, Stuart Warriner",
     author_email="s.l.warriner@leeds.ac.uk, lawrencejordancollins@gmail.com",
     description="Processing and analysis of calcium flex assays",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/lawrencecollins/Ca-Flex-Analysis",
+    url="https://github.com/lawrencecollins/calciumflexanalysis",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
