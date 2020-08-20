@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="calciumflexanalysis", 
-    version="0.0.4",
+    version="1.0.0",
     author="Lawrence Collins, Stuart Warriner",
     author_email="s.l.warriner@leeds.ac.uk, lawrencejordancollins@gmail.com",
     description="Processing and analysis of calcium flex assays",
