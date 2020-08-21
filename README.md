@@ -7,5 +7,5 @@ Read and interpret Calcium Flex assay data from well plates.
 [_multiplate_](https://lawrencecollins.github.io/calciumflexanalysis/multiplate/)
 
 ## Demo ##
-[Step-by-step guide](https://lawrencecollins.github.io/calciumflexanalysis/demo/)
+[Step-by-step guide](https://lawrencecollins.github.io/calciumflexanalysis/demo/) <br>
 Download the notebook and files used [here](https://github.com/lawrencecollins/Ca-Flex-Analysis)
