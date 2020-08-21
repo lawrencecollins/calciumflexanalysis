@@ -11,7 +11,7 @@ Read and interpret Calcium Flex assay data from well plates.
 Download the notebook and files used [here](https://github.com/lawrencecollins/Ca-Flex-Analysis/)
 
 ## Installation ##
-pip install calciumflexanalysis 
+> pip install calciumflexanalysis 
 
 ### Dependencies ###
 [platemapping](https://github.com/lawrencecollins/platemapping) (automatically installed)
