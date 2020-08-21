@@ -14,7 +14,9 @@ from calciumflexanalysis import calcium_flex as cal
 Download the notebook and files used [here](https://github.com/lawrencecollins/Ca-Flex-Analysis/)
 
 ## Installation ##
-> pip install calciumflexanalysis 
+~~~CMD
+pip install calciumflexanalysis 
+~~~
 
 ### Dependencies ###
 [platemapping](https://github.com/lawrencecollins/platemapping) (automatically installed)
