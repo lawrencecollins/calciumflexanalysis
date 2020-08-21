@@ -11,7 +11,7 @@ Read and interpret Calcium Flex assay data from well plates.
 from calciumflexanalysis import calcium_flex as cal
 ~~~
 [Step-by-step guide](https://lawrencecollins.github.io/calciumflexanalysis/demo/) <br>
-Download the notebook and files used [here](https://github.com/lawrencecollins/Ca-Flex-Analysis/)
+Download the demo notebook and files used [here](https://github.com/lawrencecollins/Ca-Flex-Analysis/)
 
 ## Installation ##
 ~~~
