@@ -500,7 +500,7 @@ class CaFlexPlate:
         :param error: If True, plots error bars for each mean condition, default = False
         :type error: bool
         :param control: List of control conditions, default = 'control'
-        :type control: bool
+        :type control: [str]
         :param cmap: Colormap to use as the source of plot colors
         :type cmap: str
         :param window_color: Color of the plateau window, default = 'hotpink'
@@ -512,6 +512,7 @@ class CaFlexPlate:
         :param marker_list: List of marker symbols to use when unique_markers = True, default = ["o", "^", "s", "D", "p", "*", "v"]
         :type marker_list: [str]
         :param show_control: If True, plots each control condition for each protein, default = True
+        :type show_control: bool
         :return: Figure displaying each mean condition versus time
         :rtype: fig
         """
