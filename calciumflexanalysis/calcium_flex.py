@@ -737,11 +737,14 @@ class CaFlexPlate:
         
         return mean_response
     
-    def normalise(self):
-        """Normalises amplitudes to mean control amplitude."""
+    def normalise(self, control = 'control'):
+        """Normalises amplitudes to mean control amplitude.
+        :param control: The control used to normalise against, default = 'control' 
+        :type control: str
+        """ # UPDATE MULTIPLATE 
         mean_amps = self.mean_amplitude(use_normalised = False) # get mean control amplitude
         amps = self.processed_data['plateau']['data']
-        control_amp = float(mean_amps[mean_amps['Type'] == 'control']['Amplitude'])
+        control_amp = float(mean_amps[mean_amps['Type'] == control]['Amplitude']) 
         self.processed_data['plateau']['data_normed'] = "test"
         self.processed_data['plateau']['data_normed'] = ((amps * 100) / control_amp).rename(columns = {'Amplitude':'amps_normed'})
 
