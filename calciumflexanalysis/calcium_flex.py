@@ -644,11 +644,11 @@ class CaFlexPlate:
                     injection_end = times[time_filter].iloc[-1]
 
                     # add line indicating presence of activator
-                    if len(ctrl_max_vals) > 0: # make sure line is above plotted data!! 
+                    ymax = data_temp.max().max() + data_temp.max().max()*0.1 # add a bit extra to prevent clash
+                    
+                    if len(ctrl_max_vals) > 0: # make sure line is above plotted data!! this if statement puts line above control if control is at max
                         if max(ctrl_max_vals) > data_temp.max().max():
-                            ymax = control_data.max().max() + control_data.max().max()*0.1
-                    else:
-                        ymax = data_temp.max().max() + data_temp.max().max()*0.1 # add a bit extra to prevent clash
+                            ymax = control_data.max().max() + control_data.max().max()*0.1    
 
                     ax.plot([injection_start, injection_end], [ymax, ymax], c = 'black')
 
