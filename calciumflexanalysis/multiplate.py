@@ -323,7 +323,7 @@ class CaFlexGroup:
             # get valid data
             group = group[group.Valid == True]
             # drop cols which cause errors w/ groupby operations
-            group.drop(['Valid', 'Column'], axis = 1, inplace = True)
+            group.drop(['Valid'], axis = 1, inplace = True)
             
             # get mean amps for each condition across all plates
             mean_response = group.groupby(self.grouplist).mean().reset_index()

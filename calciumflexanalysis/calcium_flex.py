@@ -722,7 +722,7 @@ class CaFlexPlate:
         # filter for valid wells
         group = mapped[mapped.Valid == True] 
         # drop columns which can cause errors w/ groupby operations
-        group.drop(['Valid', 'Column'], axis = 1, inplace = True)
+        group.drop(['Valid'], axis = 1, inplace = True)
         mean_response = group.groupby(self.grouplist).mean().reset_index()
         
         if use_normalised == False:
